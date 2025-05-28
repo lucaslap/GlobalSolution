@@ -1,0 +1,35 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="200" height="80" viewBox="0 0 200 80">
+  <!-- Logo FloodAlert -->
+  <defs>
+    <linearGradient id="logoGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#2563eb;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#1d4ed8;stop-opacity:1" />
+    </linearGradient>
+  </defs>
+  
+  <!-- Fundo -->
+  <rect width="200" height="80" fill="white" rx="8"/>
+  
+  <!-- Ícone de gota/onda -->
+  <g transform="translate(15, 15)">
+    <!-- Onda de água -->
+    <path d="M0 35 Q15 25 30 35 Q45 45 60 35 Q75 25 90 35 L90 45 Q75 35 60 45 Q45 55 30 45 Q15 35 0 45 Z" 
+          fill="url(#logoGradient)" opacity="0.8"/>
+    <path d="M0 25 Q15 15 30 25 Q45 35 60 25 Q75 15 90 25 L90 35 Q75 25 60 35 Q45 45 30 35 Q15 25 0 35 Z" 
+          fill="url(#logoGradient)" opacity="0.6"/>
+    <path d="M0 15 Q15 5 30 15 Q45 25 60 15 Q75 5 90 15 L90 25 Q75 15 60 25 Q45 35 30 25 Q15 15 0 25 Z" 
+          fill="url(#logoGradient)" opacity="0.4"/>
+  </g>
+  
+  <!-- Texto FloodAlert -->
+  <text x="115" y="30" font-family="Arial, sans-serif" font-size="18" font-weight="bold" fill="#1f2937">FloodAlert</text>
+  <text x="115" y="48" font-family="Arial, sans-serif" font-size="10" fill="#6b7280">Sistema de Alerta</text>
+  
+  <!-- Ícone de escudo/proteção -->
+  <g transform="translate(170, 20)">
+    <path d="M15 5 L25 10 L25 25 Q25 35 15 40 Q5 35 5 25 L5 10 Z" 
+          fill="none" stroke="#059669" stroke-width="2"/>
+    <path d="M10 20 L13 23 L20 16" fill="none" stroke="#059669" stroke-width="2" 
+          stroke-linecap="round" stroke-linejoin="round"/>
+  </g>
+</svg>

@@ -1,0 +1,175 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="800" height="600" viewBox="0 0 800 600">
+  <!-- Hero Background - Cidade com Sistema de Alerta -->
+  <defs>
+    <linearGradient id="skyGradient" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" style="stop-color:#87ceeb;stop-opacity:1" />
+      <stop offset="70%" style="stop-color:#98d8e8;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#b0e5ed;stop-opacity:1" />
+    </linearGradient>
+    <linearGradient id="waterGradient" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" style="stop-color:#1e40af;stop-opacity:0.8" />
+      <stop offset="100%" style="stop-color:#1e3a8a;stop-opacity:0.9" />
+    </linearGradient>
+    <radialGradient id="alertGlow" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" style="stop-color:#fbbf24;stop-opacity:0.8" />
+      <stop offset="100%" style="stop-color:#f59e0b;stop-opacity:0.3" />
+    </radialGradient>
+  </defs>
+  
+  <!-- Céu -->
+  <rect width="800" height="400" fill="url(#skyGradient)"/>
+  
+  <!-- Nuvens -->
+  <g opacity="0.7">
+    <ellipse cx="150" cy="80" rx="40" ry="25" fill="white"/>
+    <ellipse cx="180" cy="85" rx="35" ry="20" fill="white"/>
+    <ellipse cx="200" cy="75" rx="30" ry="18" fill="white"/>
+    
+    <ellipse cx="450" cy="60" rx="45" ry="30" fill="white"/>
+    <ellipse cx="485" cy="65" rx="40" ry="25" fill="white"/>
+    
+    <ellipse cx="650" cy="90" rx="35" ry="22" fill="white"/>
+    <ellipse cx="680" cy="88" rx="30" ry="18" fill="white"/>
+  </g>
+  
+  <!-- Skyline da cidade -->
+  <g>
+    <!-- Prédios de fundo -->
+    <rect x="50" y="250" width="60" height="150" fill="#64748b"/>
+    <rect x="130" y="200" width="80" height="200" fill="#475569"/>
+    <rect x="230" y="220" width="70" height="180" fill="#64748b"/>
+    <rect x="320" y="180" width="90" height="220" fill="#475569"/>
+    <rect x="430" y="240" width="75" height="160" fill="#64748b"/>
+    <rect x="530" y="190" width="85" height="210" fill="#475569"/>
+    <rect x="640" y="230" width="70" height="170" fill="#64748b"/>
+    <rect x="730" y="260" width="60" height="140" fill="#475569"/>
+    
+    <!-- Janelas dos prédios -->
+    <g fill="#fbbf24" opacity="0.8">
+      <!-- Prédio 1 -->
+      <rect x="60" y="270" width="8" height="12" rx="1"/>
+      <rect x="75" y="270" width="8" height="12" rx="1"/>
+      <rect x="90" y="270" width="8" height="12" rx="1"/>
+      <rect x="60" y="300" width="8" height="12" rx="1"/>
+      <rect x="90" y="300" width="8" height="12" rx="1"/>
+      
+      <!-- Prédio 2 -->
+      <rect x="140" y="220" width="10" height="15" rx="1"/>
+      <rect x="160" y="220" width="10" height="15" rx="1"/>
+      <rect x="180" y="220" width="10" height="15" rx="1"/>
+      <rect x="140" y="250" width="10" height="15" rx="1"/>
+      <rect x="160" y="250" width="10" height="15" rx="1"/>
+      <rect x="140" y="280" width="10" height="15" rx="1"/>
+      <rect x="180" y="280" width="10" height="15" rx="1"/>
+      
+      <!-- Mais janelas nos outros prédios -->
+      <rect x="240" y="240" width="9" height="13" rx="1"/>
+      <rect x="255" y="240" width="9" height="13" rx="1"/>
+      <rect x="270" y="240" width="9" height="13" rx="1"/>
+      <rect x="285" y="240" width="9" height="13" rx="1"/>
+      
+      <rect x="330" y="200" width="12" height="18" rx="1"/>
+      <rect x="350" y="200" width="12" height="18" rx="1"/>
+      <rect x="370" y="200" width="12" height="18" rx="1"/>
+      <rect x="390" y="200" width="12" height="18" rx="1"/>
+      <rect x="330" y="230" width="12" height="18" rx="1"/>
+      <rect x="370" y="230" width="12" height="18" rx="1"/>
+    </g>
+  </g>
+  
+  <!-- Água da enchente -->
+  <rect x="0" y="400" width="800" height="200" fill="url(#waterGradient)"/>
+  
+  <!-- Ondas na água -->
+  <g opacity="0.6">
+    <path d="M0 420 Q100 410 200 420 Q300 430 400 420 Q500 410 600 420 Q700 430 800 420 L800 430 Q700 440 600 430 Q500 420 400 430 Q300 440 200 430 Q100 420 0 430 Z" 
+          fill="#1e40af"/>
+    <path d="M0 440 Q100 430 200 440 Q300 450 400 440 Q500 430 600 440 Q700 450 800 440 L800 450 Q700 460 600 450 Q500 440 400 450 Q300 460 200 450 Q100 440 0 450 Z" 
+          fill="#1e40af" opacity="0.7"/>
+  </g>
+  
+  <!-- Torres de alerta/comunicação -->
+  <g>
+    <!-- Torre 1 -->
+    <rect x="395" y="150" width="8" height="80" fill="#374151"/>
+    <circle cx="399" cy="145" r="12" fill="url(#alertGlow)"/>
+    <circle cx="399" cy="145" r="8" fill="#f59e0b"/>
+    
+    <!-- Torre 2 -->
+    <rect x="555" y="160" width="8" height="70" fill="#374151"/>
+    <circle cx="559" cy="155" r="12" fill="url(#alertGlow)"/>
+    <circle cx="559" cy="155" r="8" fill="#f59e0b"/>
+    
+    <!-- Sinais de transmissão -->
+    <g stroke="#f59e0b" stroke-width="2" fill="none" opacity="0.6">
+      <!-- Da torre 1 -->
+      <circle cx="399" cy="145" r="20"/>
+      <circle cx="399" cy="145" r="35"/>
+      <circle cx="399" cy="145" r="50"/>
+      
+      <!-- Da torre 2 -->
+      <circle cx="559" cy="155" r="20"/>
+      <circle cx="559" cy="155" r="35"/>
+      <circle cx="559" cy="155" r="50"/>
+    </g>
+  </g>
+  
+  <!-- Pessoas sendo evacuadas -->
+  <g>
+    <!-- Barco de resgate -->
+    <ellipse cx="300" cy="430" rx="40" ry="15" fill="#dc2626"/>
+    <rect x="280" y="420" width="40" height="8" fill="#b91c1c"/>
+    
+    <!-- Pessoas no barco -->
+    <circle cx="290" cy="415" r="4" fill="#fbbf24"/>
+    <circle cx="305" cy="415" r="4" fill="#fbbf24"/>
+    <circle cx="320" cy="415" r="4" fill="#fbbf24"/>
+  </g>
+  
+  <!-- Helicoptero de resgate -->
+  <g transform="translate(600, 100)">
+    <!-- Corpo do helicoptero -->
+    <ellipse cx="0" cy="0" rx="25" ry="8" fill="#dc2626"/>
+    <rect x="-20" y="-3" width="40" height="6" fill="#b91c1c"/>
+    
+    <!-- Hélice principal -->
+    <g opacity="0.3">
+      <rect x="-30" y="-1" width="60" height="2" fill="#374151"/>
+      <rect x="-1" y="-30" width="2" height="60" fill="#374151"/>
+    </g>
+    
+    <!-- Hélice traseira -->
+    <circle cx="28" cy="0" r="8" fill="none" stroke="#374151" stroke-width="1" opacity="0.3"/>
+  </g>
+  
+  <!-- Placas de alerta -->
+  <g>
+    <!-- Placa 1 -->
+    <rect x="120" y="360" width="60" height="40" fill="#fbbf24" stroke="#f59e0b" stroke-width="2"/>
+    <text x="150" y="375" text-anchor="middle" font-family="Arial" font-size="8" font-weight="bold" fill="#92400e">ÁREA DE</text>
+    <text x="150" y="385" text-anchor="middle" font-family="Arial" font-size="8" font-weight="bold" fill="#92400e">RISCO</text>
+    <text x="150" y="395" text-anchor="middle" font-family="Arial" font-size="6" fill="#92400e">EVACUAÇÃO</text>
+    
+    <!-- Placa 2 -->
+    <rect x="500" y="370" width="70" height="30" fill="#059669" stroke="#047857" stroke-width="2"/>
+    <text x="535" y="382" text-anchor="middle" font-family="Arial" font-size="7" font-weight="bold" fill="white">ROTA SEGURA</text>
+    <text x="535" y="392" text-anchor="middle" font-family="Arial" font-size="7" font-weight="bold" fill="white">→ ABRIGO</text>
+  </g>
+  
+  <!-- Ícones de status flutuantes -->
+  <g>
+    <!-- Status 1 - Conectado -->
+    <circle cx="700" cy="50" r="20" fill="#10b981" opacity="0.9"/>
+    <path d="M690 50 L695 55 L710 40" stroke="white" stroke-width="3" fill="none" stroke-linecap="round"/>
+    
+    <!-- Status 2 - Alerta -->
+    <circle cx="750" cy="50" r="20" fill="#f59e0b" opacity="0.9"/>
+    <text x="750" y="56" text-anchor="middle" font-family="Arial" font-size="16" font-weight="bold" fill="white">!</text>
+  </g>
+  
+  <!-- Título sobreposto -->
+  <rect x="50" y="500" width="700" height="80" fill="rgba(255,255,255,0.95)" rx="8"/>
+  <text x="400" y="530" text-anchor="middle" font-family="Arial" font-size="28" font-weight="bold" fill="#1f2937">Sistema FloodAlert</text>
+  <text x="400" y="555" text-anchor="middle" font-family="Arial" font-size="18" fill="#6b7280">Proteção Inteligente Contra Enchentes</text>
+  <text x="400" y="575" text-anchor="middle" font-family="Arial" font-size="14" fill="#059669">Monitoramento • Alerta • Evacuação</text>
+</svg>

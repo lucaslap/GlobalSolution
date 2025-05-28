@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FloodAlert - Sistema de Alerta e Evacuação para Enchentes</title>
+    <link rel="icon" type="image/svg+xml" href="images/favicon.svg">
+    <link rel="alternate icon" href="images/favicon.ico">
+    <meta name="description"
+        content="Sistema interativo de alerta e evacuação para enchentes. Monitore riscos em tempo real e mantenha sua comunidade segura.">
+    <meta name="keywords" content="enchente, alerta, evacuação, segurança, monitoramento, emergência">
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="css/home.css">
+</head>
+
+<body>
+    <header>
+        <nav class="navbar">
+            <div class="nav-container">
+                <div class="nav-logo">
+                    <h2>FloodAlert</h2>
+                </div>
+                <ul class="nav-menu">
+                    <li class="nav-item">
+                        <a href="index.html" class="nav-link active">Início</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="simulacao.html" class="nav-link">Simulação</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="sobre.html" class="nav-link">Sobre</a>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <!-- Hero Section -->
+        <section class="hero">
+            <div class="hero-content">
+                <h1>Sistema Interativo de Alerta e Evacuação para Enchentes</h1>
+                <p class="hero-subtitle">Protegendo vidas através de tecnologia inteligente e alertas em tempo real</p>
+                <button class="cta-button" onclick="scrollToSection('problema')">Saiba Mais</button>
+            </div>
+            <div class="hero-image">
+                <div class="flood-animation"></div>
+            </div>
+        </section>
+
+        <!-- Problema Section -->
+        <section id="problema" class="problema">
+            <div class="container">
+                <h2>O Problema das Enchentes</h2>
+                <div class="problema-grid">
+                    <div class="problema-card">
+                        <div class="problema-icon">🌊</div>
+                        <h3>Impacto Global</h3>
+                        <p>As enchentes afetam milhões de pessoas anualmente, causando perdas humanas e materiais
+                            devastadoras.</p>
+                    </div>
+                    <div class="problema-card">
+                        <div class="problema-icon">⚠️</div>
+                        <h3>Falta de Alertas</h3>
+                        <p>Muitas comunidades não recebem alertas antecipados, reduzindo o tempo de evacuação segura.
+                        </p>
+                    </div>
+                    <div class="problema-card">
+                        <div class="problema-icon">🏃‍♂️</div>
+                        <h3>Evacuação Ineficiente</h3>
+                        <p>Rotas de evacuação mal planejadas podem levar a congestionamentos e riscos adicionais.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Solução Section -->
+        <section class="solucao">
+            <div class="container">
+                <h2>Nossa Solução</h2>
+                <div class="solucao-content">
+                    <div class="solucao-text">
+                        <h3>FloodAlert: Tecnologia a Serviço da Segurança</h3>
+                        <p>Nosso sistema integra monitoramento meteorológico em tempo real, mapeamento de áreas de risco
+                            e algoritmos inteligentes de roteamento para criar a solução mais eficiente de prevenção e
+                            evacuação de enchentes.</p>
+
+                        <div class="features">
+                            <div class="feature">
+                                <span class="feature-icon">📡</span>
+                                <div>
+                                    <h4>Alertas em Tempo Real</h4>
+                                    <p>Notificações instantâneas baseadas em dados meteorológicos e sensores locais</p>
+                                </div>
+                            </div>
+                            <div class="feature">
+                                <span class="feature-icon">🗺️</span>
+                                <div>
+                                    <h4>Mapeamento Inteligente</h4>
+                                    <p>Visualização interativa de áreas de risco e rotas de evacuação otimizadas</p>
+                                </div>
+                            </div>
+                            <div class="feature">
+                                <span class="feature-icon">🤝</span>
+                                <div>
+                                    <h4>Coordenação Comunitária</h4>
+                                    <p>Plataforma colaborativa para autoridades e cidadãos trabalharem juntos</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <a href="simulacao.html" class="btn-secondary">Testar Simulação</a>
+                    </div>
+                    <div class="solucao-visual">
+                        <div class="dashboard-preview">
+                            <div class="dashboard-header">
+                                <div class="status-indicator active"></div>
+                                <span>Sistema Ativo</span>
+                            </div>
+                            <div class="dashboard-content">
+                                <div class="alert-box">
+                                    <span class="alert-level medium">⚠️ Alerta Amarelo</span>
+                                    <p>Chuvas intensas previstas para as próximas 2 horas</p>
+                                </div>
+                                <div class="map-placeholder">
+                                    <span>Mapa Interativo</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Estatísticas Section -->
+        <section class="estatisticas">
+            <div class="container">
+                <h2>Impacto da Tecnologia</h2>
+                <div class="stats-grid">
+                    <div class="stat-card">
+                        <div class="stat-number" data-target="85">0%</div>
+                        <p>Redução no tempo de resposta</p>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-number" data-target="70">0%</div>
+                        <p>Melhoria na eficiência de evacuação</p>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-number" data-target="95">0%</div>
+                        <p>Precisão dos alertas</p>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-number" data-target="200">0+</div>
+                        <p>Vidas potencialmente salvas</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- CTA Final Section -->
+        <section class="cta-final">
+            <div class="container">
+                <h2>Faça Parte da Solução</h2>
+                <p>Teste nosso sistema e veja como a tecnologia pode salvar vidas</p>
+                <div class="cta-buttons">
+                    <a href="simulacao.html" class="btn-primary">Iniciar Simulação</a>
+                    <a href="sobre.html" class="btn-outline">Saiba Mais</a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>FloodAlert</h3>
+                    <p>Sistema Interativo de Alerta e Evacuação para Enchentes</p>
+                    <p>Projeto Global Solution - FIAP 2025</p>
+                </div>
+                <div class="footer-section">
+                    <h4>Navegação</h4>
+                    <ul>
+                        <li><a href="index.html">Início</a></li>
+                        <li><a href="simulacao.html">Simulação</a></li>
+                        <li><a href="sobre.html">Sobre</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Emergência</h4>
+                    <p>Em caso de enchente:</p>
+                    <p><strong>Ligue 199 (Defesa Civil)</strong></p>
+                    <p><strong>Ligue 193 (Bombeiros)</strong></p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 FloodAlert. Todos os direitos reservados.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/main.js"></script>
+    <script src="js/home.js"></script>
+</body>
+
+</html>
