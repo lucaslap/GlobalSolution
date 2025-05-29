@@ -4,127 +4,770 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Nome_do_projeto - Sistema de Alerta e Evacuação para Enchentes</title>
+    <title>DryPath - Sistema de Alerta e Evacuação para Enchentes</title>
     <link rel="icon" type="image/svg+xml" href="images/favicon.svg">
     <link rel="alternate icon" href="images/favicon.ico">
-    <meta name="description"
-        content="Sistema interativo de alerta e evacuação para enchentes. Monitore riscos em tempo real e mantenha sua comunidade segura.">
-    <meta name="keywords" content="enchente, alerta, evacuação, segurança, monitoramento, emergência">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.2/font/bootstrap-icons.css">
     <link rel="stylesheet" href="css/styles.css">
     <link rel="stylesheet" href="css/home.css">
 </head>
 
 <body>
     <header>
-        <nav class="navbar">
-            <div class="nav-container">
-                <div class="nav-logo">
-                    <h2>FloodAlert</h2>
+        <nav class="navbar navbar-expand-lg navbar-light fixed-top">
+            <div class="container">
+                <a class="navbar-brand fw-bold text-white d-flex align-items-center" href="index.html"
+                    aria-label="DryPath - Página Inicial">
+                    <i class="bi bi-shield-fill-check me-2 fs-4" aria-hidden="true"></i>
+                    <span class="brand-text">DryPath</span>
+                </a>
+                <button class="navbar-toggler border-0 p-2" type="button" data-bs-toggle="collapse"
+                    data-bs-target="#navbarNav" style="color: white;" aria-label="Menu de navegação"
+                    aria-expanded="false" aria-controls="navbarNav">
+                    <span class="navbar-toggler-icon"
+                        style="background-image: url('data:image/svg+xml,%3csvg xmlns=%27http://www.w3.org/2000/svg%27 viewBox=%270 0 30 30%27%3e%3cpath stroke=%27rgba%28255, 255, 255, 1%29%27 stroke-linecap=%27round%27 stroke-miterlimit=%2710%27 stroke-width=%272%27 d=%27M4 7h22M4 15h22M4 23h22%27/%3e%3c/svg%3e');"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarNav">
+                    <ul class="navbar-nav ms-auto">
+                        <li class="nav-item">
+                            <a class="nav-link active text-white nav-link-custom" href="index.html">
+                                <i class="bi bi-house-fill me-2"></i>Início
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link text-white nav-link-custom" href="simulacao.html">
+                                <i class="bi bi-play-circle-fill me-2"></i>Simulação
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link text-white nav-link-custom" href="sobre.html">
+                                <i class="bi bi-info-circle-fill me-2"></i>Sobre
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link text-white nav-link-custom" href="educacional.html">
+                                <i class="bi bi-book-half me-2"></i>Educacional
+                            </a>
+
+                        </li>
+                    </ul>
                 </div>
-                <ul class="nav-menu">
-                    <li class="nav-item">
-                        <a href="index.html" class="nav-link active">Início</a>
-                    </li>
-                    <li class="nav-item">
-                        <a href="simulacao.html" class="nav-link">Simulação</a>
-                    </li>
-                    <li class="nav-item">
-                        <a href="sobre.html" class="nav-link">Sobre</a>
-                    </li>
-                </ul>
             </div>
         </nav>
     </header>
 
     <main>
-        <!-- Hero Section -->
-        <section class="hero">
-            <div class="hero-content">
-                <h1>Sistema Interativo de Alerta e Evacuação para Enchentes</h1>
-                <p class="hero-subtitle">Protegendo vidas através de tecnologia inteligente e alertas em tempo real</p>
-                <button class="cta-button" onclick="scrollToSection('problema')">Saiba Mais</button>
+        <!-- Hero Section Enhanced -->
+        <section id="hero" class="hero text-white py-5 d-flex align-items-center position-relative">
+            <!-- Particles Background -->
+            <div class="particles-background position-absolute w-100 h-100" style="top: 0; left: 0; z-index: 0;"></div>
+
+            <!-- Main Content -->
+            <div class="container py-5 mt-5 position-relative" style="z-index: 2;">
+                <div class="row align-items-center min-vh-75">
+                    <div class="col-lg-6 text-center text-lg-start">
+                        <!-- Typing Animation -->
+                        <div class="hero-badge mb-3">
+                            <span class="badge text-primary px-3 py-2 rounded-pill">
+                                <i class="bi bi-lightning-charge me-2"></i>Sistema Inovador de Alertas
+                            </span>
+                        </div>
+
+                        <h1 class="display-4 fw-bold mb-4 text-white hero-title">
+                            Sistema <span class="text-warning typing-text" id="typingText">Inteligente</span><br>
+                            de Alerta e Evacuação para Enchentes
+                        </h1>
+
+                        <p class="lead mb-4 text-white hero-subtitle">
+                            Protegendo vidas através de <strong>tecnologia avançada</strong> e
+                            <strong>alertas em tempo real</strong> com precisão de 95%
+                        </p>
+
+                        <!-- CTA Buttons -->
+                        <div class="hero-buttons d-flex flex-column flex-sm-row gap-3 mb-4">
+                            <button class="btn btn-warning btn-lg px-4 py-3 cta-primary"
+                                onclick="scrollToSection('problema')" aria-label="Rolar para seção do problema">
+                                <i class="bi bi-arrow-down-circle me-2"></i>Descobrir Mais
+                            </button>
+                            <a href="simulacao.html" class="btn btn-outline-light btn-lg px-4 py-3 cta-secondary">
+                                <i class="bi bi-play-circle-fill me-2"></i>Testar Agora
+                            </a>
+                        </div>
+
+                        <!-- Quick Stats -->
+                        <div class="hero-stats d-flex flex-wrap gap-4 mt-4">
+                            <div class="stat-item text-center">
+                                <div class="stat-number fw-bold fs-4 text-warning">95%</div>
+                                <div class="stat-label small text-white-75">Precisão</div>
+                            </div>
+                            <div class="stat-item text-center">
+                                <div class="stat-number fw-bold fs-4 text-warning">24/7</div>
+                                <div class="stat-label small text-white-75">Monitoramento</div>
+                            </div>
+                            <div class="stat-item text-center">
+                                <div class="stat-number fw-bold fs-4 text-warning">6h</div>
+                                <div class="stat-label small text-white-75">Antecedência</div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-lg-6 text-center mt-4 mt-lg-0">
+                        <!-- Enhanced Flood Animation -->
+                        <div class="hero-visual position-relative">
+                            <div class="flood-animation" role="img"
+                                aria-label="Animação visual representando sistema de alerta de enchentes">
+                                <!-- Inner elements for more detail -->
+                                <div class="flood-inner-ring"></div>
+                                <div class="flood-pulse"></div>
+                            </div>
+
+                            <!-- Floating Info Cards -->
+                            <div class="floating-card floating-card-1">
+                                <div class="card border-0 shadow-sm bg-success text-white">
+                                    <div class="card-body p-2 text-center">
+                                        <i class="bi bi-shield-check"></i>
+                                        <small class="d-block">Seguro</small>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="floating-card floating-card-2">
+                                <div class="card border-0 shadow-sm bg-warning text-dark">
+                                    <div class="card-body p-2 text-center">
+                                        <i class="bi bi-exclamation-triangle"></i>
+                                        <small class="d-block">Alerta</small>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="floating-card floating-card-3">
+                                <div class="card border-0 shadow-sm bg-info text-white">
+                                    <div class="card-body p-2 text-center">
+                                        <i class="bi bi-geo-alt"></i>
+                                        <small class="d-block">Rota</small>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
-            <div class="hero-image">
-                <div class="flood-animation"></div>
+
+            <!-- Scroll Indicator -->
+            <div class="scroll-indicator position-absolute bottom-0 start-50 translate-middle-x mb-4">
+                <div class="scroll-mouse">
+                    <div class="scroll-wheel"></div>
+                </div>
+                <small class="text-white-75 d-block mt-2">Role para baixo</small>
             </div>
         </section>
 
-        <!-- Problema Section -->
-        <section id="problema" class="problema">
-            <div class="container">
-                <h2>O Problema das Enchentes</h2>
-                <div class="problema-grid">
-                    <div class="problema-card">
-                        <div class="problema-icon">🌊</div>
-                        <h3>Impacto Global</h3>
-                        <p>As enchentes afetam milhões de pessoas anualmente, causando perdas humanas e materiais
-                            devastadoras.</p>
+        <!-- Problema Section Enhanced -->
+        <section id="problema" class="py-5 bg-light position-relative overflow-hidden">
+            <!-- Background Pattern -->
+            <div class="problem-bg-pattern position-absolute w-100 h-100" style="top: 0; left: 0; z-index: 0;"></div>
+
+            <div class="container position-relative" style="z-index: 2;">
+                <!-- Section Header -->
+                <div class="row">
+                    <div class="col-12 text-center mb-5">
+                        <div class="problem-badge mb-3">
+                            <span class="badge bg-danger text-white px-3 py-2 rounded-pill">
+                                <i class="bi bi-exclamation-triangle me-2"></i>Situação Crítica
+                            </span>
+                        </div>
+                        <h2 class="display-5 fw-bold text-dark mb-3">O Problema das Enchentes</h2>
+                        <p class="lead text-muted max-width-600 mx-auto">
+                            Milhões de pessoas sofrem anualmente com enchentes. Conhecer os desafios é o primeiro passo
+                            para a solução.
+                        </p>
+
+                        <!-- Problem Statistics Counter -->
+                        <div class="problem-stats d-flex flex-wrap justify-content-center gap-4 mt-4">
+                            <div class="stat-item-problem text-center">
+                                <div class="stat-number-problem fw-bold fs-3 text-danger" data-target="250">0M+</div>
+                                <div class="stat-label-problem small text-muted">Pessoas Afetadas/Ano</div>
+                            </div>
+                            <div class="stat-item-problem text-center">
+                                <div class="stat-number-problem fw-bold fs-3 text-warning" data-target="15">0min</div>
+                                <div class="stat-label-problem small text-muted">Tempo Médio de Alerta</div>
+                            </div>
+                            <div class="stat-item-problem text-center">
+                                <div class="stat-number-problem fw-bold fs-3 text-info" data-target="80">0%</div>
+                                <div class="stat-label-problem small text-muted">Comunidades Sem Sistema</div>
+                            </div>
+                        </div>
                     </div>
-                    <div class="problema-card">
-                        <div class="problema-icon">⚠️</div>
-                        <h3>Falta de Alertas</h3>
-                        <p>Muitas comunidades não recebem alertas antecipados, reduzindo o tempo de evacuação segura.
+                </div>
+
+                <!-- Problem Cards Grid -->
+                <div class="row g-4">
+                    <div class="col-md-6 col-lg-4">
+                        <div class="card h-100 shadow-sm border-0 problem-card enhanced-problem-card" data-tilt>
+                            <div class="card-body text-center p-4 position-relative">
+                                <!-- Icon Container with Animation -->
+                                <div class="problem-icon-container mb-3 position-relative">
+                                    <div class="icon-bg-circle"></div>
+                                    <i class="bi bi-tsunami display-4 text-danger position-relative"></i>
+                                    <div class="icon-pulse-effect"></div>
+                                </div>
+
+                                <h3 class="card-title h5 fw-bold text-dark mb-3">Impacto Global</h3>
+                                <p class="card-text text-muted mb-4">
+                                    As enchentes afetam milhões de pessoas anualmente, causando perdas humanas e
+                                    materiais devastadoras em todo o mundo.
+                                </p>
+
+                                <!-- Interactive Elements -->
+                                <div class="problem-metrics">
+                                    <div class="metric-item d-flex justify-content-between align-items-center mb-2">
+                                        <span class="metric-label small text-muted">Mortes/Ano:</span>
+                                        <span class="metric-value fw-bold text-danger">20.000+</span>
+                                    </div>
+                                    <div class="metric-item d-flex justify-content-between align-items-center mb-2">
+                                        <span class="metric-label small text-muted">Prejuízo:</span>
+                                        <span class="metric-value fw-bold text-danger">$40Bi+</span>
+                                    </div>
+                                    <div class="progress mt-3" style="height: 4px;">
+                                        <div class="progress-bar bg-danger progress-animated" role="progressbar"
+                                            style="width: 85%" data-width="85"></div>
+                                    </div>
+                                    <small class="text-muted">Nível de Impacto: Crítico</small>
+                                </div>
+
+                                <!-- Hover Effect Overlay -->
+                                <div class="card-overlay position-absolute w-100 h-100"
+                                    style="top: 0; left: 0; pointer-events: none;"></div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-md-6 col-lg-4">
+                        <div class="card h-100 shadow-sm border-0 problem-card enhanced-problem-card" data-tilt>
+                            <div class="card-body text-center p-4 position-relative">
+                                <div class="problem-icon-container mb-3 position-relative">
+                                    <div class="icon-bg-circle bg-warning-light"></div>
+                                    <i
+                                        class="bi bi-exclamation-triangle-fill display-4 text-warning position-relative"></i>
+                                    <div class="icon-pulse-effect warning"></div>
+                                </div>
+
+                                <h3 class="card-title h5 fw-bold text-dark mb-3">Falta de Alertas</h3>
+                                <p class="card-text text-muted mb-4">
+                                    Muitas comunidades não recebem alertas antecipados suficientes, reduzindo
+                                    drasticamente o tempo de evacuação segura.
+                                </p>
+
+                                <div class="problem-metrics">
+                                    <div class="metric-item d-flex justify-content-between align-items-center mb-2">
+                                        <span class="metric-label small text-muted">Cobertura:</span>
+                                        <span class="metric-value fw-bold text-warning">20%</span>
+                                    </div>
+                                    <div class="metric-item d-flex justify-content-between align-items-center mb-2">
+                                        <span class="metric-label small text-muted">Tempo Médio:</span>
+                                        <span class="metric-value fw-bold text-warning">15min</span>
+                                    </div>
+                                    <div class="progress mt-3" style="height: 4px;">
+                                        <div class="progress-bar bg-warning progress-animated" role="progressbar"
+                                            style="width: 20%" data-width="20"></div>
+                                    </div>
+                                    <small class="text-muted">Nível de Cobertura: Baixo</small>
+                                </div>
+
+                                <div class="card-overlay position-absolute w-100 h-100"
+                                    style="top: 0; left: 0; pointer-events: none;"></div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-md-6 col-lg-4">
+                        <div class="card h-100 shadow-sm border-0 problem-card enhanced-problem-card" data-tilt>
+                            <div class="card-body text-center p-4 position-relative">
+                                <div class="problem-icon-container mb-3 position-relative">
+                                    <div class="icon-bg-circle bg-primary-light"></div>
+                                    <i class="bi bi-person-walking display-4 text-primary position-relative"></i>
+                                    <div class="icon-pulse-effect primary"></div>
+                                </div>
+
+                                <h3 class="card-title h5 fw-bold text-dark mb-3">Evacuação Ineficiente</h3>
+                                <p class="card-text text-muted mb-4">
+                                    Rotas de evacuação mal planejadas e desatualizadas podem levar a congestionamentos
+                                    críticos e riscos adicionais.
+                                </p>
+
+                                <div class="problem-metrics">
+                                    <div class="metric-item d-flex justify-content-between align-items-center mb-2">
+                                        <span class="metric-label small text-muted">Eficiência:</span>
+                                        <span class="metric-value fw-bold text-primary">30%</span>
+                                    </div>
+                                    <div class="metric-item d-flex justify-content-between align-items-center mb-2">
+                                        <span class="metric-label small text-muted">Tempo Extra:</span>
+                                        <span class="metric-value fw-bold text-primary">+200%</span>
+                                    </div>
+                                    <div class="progress mt-3" style="height: 4px;">
+                                        <div class="progress-bar bg-primary progress-animated" role="progressbar"
+                                            style="width: 30%" data-width="30"></div>
+                                    </div>
+                                    <small class="text-muted">Nível de Eficiência: Baixo</small>
+                                </div>
+
+                                <div class="card-overlay position-absolute w-100 h-100"
+                                    style="top: 0; left: 0; pointer-events: none;"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Additional Problem Insights -->
+                <div class="row mt-5">
+                    <div class="col-12">
+                        <div class="problem-insights-container">
+                            <div class="insights-header text-center mb-4">
+                                <h3 class="h4 fw-bold text-dark">
+                                    <i class="bi bi-graph-up-arrow text-danger me-2"></i>
+                                    Tendências Preocupantes
+                                </h3>
+                            </div>
+
+                            <div class="row g-3">
+                                <div class="col-md-6 col-lg-3">
+                                    <div class="insight-card p-3 rounded bg-white shadow-sm">
+                                        <div class="d-flex align-items-center">
+                                            <div class="insight-icon bg-danger-light rounded-circle p-2 me-3">
+                                                <i class="bi bi-arrow-up text-danger"></i>
+                                            </div>
+                                            <div>
+                                                <div class="insight-number fw-bold text-dark">+40%</div>
+                                                <div class="insight-label small text-muted">Aumento em 20 anos</div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="col-md-6 col-lg-3">
+                                    <div class="insight-card p-3 rounded bg-white shadow-sm">
+                                        <div class="d-flex align-items-center">
+                                            <div class="insight-icon bg-warning-light rounded-circle p-2 me-3">
+                                                <i class="bi bi-clock text-warning"></i>
+                                            </div>
+                                            <div>
+                                                <div class="insight-number fw-bold text-dark">6 min</div>
+                                                <div class="insight-label small text-muted">Tempo médio real</div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="col-md-6 col-lg-3">
+                                    <div class="insight-card p-3 rounded bg-white shadow-sm">
+                                        <div class="d-flex align-items-center">
+                                            <div class="insight-icon bg-info-light rounded-circle p-2 me-3">
+                                                <i class="bi bi-people text-info"></i>
+                                            </div>
+                                            <div>
+                                                <div class="insight-number fw-bold text-dark">1.5Bi</div>
+                                                <div class="insight-label small text-muted">Em áreas de risco</div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="col-md-6 col-lg-3">
+                                    <div class="insight-card p-3 rounded bg-white shadow-sm">
+                                        <div class="d-flex align-items-center">
+                                            <div class="insight-icon bg-success-light rounded-circle p-2 me-3">
+                                                <i class="bi bi-shield-x text-success"></i>
+                                            </div>
+                                            <div>
+                                                <div class="insight-number fw-bold text-dark">90%</div>
+                                                <div class="insight-label small text-muted">Poderiam ser evitadas</div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- Solução Section Enhanced -->
+        <section id="solucao" class="py-5 position-relative overflow-hidden">
+            <!-- Background Animation -->
+            <div class="solution-bg-animation position-absolute w-100 h-100" style="top: 0; left: 0; z-index: 0;"></div>
+
+            <div class="container position-relative" style="z-index: 2;">
+                <!-- Section Header -->
+                <div class="row">
+                    <div class="col-12 text-center mb-5">
+                        <div class="solution-badge mb-3">
+                            <span class="badge bg-success text-white px-3 py-2 rounded-pill">
+                                <i class="bi bi-lightbulb me-2"></i>Solução Inovadora
+                            </span>
+                        </div>
+                        <h2 class="display-5 fw-bold text-dark mb-3">Nossa Solução</h2>
+                        <p class="lead text-muted max-width-700 mx-auto">
+                            Transformando a gestão de enchentes através de tecnologia inteligente e coordenação
+                            eficiente.
                         </p>
                     </div>
-                    <div class="problema-card">
-                        <div class="problema-icon">🏃‍♂️</div>
-                        <h3>Evacuação Ineficiente</h3>
-                        <p>Rotas de evacuação mal planejadas podem levar a congestionamentos e riscos adicionais.</p>
-                    </div>
                 </div>
-            </div>
-        </section>
 
-        <!-- Solução Section -->
-        <section class="solucao">
-            <div class="container">
-                <h2>Nossa Solução</h2>
-                <div class="solucao-content">
-                    <div class="solucao-text">
-                        <h3>FloodAlert: Tecnologia a Serviço da Segurança</h3>
-                        <p>Nosso sistema integra monitoramento meteorológico em tempo real, mapeamento de áreas de risco
-                            e algoritmos inteligentes de roteamento para criar a solução mais eficiente de prevenção e
-                            evacuação de enchentes.</p>
+                <div class="row align-items-center">
+                    <!-- Content Side -->
+                    <div class="col-lg-6 order-2 order-lg-1">
+                        <div class="solution-content">
+                            <h3 class="h3 text-primary fw-bold mb-4">
+                                <i class="bi bi-shield-check me-2"></i>DryPath: Tecnologia a Serviço da Segurança
+                            </h3>
+                            <p class="lead mb-4 text-dark">
+                                Nosso sistema integra <strong>monitoramento meteorológico em tempo real</strong>,
+                                mapeamento de áreas de risco e algoritmos inteligentes de roteamento para criar a
+                                solução mais eficiente de prevenção e evacuação de enchentes.
+                            </p>
 
-                        <div class="features">
-                            <div class="feature">
-                                <span class="feature-icon">📡</span>
-                                <div>
-                                    <h4>Alertas em Tempo Real</h4>
-                                    <p>Notificações instantâneas baseadas em dados meteorológicos e sensores locais</p>
+                            <!-- Enhanced Features -->
+                            <div class="features-container mb-4">
+                                <div class="feature-item enhanced-feature" data-feature="alerts">
+                                    <div class="feature-icon-container">
+                                        <div class="bg-primary text-white rounded-circle p-3 me-3 flex-shrink-0">
+                                            <i class="bi bi-broadcast-pin"></i>
+                                        </div>
+                                        <div class="feature-pulse-ring"></div>
+                                    </div>
+                                    <div class="feature-content">
+                                        <h4 class="h6 fw-bold text-dark mb-2">Alertas em Tempo Real</h4>
+                                        <p class="text-muted mb-2">
+                                            Notificações instantâneas baseadas em dados meteorológicos e sensores locais
+                                        </p>
+                                        <div class="feature-metrics">
+                                            <div class="metric-badge bg-primary-light text-primary">
+                                                <i class="bi bi-clock me-1"></i>15s resposta
+                                            </div>
+                                            <div class="metric-badge bg-success-light text-success">
+                                                <i class="bi bi-check-circle me-1"></i>95% precisão
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="feature-item enhanced-feature" data-feature="mapping">
+                                    <div class="feature-icon-container">
+                                        <div class="bg-success text-white rounded-circle p-3 me-3 flex-shrink-0">
+                                            <i class="bi bi-map"></i>
+                                        </div>
+                                        <div class="feature-pulse-ring success"></div>
+                                    </div>
+                                    <div class="feature-content">
+                                        <h4 class="h6 fw-bold text-dark mb-2">Mapeamento Inteligente</h4>
+                                        <p class="text-muted mb-2">
+                                            Visualização interativa de áreas de risco e rotas de evacuação otimizadas
+                                        </p>
+                                        <div class="feature-metrics">
+                                            <div class="metric-badge bg-success-light text-success">
+                                                <i class="bi bi-geo-alt me-1"></i>GPS integrado
+                                            </div>
+                                            <div class="metric-badge bg-info-light text-info">
+                                                <i class="bi bi-layers me-1"></i>3D mapping
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="feature-item enhanced-feature" data-feature="coordination">
+                                    <div class="feature-icon-container">
+                                        <div class="bg-warning text-white rounded-circle p-3 me-3 flex-shrink-0">
+                                            <i class="bi bi-people-fill"></i>
+                                        </div>
+                                        <div class="feature-pulse-ring warning"></div>
+                                    </div>
+                                    <div class="feature-content">
+                                        <h4 class="h6 fw-bold text-dark mb-2">Coordenação Comunitária</h4>
+                                        <p class="text-muted mb-2">
+                                            Plataforma colaborativa para autoridades e cidadãos trabalharem juntos
+                                        </p>
+                                        <div class="feature-metrics">
+                                            <div class="metric-badge bg-warning-light text-warning">
+                                                <i class="bi bi-people me-1"></i>Multi-usuário
+                                            </div>
+                                            <div class="metric-badge bg-primary-light text-primary">
+                                                <i class="bi bi-chat-dots me-1"></i>Chat integrado
+                                            </div>
+                                        </div>
+                                    </div>
                                 </div>
                             </div>
-                            <div class="feature">
-                                <span class="feature-icon">🗺️</span>
-                                <div>
-                                    <h4>Mapeamento Inteligente</h4>
-                                    <p>Visualização interativa de áreas de risco e rotas de evacuação otimizadas</p>
+
+                            <!-- Enhanced CTA Buttons -->
+                            <div class="solution-cta d-flex flex-column flex-sm-row gap-3">
+                                <a href="simulacao.html" class="btn btn-primary btn-lg enhanced-btn-primary">
+                                    <i class="bi bi-play-circle me-2"></i>
+                                    <span>Testar Simulação</span>
+                                    <div class="btn-shimmer"></div>
+                                </a>
+                                <button class="btn btn-outline-primary btn-lg enhanced-btn-secondary"
+                                    onclick="showTechDemo()">
+                                    <i class="bi bi-gear me-2"></i>
+                                    <span>Ver Demonstração</span>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Visual Side -->
+                    <div class="col-lg-6 order-1 order-lg-2 mt-4 mt-lg-0">
+                        <div class="solution-visual position-relative">
+                            <!-- Enhanced Dashboard Preview -->
+                            <div class="dashboard-container">
+                                <div class="card shadow-lg border-0 dashboard-preview enhanced-dashboard">
+                                    <div class="card-header bg-gradient-primary text-white position-relative">
+                                        <div class="d-flex align-items-center justify-content-between">
+                                            <div class="d-flex align-items-center">
+                                                <div
+                                                    class="status-indicator bg-success rounded-circle me-2 animate-pulse">
+                                                </div>
+                                                <span class="fw-bold">Sistema DryPath - Ativo</span>
+                                            </div>
+                                            <div class="dashboard-controls">
+                                                <i class="bi bi-fullscreen text-white-50 me-2 cursor-pointer"></i>
+                                                <i class="bi bi-three-dots text-white-50 cursor-pointer"></i>
+                                            </div>
+                                        </div>
+                                        <div class="connection-status position-absolute end-0 top-0 p-2">
+                                            <small class="text-white-75">
+                                                <i class="bi bi-wifi me-1"></i>Conectado
+                                            </small>
+                                        </div>
+                                    </div>
+
+                                    <div class="card-body p-0">
+                                        <!-- Alert Section -->
+                                        <div class="alert-section p-3 border-bottom">
+                                            <div class="alert alert-warning d-flex align-items-center mb-0 enhanced-alert"
+                                                role="alert">
+                                                <div class="alert-icon me-3">
+                                                    <i class="bi bi-exclamation-triangle-fill"></i>
+                                                </div>
+                                                <div class="flex-grow-1">
+                                                    <div class="d-flex justify-content-between align-items-start">
+                                                        <div>
+                                                            <strong>Alerta Amarelo</strong>
+                                                            <br>
+                                                            <small>Chuvas intensas previstas para as próximas 2
+                                                                horas</small>
+                                                        </div>
+                                                        <span class="badge bg-warning text-dark">Ativo</span>
+                                                    </div>
+                                                    <div class="mt-2">
+                                                        <div class="progress" style="height: 4px;">
+                                                            <div class="progress-bar bg-warning progress-animated"
+                                                                style="width: 75%" data-width="75"></div>
+                                                        </div>
+                                                        <small class="text-muted">Nível de risco: 75%</small>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <!-- Interactive Map -->
+                                        <div class="map-section p-3">
+                                            <div
+                                                class="map-container bg-light rounded position-relative overflow-hidden">
+                                                <div
+                                                    class="map-header d-flex justify-content-between align-items-center mb-2">
+                                                    <h6 class="fw-bold text-dark mb-0">
+                                                        <i class="bi bi-geo-alt-fill text-primary me-1"></i>
+                                                        Mapa de Riscos - São Paulo
+                                                    </h6>
+                                                    <div class="map-controls">
+                                                        <button class="btn btn-sm btn-outline-primary me-1">
+                                                            <i class="bi bi-zoom-in"></i>
+                                                        </button>
+                                                        <button class="btn btn-sm btn-outline-primary">
+                                                            <i class="bi bi-layers"></i>
+                                                        </button>
+                                                    </div>
+                                                </div>
+
+                                                <div class="interactive-map position-relative">
+                                                    <div class="map-background"></div>
+
+                                                    <!-- Animated Risk Areas -->
+                                                    <div class="risk-area risk-high" style="top: 30%; left: 20%;">
+                                                        <div class="risk-marker">
+                                                            <i class="bi bi-exclamation-triangle-fill"></i>
+                                                        </div>
+                                                        <div class="risk-tooltip">Alto Risco</div>
+                                                    </div>
+
+                                                    <div class="risk-area risk-medium" style="top: 60%; left: 60%;">
+                                                        <div class="risk-marker">
+                                                            <i class="bi bi-exclamation-circle-fill"></i>
+                                                        </div>
+                                                        <div class="risk-tooltip">Médio Risco</div>
+                                                    </div>
+
+                                                    <div class="risk-area risk-low" style="top: 20%; left: 70%;">
+                                                        <div class="risk-marker">
+                                                            <i class="bi bi-check-circle-fill"></i>
+                                                        </div>
+                                                        <div class="risk-tooltip">Baixo Risco</div>
+                                                    </div>
+
+                                                    <!-- Evacuation Routes -->
+                                                    <div class="evacuation-route route-1"></div>
+                                                    <div class="evacuation-route route-2"></div>
+                                                </div>
+
+                                                <!-- Map Legend -->
+                                                <div class="map-legend position-absolute bottom-0 start-0 p-2">
+                                                    <div class="d-flex gap-2 flex-wrap">
+                                                        <div class="legend-item">
+                                                            <div class="legend-color bg-danger"></div>
+                                                            <small>Alto</small>
+                                                        </div>
+                                                        <div class="legend-item">
+                                                            <div class="legend-color bg-warning"></div>
+                                                            <small>Médio</small>
+                                                        </div>
+                                                        <div class="legend-item">
+                                                            <div class="legend-color bg-success"></div>
+                                                            <small>Baixo</small>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <!-- Stats Section -->
+                                        <div class="stats-section p-3 bg-light">
+                                            <div class="row g-2">
+                                                <div class="col-4">
+                                                    <div class="stat-card text-center p-2 bg-white rounded shadow-sm">
+                                                        <div class="stat-number fw-bold text-primary">1.2k</div>
+                                                        <small class="text-muted">Usuários Online</small>
+                                                    </div>
+                                                </div>
+                                                <div class="col-4">
+                                                    <div class="stat-card text-center p-2 bg-white rounded shadow-sm">
+                                                        <div class="stat-number fw-bold text-success">98%</div>
+                                                        <small class="text-muted">Uptime</small>
+                                                    </div>
+                                                </div>
+                                                <div class="col-4">
+                                                    <div class="stat-card text-center p-2 bg-white rounded shadow-sm">
+                                                        <div class="stat-number fw-bold text-warning">15</div>
+                                                        <small class="text-muted">Alertas Ativos</small>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
                                 </div>
                             </div>
-                            <div class="feature">
-                                <span class="feature-icon">🤝</span>
-                                <div>
-                                    <h4>Coordenação Comunitária</h4>
-                                    <p>Plataforma colaborativa para autoridades e cidadãos trabalharem juntos</p>
+
+                            <!-- Floating Tech Cards -->
+                            <div class="floating-tech-card tech-card-1">
+                                <div class="card border-0 shadow bg-white">
+                                    <div class="card-body p-2 text-center">
+                                        <i class="bi bi-cpu text-primary"></i>
+                                        <small class="d-block">IA/ML</small>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="floating-tech-card tech-card-2">
+                                <div class="card border-0 shadow bg-white">
+                                    <div class="card-body p-2 text-center">
+                                        <i class="bi bi-cloud text-info"></i>
+                                        <small class="d-block">Cloud</small>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="floating-tech-card tech-card-3">
+                                <div class="card border-0 shadow bg-white">
+                                    <div class="card-body p-2 text-center">
+                                        <i class="bi bi-globe text-success"></i>
+                                        <small class="d-block">IoT</small>
+                                    </div>
                                 </div>
                             </div>
                         </div>
-
-                        <a href="simulacao.html" class="btn-secondary">Testar Simulação</a>
                     </div>
-                    <div class="solucao-visual">
-                        <div class="dashboard-preview">
-                            <div class="dashboard-header">
-                                <div class="status-indicator active"></div>
-                                <span>Sistema Ativo</span>
+                </div>
+
+                <!-- Solution Impact Section -->
+                <div class="row mt-5">
+                    <div class="col-12">
+                        <div class="solution-impact-container">
+                            <div class="impact-header text-center mb-4">
+                                <h3 class="h4 fw-bold text-dark">
+                                    <i class="bi bi-graph-up text-success me-2"></i>
+                                    Impacto Esperado da Solução
+                                </h3>
                             </div>
-                            <div class="dashboard-content">
-                                <div class="alert-box">
-                                    <span class="alert-level medium">⚠️ Alerta Amarelo</span>
-                                    <p>Chuvas intensas previstas para as próximas 2 horas</p>
+
+                            <div class="row g-3">
+                                <div class="col-md-6 col-lg-3">
+                                    <div
+                                        class="impact-card p-3 rounded bg-white shadow-sm border-start border-4 border-success">
+                                        <div class="d-flex align-items-center">
+                                            <div class="impact-icon bg-success-light rounded-circle p-2 me-3">
+                                                <i class="bi bi-arrow-up text-success"></i>
+                                            </div>
+                                            <div>
+                                                <div class="impact-number fw-bold text-dark">85%</div>
+                                                <div class="impact-label small text-muted">Redução tempo resposta</div>
+                                            </div>
+                                        </div>
+                                    </div>
                                 </div>
-                                <div class="map-placeholder">
-                                    <span>Mapa Interativo</span>
+
+                                <div class="col-md-6 col-lg-3">
+                                    <div
+                                        class="impact-card p-3 rounded bg-white shadow-sm border-start border-4 border-primary">
+                                        <div class="d-flex align-items-center">
+                                            <div class="impact-icon bg-primary-light rounded-circle p-2 me-3">
+                                                <i class="bi bi-people text-primary"></i>
+                                            </div>
+                                            <div>
+                                                <div class="impact-number fw-bold text-dark">70%</div>
+                                                <div class="impact-label small text-muted">Melhoria evacuação</div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="col-md-6 col-lg-3">
+                                    <div
+                                        class="impact-card p-3 rounded bg-white shadow-sm border-start border-4 border-warning">
+                                        <div class="d-flex align-items-center">
+                                            <div class="impact-icon bg-warning-light rounded-circle p-2 me-3">
+                                                <i class="bi bi-shield-check text-warning"></i>
+                                            </div>
+                                            <div>
+                                                <div class="impact-number fw-bold text-dark">95%</div>
+                                                <div class="impact-label small text-muted">Precisão alertas</div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="col-md-6 col-lg-3">
+                                    <div
+                                        class="impact-card p-3 rounded bg-white shadow-sm border-start border-4 border-info">
+                                        <div class="d-flex align-items-center">
+                                            <div class="impact-icon bg-info-light rounded-circle p-2 me-3">
+                                                <i class="bi bi-heart text-info"></i>
+                                            </div>
+                                            <div>
+                                                <div class="impact-number fw-bold text-dark">1000+</div>
+                                                <div class="impact-label small text-muted">Vidas salvas/ano</div>
+                                            </div>
+                                        </div>
+                                    </div>
                                 </div>
                             </div>
                         </div>
@@ -132,74 +775,422 @@
                 </div>
             </div>
         </section>
+        <!-- CTA Final Section Enhanced -->
+        <section id="cta-final" class="py-5 position-relative overflow-hidden">
+            <!-- Dynamic Background -->
+            <div class="cta-bg-animation position-absolute w-100 h-100" style="top: 0; left: 0; z-index: 0;"></div>
 
-        <!-- Estatísticas Section -->
-        <section class="estatisticas">
-            <div class="container">
-                <h2>Impacto da Tecnologia</h2>
-                <div class="stats-grid">
-                    <div class="stat-card">
-                        <div class="stat-number" data-target="85">0%</div>
-                        <p>Redução no tempo de resposta</p>
-                    </div>
-                    <div class="stat-card">
-                        <div class="stat-number" data-target="70">0%</div>
-                        <p>Melhoria na eficiência de evacuação</p>
-                    </div>
-                    <div class="stat-card">
-                        <div class="stat-number" data-target="95">0%</div>
-                        <p>Precisão dos alertas</p>
-                    </div>
-                    <div class="stat-card">
-                        <div class="stat-number" data-target="200">0+</div>
-                        <p>Vidas potencialmente salvas</p>
+            <!-- Floating Elements Background -->
+            <div class="cta-floating-elements position-absolute w-100 h-100" style="top: 0; left: 0; z-index: 1;">
+                <div class="floating-element element-1">
+                    <i class="bi bi-shield-check"></i>
+                </div>
+                <div class="floating-element element-2">
+                    <i class="bi bi-geo-alt"></i>
+                </div>
+                <div class="floating-element element-3">
+                    <i class="bi bi-broadcast"></i>
+                </div>
+                <div class="floating-element element-4">
+                    <i class="bi bi-people"></i>
+                </div>
+                <div class="floating-element element-5">
+                    <i class="bi bi-lightbulb"></i>
+                </div>
+            </div>
+
+            <div class="container position-relative" style="z-index: 3;">
+                <div class="row">
+                    <div class="col-12">
+                        <!-- Enhanced CTA Container -->
+                        <div class="cta-container">
+                            <!-- Header Section -->
+                            <div class="cta-header text-center mb-5">
+                                <div class="cta-badge mb-3">
+                                    <span class="badge bg-success text-white px-4 py-2 rounded-pill">
+                                        <i class="bi bi-rocket-takeoff me-2"></i>Comece Agora
+                                    </span>
+                                </div>
+
+                                <h2 class="display-4 fw-bold text-dark mb-4">
+                                    <span class="text-gradient">Faça Parte da Solução</span>
+                                </h2>
+
+                                <p class="lead text-muted mb-4 max-width-800 mx-auto">
+                                    Teste nosso sistema revolucionário e descubra como a <strong>tecnologia
+                                        inteligente</strong>
+                                    pode salvar vidas e proteger comunidades inteiras durante emergências.
+                                </p>
+
+                                <!-- Impact Counter -->
+                                <div class="impact-counter d-flex flex-wrap justify-content-center gap-4 mb-5">
+                                    <div class="counter-item">
+                                        <div class="counter-value fw-bold fs-2 text-primary" data-target="95">0%</div>
+                                        <div class="counter-label small text-muted">Precisão</div>
+                                    </div>
+                                    <div class="counter-item">
+                                        <div class="counter-value fw-bold fs-2 text-success" data-target="1000">0+</div>
+                                        <div class="counter-label small text-muted">Vidas Salvas</div>
+                                    </div>
+                                    <div class="counter-item">
+                                        <div class="counter-value fw-bold fs-2 text-warning" data-target="15">0s</div>
+                                        <div class="counter-label small text-muted">Tempo Resposta</div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Action Section -->
+                            <div class="cta-actions">
+                                <div class="row align-items-center">
+                                    <!-- Primary Actions -->
+                                    <div class="col-lg-8 mb-4 mb-lg-0">
+                                        <div class="actions-container">
+                                            <!-- Main CTA Buttons -->
+                                            <div
+                                                class="main-actions d-flex flex-column flex-md-row gap-3 justify-content-center mb-4">
+                                                <a href="simulacao.html"
+                                                    class="btn btn-primary btn-lg enhanced-cta-primary">
+                                                    <div class="btn-content">
+                                                        <i class="bi bi-play-circle-fill me-2"></i>
+                                                        <span>Iniciar Simulação</span>
+                                                        <small class="d-block">Teste grátis - 2 minutos</small>
+                                                    </div>
+                                                    <div class="btn-glow"></div>
+                                                </a>
+
+                                                <button class="btn btn-outline-primary btn-lg enhanced-cta-secondary"
+                                                    onclick="showDemoVideo()">
+                                                    <div class="btn-content">
+                                                        <i class="bi bi-camera-video me-2"></i>
+                                                        <span>Ver Demonstração</span>
+                                                        <small class="d-block">3 min de vídeo</small>
+                                                    </div>
+                                                </button>
+                                            </div>
+
+                                            <!-- Secondary Actions -->
+                                            <div
+                                                class="secondary-actions d-flex flex-wrap justify-content-center gap-3">
+                                                <a href="sobre.html" class="action-link">
+                                                    <i class="bi bi-info-circle me-2"></i>
+                                                    Saiba Mais
+                                                </a>
+                                                <a href="educacional.html" class="action-link">
+                                                    <i class="bi bi-book me-2"></i>
+                                                    Recursos Educacionais
+                                                </a>
+                                                <button class="action-link" onclick="shareProject()">
+                                                    <i class="bi bi-share me-2"></i>
+                                                    Compartilhar
+                                                </button>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <!-- Trust Indicators -->
+                                    <div class="col-lg-4">
+                                        <div class="trust-indicators">
+                                            <div class="trust-header text-center mb-3">
+                                                <h3 class="h5 fw-bold text-dark">
+                                                    <i class="bi bi-award text-warning me-2"></i>
+                                                    Por que confiar?
+                                                </h3>
+                                            </div>
+
+                                            <div class="trust-items">
+                                                <div class="trust-item d-flex align-items-center mb-3">
+                                                    <div class="trust-icon bg-primary-light rounded-circle p-2 me-3">
+                                                        <i class="bi bi-shield-check text-primary"></i>
+                                                    </div>
+                                                    <div>
+                                                        <div class="trust-title fw-bold text-dark">Sistema Seguro</div>
+                                                        <small class="text-muted">Dados protegidos por
+                                                            criptografia</small>
+                                                    </div>
+                                                </div>
+
+                                                <div class="trust-item d-flex align-items-center mb-3">
+                                                    <div class="trust-icon bg-success-light rounded-circle p-2 me-3">
+                                                        <i class="bi bi-people text-success"></i>
+                                                    </div>
+                                                    <div>
+                                                        <div class="trust-title fw-bold text-dark">Aprovado por
+                                                            Especialistas</div>
+                                                        <small class="text-muted">Validado por profissionais de
+                                                            segurança</small>
+                                                    </div>
+                                                </div>
+
+                                                <div class="trust-item d-flex align-items-center">
+                                                    <div class="trust-icon bg-warning-light rounded-circle p-2 me-3">
+                                                        <i class="bi bi-clock text-warning"></i>
+                                                    </div>
+                                                    <div>
+                                                        <div class="trust-title fw-bold text-dark">Disponível 24/7</div>
+                                                        <small class="text-muted">Monitoramento contínuo</small>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Features Preview -->
+                            <div class="features-preview mt-5">
+                                <div class="preview-header text-center mb-4">
+                                    <h3 class="h4 fw-bold text-dark">
+                                        <i class="bi bi-stars text-warning me-2"></i>
+                                        O que você vai encontrar
+                                    </h3>
+                                </div>
+
+                                <div class="row g-3">
+                                    <div class="col-md-6 col-lg-3">
+                                        <div class="preview-card p-3 text-center">
+                                            <div class="preview-icon mb-2">
+                                                <i class="bi bi-speedometer2 text-primary fs-1"></i>
+                                            </div>
+                                            <h4 class="h6 fw-bold text-dark mb-2">Dashboard Interativo</h4>
+                                            <p class="small text-muted mb-0">Visualize dados em tempo real</p>
+                                        </div>
+                                    </div>
+
+                                    <div class="col-md-6 col-lg-3">
+                                        <div class="preview-card p-3 text-center">
+                                            <div class="preview-icon mb-2">
+                                                <i class="bi bi-geo-alt-fill text-success fs-1"></i>
+                                            </div>
+                                            <h4 class="h6 fw-bold text-dark mb-2">Mapas Inteligentes</h4>
+                                            <p class="small text-muted mb-0">Rotas otimizadas de evacuação</p>
+                                        </div>
+                                    </div>
+
+                                    <div class="col-md-6 col-lg-3">
+                                        <div class="preview-card p-3 text-center">
+                                            <div class="preview-icon mb-2">
+                                                <i class="bi bi-bell-fill text-warning fs-1"></i>
+                                            </div>
+                                            <h4 class="h6 fw-bold text-dark mb-2">Alertas Personalizados</h4>
+                                            <p class="small text-muted mb-0">Notificações inteligentes</p>
+                                        </div>
+                                    </div>
+
+                                    <div class="col-md-6 col-lg-3">
+                                        <div class="preview-card p-3 text-center">
+                                            <div class="preview-icon mb-2">
+                                                <i class="bi bi-graph-up text-info fs-1"></i>
+                                            </div>
+                                            <h4 class="h6 fw-bold text-dark mb-2">Análises Avançadas</h4>
+                                            <p class="small text-muted mb-0">Relatórios detalhados</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Social Proof
+                            <div class="social-proof mt-5 text-center">
+                                <div class="social-stats d-flex flex-wrap justify-content-center gap-4">
+                                    <div class="social-stat">
+                                        <div class="stat-number fw-bold text-primary">1.2k+</div>
+                                        <div class="stat-label small text-muted">Testes realizados</div>
+                                    </div>
+                                    <div class="social-stat">
+                                        <div class="stat-number fw-bold text-success">95%</div>
+                                        <div class="stat-label small text-muted">Satisfação</div>
+                                    </div>
+                                    <div class="social-stat">
+                                        <div class="stat-number fw-bold text-warning">4.8/5</div>
+                                        <div class="stat-label small text-muted">Avaliação</div>
+                                    </div>
+                                </div>
+
+                                <div class="social-testimonial mt-4">
+                                    <blockquote class="blockquote">
+                                        <p class="mb-0 fst-italic text-muted">
+                                            "O DryPath é uma ferramenta revolucionária que pode salvar milhares de
+                                            vidas."
+                                        </p>
+                                        <footer class="blockquote-footer mt-2">
+                                            <cite title="Especialista em Gestão de Riscos">Especialista em Gestão de
+                                                Riscos</cite>
+                                        </footer>
+                                    </blockquote>
+                                </div>
+                            </div> -->
+
+                            <!-- Urgency Element -->
+                            <div class="urgency-element mt-4 text-center">
+                                <div class="urgency-message p-3 rounded bg-warning-light">
+                                    <i class="bi bi-clock text-warning me-2"></i>
+                                    <strong class="text-warning">Cada segundo conta em uma emergência.</strong>
+                                    <span class="text-muted">Comece agora e esteja preparado!</span>
+                                </div>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
-        </section>
 
-        <!-- CTA Final Section -->
-        <section class="cta-final">
-            <div class="container">
-                <h2>Faça Parte da Solução</h2>
-                <p>Teste nosso sistema e veja como a tecnologia pode salvar vidas</p>
-                <div class="cta-buttons">
-                    <a href="simulacao.html" class="btn-primary">Iniciar Simulação</a>
-                    <a href="sobre.html" class="btn-outline">Saiba Mais</a>
-                </div>
+            <!-- Scroll to top indicator -->
+            <div class="scroll-to-top-indicator position-absolute bottom-0 end-0 p-4">
+                <button class="btn btn-primary rounded-circle p-3 back-to-top-btn" onclick="scrollToTop()"
+                    title="Voltar ao topo">
+                    <i class="bi bi-arrow-up"></i>
+                </button>
             </div>
         </section>
     </main>
-
-    <footer>
+    <footer class="footer text-white py-5">
         <div class="container">
-            <div class="footer-content">
-                <div class="footer-section">
-                    <h3>FloodAlert</h3>
-                    <p>Sistema Interativo de Alerta e Evacuação para Enchentes</p>
-                    <p>Projeto Global Solution - FIAP 2025</p>
+            <div class="row g-4">
+                <!-- Logo e informações da empresa -->
+                <div class="col-lg-3 col-md-6 mb-4 mb-md-0">
+                    <div class="d-flex align-items-center mb-3">
+                        <i class="bi bi-shield-fill-check text-white me-2 fs-3"></i>
+                        <h3 class="h5 fw-bold mb-0 text-white">DryPath</h3>
+                    </div>
+                    <p class="text-white mb-3">
+                        Sistema Inteligente de Alerta e Evacuação para Enchentes
+                    </p>
+                    <p class="text-white small mb-3 fw-bold">
+                        <i class="bi bi-building me-1 "></i>Projeto Global Solution - FIAP 2025
+                    </p>
+                    <div class="d-flex gap-2 flex-wrap">
+                        <span class="badge text-primary">
+                            <i class="bi bi-award-fill me-1"></i>Inovação
+                        </span>
+                        <span class="badge text-primary">
+                            <i class="bi bi-heart-fill me-1"></i>Vidas
+                        </span>
+                        <span class="badge text-primary">
+                            <i class="bi bi-shield-check me-1"></i>Segurança
+                        </span>
+                    </div>
                 </div>
-                <div class="footer-section">
-                    <h4>Navegação</h4>
-                    <ul>
-                        <li><a href="index.html">Início</a></li>
-                        <li><a href="simulacao.html">Simulação</a></li>
-                        <li><a href="sobre.html">Sobre</a></li>
+
+                <!-- Links rápidos -->
+                <div class="col-lg-3 col-md-6 mb-4 mb-md-0">
+                    <h5 class="text-white fw-bold mb-4">
+                        <i class="bi bi-compass me-2"></i>Navegação
+                    </h5>
+                    <ul class="list-unstyled footer-links">
+                        <li class="mb-2">
+                            <a href="" class="text-white text-decoration-none d-flex align-items-center"
+                                onclick="scrollToSection('hero')">
+                                <i class="bi bi-house-fill me-2"></i>Início
+                            </a>
+                        </li>
+                        <li class="mb-2">
+                            <a href="simulacao.html" class="text-white text-decoration-none d-flex align-items-center">
+                                <i class="bi bi-play-circle-fill me-2"></i>Simulação
+                            </a>
+                        </li>
+                        <li class="mb-2">
+                            <a href="sobre.html" class="text-white text-decoration-none d-flex align-items-center">
+                                <i class="bi bi-info-circle-fill me-2"></i>Sobre
+                            </a>
+                        </li>
                     </ul>
                 </div>
-                <div class="footer-section">
-                    <h4>Emergência</h4>
-                    <p>Em caso de enchente:</p>
-                    <p><strong>Ligue 199 (Defesa Civil)</strong></p>
-                    <p><strong>Ligue 193 (Bombeiros)</strong></p>
+
+                <!-- Contato -->
+                <div class="col-lg-3 col-md-6 mb-4 mb-md-0">
+                    <h5 class="text-white fw-bold mb-4">
+                        <i class="bi bi-geo-alt-fill me-2"></i>Contato
+                    </h5>
+                    <ul class="list-unstyled">
+                        <li class="mb-3">
+                            <div class="d-flex align-items-start">
+                                <i class="bi bi-geo-alt text-white me-2 mt-1"></i>
+                                <div class="text-white">
+                                    Av. Tecnologia, 1500<br />
+                                    São Paulo, SP - 04523-001
+                                </div>
+                            </div>
+                        </li>
+                        <li class="mb-2">
+                            <a href="tel:+551134567890"
+                                class="text-white text-decoration-none d-flex align-items-center">
+                                <i class="bi bi-telephone-fill me-2"></i>(11) 3456-7890
+                            </a>
+                        </li>
+                        <li class="mb-2">
+                            <a href="mailto:contato@drypath.com.br"
+                                class="text-white text-decoration-none d-flex align-items-center">
+                                <i class="bi bi-envelope-fill me-2"></i>contato@drypath.com.br
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- Emergência -->
+                <div class="col-lg-3 col-md-6 mb-4 mb-md-0">
+                    <h5 class="text-white fw-bold mb-4">
+                        <i class="bi bi-telephone-fill me-2"></i>Emergência
+                    </h5>
+                    <div class="d-flex flex-column gap-2">
+                        <div class="emergency-contact p-2 rounded" style="background: rgba(255,255,255,0.1);">
+                            <div class="d-flex align-items-center">
+                                <i class="bi bi-shield-check text-warning me-2"></i>
+                                <div>
+                                    <strong class="text-warning d-block">199</strong>
+                                    <small class="text-white-50">Defesa Civil</small>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="emergency-contact p-2 rounded" style="background: rgba(255,255,255,0.1);">
+                            <div class="d-flex align-items-center">
+                                <i class="bi bi-fire text-danger me-2"></i>
+                                <div>
+                                    <strong class="text-danger d-block">193</strong>
+                                    <small class="text-white-50">Bombeiros</small>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="emergency-contact p-2 rounded" style="background: rgba(255,255,255,0.1);">
+                            <div class="d-flex align-items-center">
+                                <i class="bi bi-hospital text-info me-2"></i>
+                                <div>
+                                    <strong class="text-info d-block">192</strong>
+                                    <small class="text-white-50">SAMU</small>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
-            <div class="footer-bottom">
-                <p>&copy; 2025 FloodAlert. Todos os direitos reservados.</p>
+
+            <!-- Separador -->
+            <hr class="my-4" style="border-color: rgba(255,255,255,0.3);" />
+
+            <!-- Copyright e políticas -->
+            <div class="row align-items-center">
+                <div class="col-md-7 text-center text-md-start">
+                    <p class="mb-md-0 text-white-50">
+                        <i class="bi bi-c-circle me-1"></i>&copy; 2025 DryPath - Todos os direitos reservados
+                    </p>
+                </div>
+                <div class="col-md-5">
+                    <div
+                        class="d-flex justify-content-center justify-content-md-end align-items-center gap-3 mt-2 mt-md-0">
+                        <a href="#" class="text-white-50 small text-decoration-none">
+                            <i class="bi bi-shield-lock me-1"></i>Política de Privacidade
+                        </a>
+                        <span class="text-white-50">|</span>
+                        <a href="#" class="text-white-50 small text-decoration-none">
+                            <i class="bi bi-file-text me-1"></i>Termos de Uso
+                        </a>
+                        <a href="#" class="back-to-top text-white ms-3" title="Voltar ao topo">
+                            <i class="bi bi-arrow-up-circle fs-5"></i>
+                        </a>
+                    </div>
+                </div>
             </div>
         </div>
-    </footer>
-
+    </footer><!-- Bootstrap JS Bundle -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- Custom JS -->
     <script src="js/main.js"></script>
     <script src="js/home.js"></script>
 </body>

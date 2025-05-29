@@ -556,9 +556,8 @@ simulationStyles.textContent = `
             transform: scaleX(1);
         }
     }
-    
-    .data-chart::before {
-        height: var(--chart-height, 30%);
+      .data-chart::before {
+        height: 30%;
         transition: height 0.5s ease-in-out;
     }
 `;

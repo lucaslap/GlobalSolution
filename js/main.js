@@ -235,25 +235,6 @@ function initScrollEffects() {
     animatedElements.forEach(el => observer.observe(el));
 }
 
-// Função para controlar tema escuro/claro
-function initThemeToggle() {
-    const savedTheme = localStorage.getItem('theme') || 'light';
-    document.documentElement.setAttribute('data-theme', savedTheme);
-    
-    const themeToggle = document.getElementById('themeToggle');
-    if (themeToggle) {
-        themeToggle.addEventListener('click', () => {
-            const currentTheme = document.documentElement.getAttribute('data-theme');
-            const newTheme = currentTheme === 'light' ? 'dark' : 'light';
-            
-            document.documentElement.setAttribute('data-theme', newTheme);
-            localStorage.setItem('theme', newTheme);
-            
-            showNotification(`Tema ${newTheme === 'dark' ? 'escuro' : 'claro'} ativado`, 'info');
-        });
-    }
-}
-
 // Event Listeners para quando o DOM estiver carregado
 document.addEventListener('DOMContentLoaded', function() {
     // Inicializa funcionalidades básicas
@@ -337,13 +318,12 @@ animationStyles.textContent = `
         .nav-toggle {
             display: block !important;
         }
-        
-        .nav-menu {
+          .nav-menu {
             position: absolute;
             top: 100%;
             left: 0;
             right: 0;
-            background: var(--primary-color);
+            background: #0d6efd;
             flex-direction: column;
             padding: 1rem 0;
             display: none;
