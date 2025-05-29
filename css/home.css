@@ -982,10 +982,10 @@
 
 /* Enhanced Buttons */
 .enhanced-btn-primary {
-    display: flex; /* Garante que o conteúdo interno seja flexível */
-    align-items: center; /* Centraliza verticalmente o texto e ícones */
-    justify-content: center; /* Centraliza horizontalmente o texto e ícones */
-    position: relative; /* Permite posicionar o shimmer corretamente */
+    display: flex; 
+    align-items: center; 
+    justify-content: center; 
+    position: relative; 
     overflow: hidden;
     background: linear-gradient(45deg, #2563eb, #1d4ed8);
     border: none;
@@ -1003,14 +1003,14 @@
 }
 
 .btn-shimmer {
-    position: absolute; /* Remove o impacto no layout do botão */
+    position: absolute; 
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
     background: linear-gradient(45deg, rgba(255, 255, 255, 0.2), transparent);
     opacity: 0.5;
-    pointer-events: none; /* Garante que não interfira na interação do botão */
+    pointer-events: none; 
 }
 
 .enhanced-btn-secondary {
@@ -1417,14 +1417,14 @@
 }
 
 .btn-shimmer {
-    position: absolute; /* Remove o impacto no layout do botão */
+    position: absolute; 
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
     background: linear-gradient(45deg, rgba(255, 255, 255, 0.2), transparent);
     opacity: 0.5;
-    pointer-events: none; /* Garante que não interfira na interação do botão */
+    pointer-events: none; 
 }
 
 .enhanced-cta-secondary {
