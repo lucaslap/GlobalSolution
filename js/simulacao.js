@@ -92,20 +92,32 @@ function updateDataDisplay(data) {
         windSpeed: document.getElementById('windSpeed'),
         evacuated: document.getElementById('evacuated')
     };
-    
-    if (elements.precipitation) elements.precipitation.textContent = data.precipitation;
-    if (elements.riverLevel) elements.riverLevel.textContent = data.riverLevel;
-    if (elements.windSpeed) elements.windSpeed.textContent = data.windSpeed;
-    if (elements.evacuated) elements.evacuated.textContent = simulationState.evacuatedPeople;
+
+    // Atualiza os valores com fallback para valores padrão
+    if (elements.precipitation) {
+        elements.precipitation.textContent = data.precipitation !== undefined ? `${data.precipitation} mm` : '0 mm';
+    }
+    if (elements.riverLevel) {
+        elements.riverLevel.textContent = data.riverLevel !== undefined ? `${data.riverLevel} m` : '0 m';
+    }
+    if (elements.windSpeed) {
+        elements.windSpeed.textContent = data.windSpeed !== undefined ? `${data.windSpeed} km/h` : '0 km/h';
+    }
+    if (elements.evacuated) {
+        elements.evacuated.textContent = simulationState.evacuatedPeople !== undefined ? `${simulationState.evacuatedPeople} pessoas` : '0 pessoas';
+    }
 }
 
 // Função para atualizar gráficos simulados
 function updateCharts(data) {
     const charts = document.querySelectorAll('.data-chart');
     charts.forEach(chart => {
-        const height = Math.min(90, (parseFloat(data.precipitation) / 50) * 100);
+        const height = Math.min(90, (parseFloat(data.precipitation || 0) / 50) * 100); // Fallback para 0 se `data.precipitation` for inválido
         const before = chart.querySelector('::before') || chart;
+
+        // Atualiza altura do gráfico com transição suave
         if (before.style) {
+            before.style.transition = 'height 0.5s ease-in-out';
             before.style.setProperty('--chart-height', `${height}%`);
         }
     });

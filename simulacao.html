@@ -64,12 +64,12 @@
 
     <main>
         <!-- Header da Simulação -->
-        <section class="bg-primary text-white py-5 mt-5">
+        <section id="topo" class="bg-primary text-white py-5 mt-5">
             <div class="container">
                 <div class="row">
                     <div class="col-12 text-center">
-                        <h1 class="display-4 fw-bold mb-3">Simulação do Sistema de Alerta</h1>
-                        <p class="lead">Experimente nosso sistema interativo de monitoramento e evacuação</p>
+                        <h1 class="display-4 fw-bold mb-3 text-white">Simulação do Sistema de Alerta</h1>
+                        <p class="lead text-white">Experimente nosso sistema interativo de monitoramento e evacuação</p>
                     </div>
                 </div>
                 <div class="row mt-4">
@@ -87,7 +87,7 @@
                             <div class="card-body text-center">
                                 <i class="bi bi-exclamation-triangle-fill text-warning me-2"></i>
                                 <strong>Nível de Alerta:</strong>
-                                <span id="alertLevel" class="badge bg-success ms-2">Verde</span>
+                                <span id="alertLevel" class="ms-2">Verde</span>
                             </div>
                         </div>
                     </div>
@@ -511,31 +511,149 @@
             </div>
         </section>
     </main>
-    <footer class="bg-dark text-light py-5">
+   <footer class="footer text-white py-5">
         <div class="container">
-            <div class="row">
-                <div class="col-lg-6 mb-4 mb-lg-0">
-                    <h3 class="h5 fw-bold mb-3">
-                        <i class="bi bi-shield-fill-check me-2 text-primary"></i>DryPath
-                    </h3>
-                    <p class="text-muted">Sistema Interativo de Alerta e Evacuação para Enchentes</p>
+            <div class="row g-4">
+                <!-- Logo e informações da empresa -->
+                <div class="col-lg-3 col-md-6 mb-4 mb-md-0">
+                    <div class="d-flex align-items-center mb-3">
+                        <i class="bi bi-shield-fill-check text-white me-2 fs-3"></i>
+                        <h3 class="h5 fw-bold mb-0 text-white">DryPath</h3>
+                    </div>
+                    <p class="text-white mb-3">
+                        Sistema Inteligente de Alerta e Evacuação para Enchentes
+                    </p>
+                    <p class="text-white small mb-3 fw-bold">
+                        <i class="bi bi-building me-1 "></i>Projeto Global Solution - FIAP 2025
+                    </p>
+                    <div class="d-flex gap-2 flex-wrap">
+                        <span class="badge text-primary">
+                            <i class="bi bi-award-fill me-1"></i>Inovação
+                        </span>
+                        <span class="badge text-primary">
+                            <i class="bi bi-heart-fill me-1"></i>Vidas
+                        </span>
+                        <span class="badge text-primary">
+                            <i class="bi bi-shield-check me-1"></i>Segurança
+                        </span>
+                    </div>
                 </div>
-                <div class="col-lg-6">
-                    <h4 class="h6 fw-bold mb-3 text-danger">
-                        <i class="bi bi-exclamation-triangle-fill me-2"></i>Emergência
-                    </h4>
-                    <p class="fw-bold text-warning mb-1">
-                        <i class="bi bi-telephone-fill me-2"></i>199 (Defesa Civil)
-                    </p>
-                    <p class="fw-bold text-warning">
-                        <i class="bi bi-telephone-fill me-2"></i>193 (Bombeiros)
-                    </p>
+
+                <!-- Links rápidos -->
+                <div class="col-lg-3 col-md-6 mb-4 mb-md-0">
+                    <h5 class="text-white fw-bold mb-4">
+                        <i class="bi bi-compass me-2"></i>Navegação
+                    </h5>
+                    <ul class="list-unstyled footer-links">
+                        <li class="mb-2">
+                            <a href="index.html" class="text-white text-decoration-none d-flex align-items-center">
+                                <i class="bi bi-house-fill me-2"></i>Início
+                            </a>
+                        </li>
+                        <li class="mb-2">
+                            <a href="#" class="text-white text-decoration-none d-flex align-items-center" onclick="scrollToSection('topo')">
+                                <i class="bi bi-play-circle-fill me-2"></i>Simulação
+                            </a>
+                        </li>
+                        <li class="mb-2">
+                            <a href="sobre.html" class="text-white text-decoration-none d-flex align-items-center">
+                                <i class="bi bi-info-circle-fill me-2"></i>Sobre
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- Contato -->
+                <div class="col-lg-3 col-md-6 mb-4 mb-md-0">
+                    <h5 class="text-white fw-bold mb-4">
+                        <i class="bi bi-geo-alt-fill me-2"></i>Contato
+                    </h5>
+                    <ul class="list-unstyled">
+                        <li class="mb-3">
+                            <div class="d-flex align-items-start">
+                                <i class="bi bi-geo-alt text-white me-2 mt-1"></i>
+                                <div class="text-white">
+                                    Av. Tecnologia, 1500<br />
+                                    São Paulo, SP - 04523-001
+                                </div>
+                            </div>
+                        </li>
+                        <li class="mb-2">
+                            <a href="tel:+551134567890"
+                                class="text-white text-decoration-none d-flex align-items-center">
+                                <i class="bi bi-telephone-fill me-2"></i>(11) 3456-7890
+                            </a>
+                        </li>
+                        <li class="mb-2">
+                            <a href="mailto:contato@drypath.com.br"
+                                class="text-white text-decoration-none d-flex align-items-center">
+                                <i class="bi bi-envelope-fill me-2"></i>contato@drypath.com.br
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- Emergência -->
+                <div class="col-lg-3 col-md-6 mb-4 mb-md-0">
+                    <h5 class="text-white fw-bold mb-4">
+                        <i class="bi bi-telephone-fill me-2"></i>Emergência
+                    </h5>
+                    <div class="d-flex flex-column gap-2">
+                        <div class="emergency-contact p-2 rounded" style="background: rgba(255,255,255,0.1);">
+                            <div class="d-flex align-items-center">
+                                <i class="bi bi-shield-check text-warning me-2"></i>
+                                <div>
+                                    <strong class="text-warning d-block">199</strong>
+                                    <small class="text-white-50">Defesa Civil</small>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="emergency-contact p-2 rounded" style="background: rgba(255,255,255,0.1);">
+                            <div class="d-flex align-items-center">
+                                <i class="bi bi-fire text-danger me-2"></i>
+                                <div>
+                                    <strong class="text-danger d-block">193</strong>
+                                    <small class="text-white-50">Bombeiros</small>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="emergency-contact p-2 rounded" style="background: rgba(255,255,255,0.1);">
+                            <div class="d-flex align-items-center">
+                                <i class="bi bi-hospital text-info me-2"></i>
+                                <div>
+                                    <strong class="text-info d-block">192</strong>
+                                    <small class="text-white-50">SAMU</small>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
-            <hr class="my-4 text-muted">
-            <div class="row">
-                <div class="col-12 text-center">
-                    <p class="text-muted mb-0">&copy; 2025 DryPath. Todos os direitos reservados.</p>
+
+            <!-- Separador -->
+            <hr class="my-4" style="border-color: rgba(255,255,255,0.3);" />
+
+            <!-- Copyright e políticas -->
+            <div class="row align-items-center">
+                <div class="col-md-7 text-center text-md-start">
+                    <p class="mb-md-0 text-white-50">
+                        <i class="bi bi-c-circle me-1"></i>&copy; 2025 DryPath - Todos os direitos reservados
+                    </p>
+                </div>
+                <div class="col-md-5">
+                    <div
+                        class="d-flex justify-content-center justify-content-md-end align-items-center gap-3 mt-2 mt-md-0">
+                        <a href="#" class="text-white-50 small text-decoration-none">
+                            <i class="bi bi-shield-lock me-1"></i>Política de Privacidade
+                        </a>
+                        <span class="text-white-50">|</span>
+                        <a href="#" class="text-white-50 small text-decoration-none">
+                            <i class="bi bi-file-text me-1"></i>Termos de Uso
+                        </a>
+                        <a href="#" class="back-to-top text-white ms-3" title="Voltar ao topo">
+                            <i class="bi bi-arrow-up-circle fs-5"></i>
+                        </a>
+                    </div>
                 </div>
             </div>
         </div>
