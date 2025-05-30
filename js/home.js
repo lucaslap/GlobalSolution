@@ -1715,3 +1715,28 @@ window.addEventListener('beforeunload', function() {
     // Limpa timers e observers se necessário
     console.log('Home page cleanup');
 });
+
+
+// mapa interativo updated //
+const map = L.map('map').setView([-23.55052, -46.633308], 11);
+
+L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+  maxZoom: 19,
+  attribution: '© OpenStreetMap'
+}).addTo(map);
+
+// Áreas de risco (simuladas com marcadores)
+const riscos = [
+  { coord: [-23.55, -46.64], nivel: 'Alto', cor: 'red' },
+  { coord: [-23.57, -46.62], nivel: 'Médio', cor: 'orange' },
+  { coord: [-23.53, -46.60], nivel: 'Baixo', cor: 'green' },
+];
+
+riscos.forEach(risco => {
+  L.circle(risco.coord, {
+    color: risco.cor,
+    fillColor: risco.cor,
+    fillOpacity: 0.5,
+    radius: 800
+  }).addTo(map).bindPopup(`<strong>${risco.nivel} Risco</strong>`);
+});

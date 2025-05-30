@@ -9,6 +9,7 @@
     <link rel="alternate icon" href="images/favicon.ico">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.2/font/bootstrap-icons.css">
+    <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
     <link rel="stylesheet" href="css/styles.css">
     <link rel="stylesheet" href="css/home.css">
 </head>
@@ -570,76 +571,36 @@
                                             </div>
                                         </div>
 
-                                        <!-- Interactive Map -->
-                                        <div class="map-section p-3">
-                                            <div
-                                                class="map-container bg-light rounded position-relative overflow-hidden">
-                                                <div
-                                                    class="map-header d-flex justify-content-between align-items-center mb-2">
-                                                    <h6 class="fw-bold text-dark mb-0">
-                                                        <i class="bi bi-geo-alt-fill text-primary me-1"></i>
-                                                        Mapa de Riscos - São Paulo
-                                                    </h6>
-                                                    <div class="map-controls">
-                                                        <button class="btn btn-sm btn-outline-primary me-1">
-                                                            <i class="bi bi-zoom-in"></i>
-                                                        </button>
-                                                        <button class="btn btn-sm btn-outline-primary">
-                                                            <i class="bi bi-layers"></i>
-                                                        </button>
-                                                    </div>
-                                                </div>
+                                        <!-- mapa interativo updated -->
+<div class="map-section p-3">
+    <div class="map-container bg-light rounded position-relative overflow-hidden">
+      <div class="map-header d-flex justify-content-between align-items-center mb-2">
+        <h6 class="fw-bold text-dark mb-0">
+          <i class="bi bi-geo-alt-fill text-primary me-1"></i>
+          Mapa de Riscos - São Paulo
+        </h6>
+        <div class="map-controls">
+          <button class="btn btn-sm btn-outline-primary me-1" onclick="map.zoomIn()">
+            <i class="bi bi-zoom-in"></i>
+          </button>
+          <button class="btn btn-sm btn-outline-primary" onclick="map.zoomOut()">
+            <i class="bi bi-zoom-out"></i>
+          </button>
+        </div>
+      </div>
 
-                                                <div class="interactive-map position-relative">
-                                                    <div class="map-background"></div>
+      <div id="map"></div>
 
-                                                    <!-- Animated Risk Areas -->
-                                                    <div class="risk-area risk-high" style="top: 30%; left: 20%;">
-                                                        <div class="risk-marker">
-                                                            <i class="bi bi-exclamation-triangle-fill"></i>
-                                                        </div>
-                                                        <div class="risk-tooltip">Alto Risco</div>
-                                                    </div>
+      <div class="map-legend">
+        <div><span style="background-color: red;"></span> Alto Risco</div>
+        <div><span style="background-color: orange;"></span> Médio Risco</div>
+        <div><span style="background-color: green;"></span> Baixo Risco</div>
+      </div>
+    </div>
+  </div>
 
-                                                    <div class="risk-area risk-medium" style="top: 60%; left: 60%;">
-                                                        <div class="risk-marker">
-                                                            <i class="bi bi-exclamation-circle-fill"></i>
-                                                        </div>
-                                                        <div class="risk-tooltip">Médio Risco</div>
-                                                    </div>
-
-                                                    <div class="risk-area risk-low" style="top: 20%; left: 70%;">
-                                                        <div class="risk-marker">
-                                                            <i class="bi bi-check-circle-fill"></i>
-                                                        </div>
-                                                        <div class="risk-tooltip">Baixo Risco</div>
-                                                    </div>
-
-                                                    <!-- Evacuation Routes -->
-                                                    <div class="evacuation-route route-1"></div>
-                                                    <div class="evacuation-route route-2"></div>
-                                                </div>
-
-                                                <!-- Map Legend -->
-                                                <div class="map-legend position-absolute bottom-0 start-0 p-2">
-                                                    <div class="d-flex gap-2 flex-wrap">
-                                                        <div class="legend-item">
-                                                            <div class="legend-color bg-danger"></div>
-                                                            <small>Alto</small>
-                                                        </div>
-                                                        <div class="legend-item">
-                                                            <div class="legend-color bg-warning"></div>
-                                                            <small>Médio</small>
-                                                        </div>
-                                                        <div class="legend-item">
-                                                            <div class="legend-color bg-success"></div>
-                                                            <small>Baixo</small>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-
+  <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
+                                          
                                         <!-- Stats Section -->
                                         <div class="stats-section p-3 bg-light">
                                             <div class="row g-2">
@@ -988,7 +949,7 @@
                                 </div>
                             </div>
 
-                            <!-- Social Proof
+                            <!-- Social Proof -->
                             <div class="social-proof mt-5 text-center">
                                 <div class="social-stats d-flex flex-wrap justify-content-center gap-4">
                                     <div class="social-stat">
@@ -1017,7 +978,7 @@
                                         </footer>
                                     </blockquote>
                                 </div>
-                            </div> -->
+                            </div>
 
                             <!-- Urgency Element -->
                             <div class="urgency-element mt-4 text-center">
