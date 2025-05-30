@@ -11,6 +11,7 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.2/font/bootstrap-icons.css">
     <link rel="stylesheet" href="css/styles.css">
     <link rel="stylesheet" href="css/home.css">
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
 </head>
 
 <body>
@@ -579,68 +580,70 @@
 
                                         <!-- Interactive Map -->
                                         <div class="map-section p-3">
+                                            <!-- Map Header movido para o topo -->
                                             <div
-                                                class="map-container bg-light rounded position-relative overflow-hidden">
-                                                <div
-                                                    class="map-header d-flex justify-content-between align-items-center mb-2">
-                                                    <h6 class="fw-bold text-dark mb-0">
-                                                        <i class="bi bi-geo-alt-fill text-primary me-1"></i>
+                                                class="map-header d-flex justify-content-between align-items-center mb-3">
+                                                <div>
+                                                    <h6 class="fw-bold text-primary mb-1">
+                                                        <i class="bi bi-geo-alt-fill me-2"></i>
                                                         Mapa de Riscos - São Paulo
                                                     </h6>
-                                                    <div class="map-controls">
-                                                        <button class="btn btn-sm btn-outline-primary me-1">
-                                                            <i class="bi bi-zoom-in"></i>
-                                                        </button>
-                                                        <button class="btn btn-sm btn-outline-primary">
-                                                            <i class="bi bi-layers"></i>
-                                                        </button>
-                                                    </div>
+                                                    <small class="text-muted">Monitoramento em tempo real</small>
                                                 </div>
+                                                <div class="map-controls">
+                                                    <button class="btn btn-sm btn-outline-primary me-1"
+                                                        onclick="zoomIn()" title="Zoom In">
+                                                        <i class="bi bi-zoom-in"></i>
+                                                    </button>
+                                                    <button class="btn btn-sm btn-outline-primary"
+                                                        onclick="toggleLayers()" title="Toggle Rotas">
+                                                        <i class="bi bi-layers"></i>
+                                                    </button>
+                                                </div>
+                                            </div>
 
-                                                <div class="interactive-map position-relative">
-                                                    <div class="map-background"></div>
-
-                                                    <!-- Animated Risk Areas -->
-                                                    <div class="risk-area risk-high" style="top: 30%; left: 20%;">
-                                                        <div class="risk-marker">
-                                                            <i class="bi bi-exclamation-triangle-fill"></i>
-                                                        </div>
-                                                        <div class="risk-tooltip">Alto Risco</div>
+                                            <div
+                                                class="map-container bg-light rounded position-relative overflow-hidden">
+                                                <!-- Mapa Real com Leaflet - altura aumentada -->
+                                                <div id="drypath-map" style="height: 350px; border-radius: 12px;">
+                                                    <!-- Toggle button para legenda -->
+                                                    <div class="legend-toggle" id="legendToggle"
+                                                        onclick="toggleMapLegend()" title="Mostrar/Ocultar Legenda">
+                                                        <i class="bi bi-list-ul"></i>
                                                     </div>
-
-                                                    <div class="risk-area risk-medium" style="top: 60%; left: 60%;">
-                                                        <div class="risk-marker">
-                                                            <i class="bi bi-exclamation-circle-fill"></i>
-                                                        </div>
-                                                        <div class="risk-tooltip">Médio Risco</div>
-                                                    </div>
-
-                                                    <div class="risk-area risk-low" style="top: 20%; left: 70%;">
-                                                        <div class="risk-marker">
-                                                            <i class="bi bi-check-circle-fill"></i>
-                                                        </div>
-                                                        <div class="risk-tooltip">Baixo Risco</div>
-                                                    </div>
-
-                                                    <!-- Evacuation Routes -->
-                                                    <div class="evacuation-route route-1"></div>
-                                                    <div class="evacuation-route route-2"></div>
                                                 </div>
 
                                                 <!-- Map Legend -->
-                                                <div class="map-legend position-absolute bottom-0 start-0 p-2">
-                                                    <div class="d-flex gap-2 flex-wrap">
-                                                        <div class="legend-item">
-                                                            <div class="legend-color bg-danger"></div>
-                                                            <small>Alto</small>
-                                                        </div>
-                                                        <div class="legend-item">
-                                                            <div class="legend-color bg-warning"></div>
-                                                            <small>Médio</small>
-                                                        </div>
-                                                        <div class="legend-item">
-                                                            <div class="legend-color bg-success"></div>
-                                                            <small>Baixo</small>
+                                                <div class="map-legend position-absolute bottom-0 end-0 m-3"
+                                                    id="mapLegend" style="z-index: 1001;">
+                                                    <div class="legend-header">
+                                                        <h6 class="legend-title">
+                                                            <i class="bi bi-geo-alt-fill"></i>
+                                                            Legenda do Mapa
+                                                        </h6>
+                                                    </div>
+                                                    <div class="legend-content">
+                                                        <div class="legend-items">
+                                                            <div class="legend-item" data-risk="high">
+                                                                <div class="legend-color risk-high"></div>
+                                                                <span class="legend-label">Alto Risco</span>
+                                                                <span class="legend-count" id="highRiskCount">3</span>
+                                                            </div>
+                                                            <div class="legend-item" data-risk="medium">
+                                                                <div class="legend-color risk-medium"></div>
+                                                                <span class="legend-label">Médio Risco</span>
+                                                                <span class="legend-count" id="mediumRiskCount">2</span>
+                                                            </div>
+                                                            <div class="legend-item" data-risk="low">
+                                                                <div class="legend-color risk-low"></div>
+                                                                <span class="legend-label">Baixo Risco</span>
+                                                                <span class="legend-count" id="lowRiskCount">1</span>
+                                                            </div>
+                                                            <div class="legend-item" data-risk="route">
+                                                                <div class="legend-color risk-route"></div>
+                                                                <span class="legend-label">Rotas Evacuação</span>
+                                                                <span class="legend-count" id="routeCount">5</span>
+                                                            </div>
                                                         </div>
                                                     </div>
                                                 </div>
@@ -754,6 +757,7 @@
                 </div>
             </div>
         </section>
+
         <!-- CTA Final Section Enhanced -->
         <section id="cta-final" class="py-5 position-relative overflow-hidden">
             <!-- Dynamic Background -->
@@ -1033,7 +1037,7 @@
                         </li>
                     </ul>
                 </div>
-
+                
                 <!-- Contato -->
                 <div class="col-lg-3 col-md-6 mb-4 mb-md-0">
                     <h5 class="text-white fw-bold mb-4">
@@ -1099,31 +1103,31 @@
                         </div>
                     </div>
                 </div>
-            </div>
 
-            <!-- Separador -->
-            <hr class="my-4" style="border-color: rgba(255,255,255,0.3);" />
+                <!-- Separador -->
+                <hr class="my-4" style="border-color: rgba(255,255,255,0.3);" />
 
-            <!-- Copyright e políticas -->
-            <div class="row align-items-center">
-                <div class="col-md-7 text-center text-md-start">
-                    <p class="mb-md-0 text-white-50">
-                        <i class="bi bi-c-circle me-1"></i>&copy; 2025 DryPath - Todos os direitos reservados
-                    </p>
-                </div>
-                <div class="col-md-5">
-                    <div
-                        class="d-flex justify-content-center justify-content-md-end align-items-center gap-3 mt-2 mt-md-0">
-                        <a href="#" class="text-white-50 small text-decoration-none">
-                            <i class="bi bi-shield-lock me-1"></i>Política de Privacidade
-                        </a>
-                        <span class="text-white-50">|</span>
-                        <a href="#" class="text-white-50 small text-decoration-none">
-                            <i class="bi bi-file-text me-1"></i>Termos de Uso
-                        </a>
-                        <a href="#" class="back-to-top text-white ms-3" title="Voltar ao topo">
-                            <i class="bi bi-arrow-up-circle fs-5"></i>
-                        </a>
+                <!-- Copyright e políticas -->
+                <div class="row align-items-center">
+                    <div class="col-md-7 text-center text-md-start">
+                        <p class="mb-md-0 text-white-50">
+                            <i class="bi bi-c-circle me-1"></i>&copy; 2025 DryPath - Todos os direitos reservados
+                        </p>
+                    </div>
+                    <div class="col-md-5">
+                        <div
+                            class="d-flex justify-content-center justify-content-md-end align-items-center gap-3 mt-2 mt-md-0">
+                            <a href="#" class="text-white-50 small text-decoration-none">
+                                <i class="bi bi-shield-lock me-1"></i>Política de Privacidade
+                            </a>
+                            <span class="text-white-50">|</span>
+                            <a href="#" class="text-white-50 small text-decoration-none">
+                                <i class="bi bi-file-text me-1"></i>Termos de Uso
+                            </a>
+                            <a href="#" class="back-to-top text-white ms-3" title="Voltar ao topo">
+                                <i class="bi bi-arrow-up-circle fs-5"></i>
+                            </a>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -1131,9 +1135,10 @@
     </footer>
     <!-- Bootstrap JS -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- Leaflet JS -->
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
     <!-- Arquivos JS -->
     <script src="js/main.js"></script>
     <script src="js/home.js"></script>
 </body>
-
 </html>

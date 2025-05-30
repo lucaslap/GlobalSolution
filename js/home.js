@@ -1715,3 +1715,562 @@ window.addEventListener('beforeunload', function() {
     // Limpa timers e observers se necessário
     console.log('Home page cleanup');
 });
+
+// ===== MAPA INTERATIVO COM LEAFLET =====
+let dryPathMap = null;
+let riskMarkers = [];
+let evacuationRoutes = [];
+
+function toggleMapLegend() {
+    const legend = document.getElementById('mapLegend');
+    const toggleBtn = document.getElementById('legendToggle');
+    
+    if (legend && toggleBtn) {
+        legend.classList.toggle('collapsed');
+        
+        if (legend.classList.contains('collapsed')) {
+            toggleBtn.innerHTML = '<i class="bi bi-list-ul"></i>';
+            toggleBtn.title = 'Mostrar Legenda';
+        } else {
+            toggleBtn.innerHTML = '<i class="bi bi-x-lg"></i>';
+            toggleBtn.title = 'Ocultar Legenda';
+        }
+    }
+}
+
+// Função para filtrar marcadores por tipo de risco
+function filterMarkersByRisk(riskLevel) {
+    if (!dryPathMap) return;
+    
+    // Remover highlight de todos os itens da legenda
+    const legendItems = document.querySelectorAll('.legend-item');
+    legendItems.forEach(item => item.classList.remove('active'));
+    
+    // Destacar item selecionado
+    const selectedItem = document.querySelector(`[data-risk="${riskLevel}"]`);
+    if (selectedItem) {
+        selectedItem.classList.add('active');
+    }
+    
+    // Aqui você pode adicionar lógica para filtrar marcadores
+    console.log(`Filtrando marcadores por: ${riskLevel}`);
+}
+
+// Função para atualizar contadores da legenda
+function updateLegendCounts() {
+    // Simular contagens (em implementação real, viria dos dados)
+    const counts = {
+        high: Math.floor(Math.random() * 5) + 1,
+        medium: Math.floor(Math.random() * 4) + 1,
+        low: Math.floor(Math.random() * 3) + 1,
+        route: Math.floor(Math.random() * 8) + 3
+    };
+    
+    // Atualizar elementos
+    const elements = {
+        highRiskCount: document.getElementById('highRiskCount'),
+        mediumRiskCount: document.getElementById('mediumRiskCount'),
+        lowRiskCount: document.getElementById('lowRiskCount'),
+        routeCount: document.getElementById('routeCount')
+    };
+    
+    if (elements.highRiskCount) elements.highRiskCount.textContent = counts.high;
+    if (elements.mediumRiskCount) elements.mediumRiskCount.textContent = counts.medium;
+    if (elements.lowRiskCount) elements.lowRiskCount.textContent = counts.low;
+    if (elements.routeCount) elements.routeCount.textContent = counts.route;
+}
+
+// Função melhorada de inicialização do mapa
+function initializeMap() {
+    // Verificar se o container do mapa existe
+    const mapContainer = document.getElementById('drypath-map');
+    if (!mapContainer) {
+        console.error('Container do mapa não encontrado');
+        return;
+    }
+
+    // Remover loading state imediatamente
+    const loadingElement = mapContainer.querySelector('.map-loading');
+    if (loadingElement) {
+        loadingElement.remove();
+    }
+
+    try {
+        // Coordenadas de São Paulo
+        const saoPauloCoords = [-23.5505, -46.6333];
+        
+        // Inicializar o mapa com altura ajustada
+        dryPathMap = L.map('drypath-map', {
+            zoomControl: false,
+            attributionControl: false,
+            scrollWheelZoom: true,
+            doubleClickZoom: true,
+            touchZoom: true
+        }).setView(saoPauloCoords, 12);
+
+        // Adicionar camada do mapa (OpenStreetMap)
+        L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+            maxZoom: 18,
+            minZoom: 10,
+            attribution: ''
+        }).addTo(dryPathMap);
+
+        // Forçar redimensionamento do mapa com delay maior para a nova altura
+        setTimeout(() => {
+            if (dryPathMap) {
+                dryPathMap.invalidateSize();
+                // Ajustar o zoom para melhor visualização no container maior
+                dryPathMap.setZoom(11);
+            }
+        }, 200);
+
+        // Segundo redimensionamento para garantir
+        setTimeout(() => {
+            if (dryPathMap) {
+                dryPathMap.invalidateSize();
+            }
+        }, 500);
+
+        // Áreas de risco em São Paulo com mais detalhes
+        const riskAreas = [
+            {
+                coords: [-23.5329, -46.6395], // Vila Madalena
+                risk: 'high',
+                name: 'Vila Madalena',
+                description: 'Alto risco de alagamento',
+                details: 'Córrego canalizado com histórico de transbordamento'
+            },
+            {
+                coords: [-23.5475, -46.6361], // Centro
+                risk: 'medium', 
+                name: 'Centro Histórico',
+                description: 'Risco moderado',
+                details: 'Drenagem urbana sobrecarregada em chuvas intensas'
+            },
+            {
+                coords: [-23.5641, -46.6527], // Jardins
+                risk: 'low',
+                name: 'Jardins', 
+                description: 'Baixo risco',
+                details: 'Área elevada com boa drenagem'
+            },
+            {
+                coords: [-23.5225, -46.6911], // Lapa
+                risk: 'high',
+                name: 'Lapa',
+                description: 'Alto risco - Rio Tietê',
+                details: 'Proximidade com Rio Tietê e várzeas'
+            },
+            {
+                coords: [-23.5955, -46.6818], // Brooklin
+                risk: 'medium',
+                name: 'Brooklin',
+                description: 'Risco moderado',
+                details: 'Córregos urbanos com potencial de alagamento'
+            },
+            {
+                coords: [-23.5200, -46.5960], // Tatuapé
+                risk: 'high',
+                name: 'Tatuapé',
+                description: 'Alto risco',
+                details: 'Várzea do Rio Tietê - área de inundação histórica'
+            }
+        ];
+
+        // Adicionar marcadores de risco com animação
+        riskAreas.forEach((area, index) => {
+            setTimeout(() => {
+                const color = getRiskColor(area.risk);
+                const icon = createCustomIcon(color, area.risk);
+                
+                const marker = L.marker(area.coords, { icon })
+                    .addTo(dryPathMap)
+                    .bindPopup(`
+                        <div class="risk-popup p-3">
+                            <h6 class="fw-bold mb-2 text-center">${area.name}</h6>
+                            <div class="risk-level mb-2 text-center">
+                                <span class="badge bg-${area.risk === 'high' ? 'danger' : area.risk === 'medium' ? 'warning text-dark' : 'success'} px-3 py-1">
+                                    ${area.risk === 'high' ? 'Alto Risco' : area.risk === 'medium' ? 'Médio Risco' : 'Baixo Risco'}
+                                </span>
+                            </div>
+                            <p class="small mb-2 text-muted">${area.description}</p>
+                            <p class="small mb-3 text-info">${area.details}</p>
+                            <div class="d-flex justify-content-center">
+                                <button class="btn btn-primary btn-sm" onclick="showAreaDetails('${area.name}')">
+                                    <i class="bi bi-info-circle me-1"></i>Mais Info
+                                </button>
+                            </div>
+                        </div>
+                    `, {
+                        maxWidth: 280,
+                        className: 'custom-popup'
+                    });
+                
+                riskMarkers.push(marker);
+                
+                // Adicionar círculo de área de influência
+                const circle = L.circle(area.coords, {
+                    color: color,
+                    fillColor: color,
+                    fillOpacity: 0.1,
+                    radius: area.risk === 'high' ? 1000 : area.risk === 'medium' ? 700 : 500,
+                    weight: 2,
+                    opacity: 0.6
+                }).addTo(dryPathMap);
+                
+                riskMarkers.push(circle);
+            }, index * 200);
+        });
+
+        // Adicionar rotas de evacuação
+        setTimeout(() => addEvacuationRoutes(), 800);
+        
+        // Animar marcadores
+        animateRiskMarkers();
+
+        // Adicionar controles customizados
+        addCustomControls();
+
+        // Adicionar event listeners para a legenda
+        setTimeout(() => {
+            const legendItems = document.querySelectorAll('.legend-item');
+            legendItems.forEach(item => {
+                item.addEventListener('click', () => {
+                    const riskLevel = item.getAttribute('data-risk');
+                    filterMarkersByRisk(riskLevel);
+                });
+            });
+            
+            // Atualizar contadores iniciais
+            updateLegendCounts();
+            
+            // Atualizar contadores a cada 30 segundos
+            setInterval(updateLegendCounts, 30000);
+        }, 1000);
+
+        console.log('Mapa inicializado com sucesso');
+    } catch (error) {
+        console.error('Erro ao inicializar o mapa:', error);
+        showMapError();
+    }
+}
+
+function getRiskColor(riskLevel) {
+    switch(riskLevel) {
+        case 'high': return '#dc3545';
+        case 'medium': return '#fd7e14';
+        case 'low': return '#198754';
+        default: return '#6c757d';
+    }
+}
+
+function createCustomIcon(color, riskLevel) {
+    const pulseClass = riskLevel === 'high' ? 'pulse-high' : riskLevel === 'medium' ? 'pulse-medium' : 'pulse-low';
+    
+    const iconHtml = `
+        <div class="custom-marker ${pulseClass}" style="
+            background-color: ${color}; 
+            width: 24px; 
+            height: 24px; 
+            border-radius: 50%; 
+            border: 3px solid white;
+            box-shadow: 0 3px 8px rgba(0,0,0,0.3);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+        ">
+            <i class="bi bi-exclamation-triangle-fill" style="color: white; font-size: 11px;"></i>
+            <div class="marker-pulse" style="
+                position: absolute;
+                width: 100%;
+                height: 100%;
+                border-radius: 50%;
+                background-color: ${color};
+                opacity: 0.4;
+                animation: markerPulse 2s infinite;
+            "></div>
+        </div>
+    `;
+    
+    return L.divIcon({
+        html: iconHtml,
+        className: 'custom-risk-icon',
+        iconSize: [24, 24],
+        iconAnchor: [12, 12]
+    });
+}
+
+function addEvacuationRoutes() {
+    // Rota de evacuação 1 (Centro para Zona Sul)
+    const route1 = [
+        [-23.5475, -46.6361], // Centro
+        [-23.5600, -46.6400], // Ponto intermediário
+        [-23.5641, -46.6527], // Jardins
+        [-23.5955, -46.6818]  // Brooklin
+    ];
+    
+    // Rota de evacuação 2 (Vila Madalena para Zona Oeste)
+    const route2 = [
+        [-23.5329, -46.6395], // Vila Madalena
+        [-23.5280, -46.6600], // Ponto intermediário
+        [-23.5225, -46.6911], // Lapa
+        [-23.5180, -46.7200]  // Zona Oeste
+    ];
+
+    // Rota de evacuação 3 (Tatuapé para Centro)
+    const route3 = [
+        [-23.5200, -46.5960], // Tatuapé
+        [-23.5350, -46.6100], // Ponto intermediário
+        [-23.5475, -46.6361]  // Centro
+    ];
+
+    const routeStyle = {
+        color: '#007bff',
+        weight: 4,
+        opacity: 0.8,
+        dashArray: '10, 8',
+        lineCap: 'round'
+    };
+
+    const evacRoute1 = L.polyline(route1, {...routeStyle, color: '#007bff'})
+        .addTo(dryPathMap)
+        .bindPopup(`
+            <div class="route-popup text-center p-2">
+                <h6 class="fw-bold mb-2">🚨 Rota de Evacuação 1</h6>
+                <p class="small mb-2">Centro → Zona Sul</p>
+                <div class="route-info">
+                    <span class="badge bg-info me-1">4.2 km</span>
+                    <span class="badge bg-success">15 min</span>
+                </div>
+            </div>
+        `);
+        
+    const evacRoute2 = L.polyline(route2, {...routeStyle, color: '#28a745'})
+        .addTo(dryPathMap)
+        .bindPopup(`
+            <div class="route-popup text-center p-2">
+                <h6 class="fw-bold mb-2">🚨 Rota de Evacuação 2</h6>
+                <p class="small mb-2">Vila Madalena → Zona Oeste</p>
+                <div class="route-info">
+                    <span class="badge bg-info me-1">5.8 km</span>
+                    <span class="badge bg-success">18 min</span>
+                </div>
+            </div>
+        `);
+
+    const evacRoute3 = L.polyline(route3, {...routeStyle, color: '#ffc107'})
+        .addTo(dryPathMap)
+        .bindPopup(`
+            <div class="route-popup text-center p-2">
+                <h6 class="fw-bold mb-2">🚨 Rota de Evacuação 3</h6>
+                <p class="small mb-2">Tatuapé → Centro</p>
+                <div class="route-info">
+                    <span class="badge bg-info me-1">3.1 km</span>
+                    <span class="badge bg-success">12 min</span>
+                </div>
+            </div>
+        `);
+
+    evacuationRoutes.push(evacRoute1, evacRoute2, evacRoute3);
+}
+
+function addCustomControls() {
+    // Controle de zoom customizado
+    const zoomControl = L.control.zoom({
+        position: 'topright'
+    }).addTo(dryPathMap);
+
+    // Adicionar botão de reset view
+    const resetButton = L.control({position: 'topright'});
+    resetButton.onAdd = function(map) {
+        const div = L.DomUtil.create('div', 'leaflet-bar leaflet-control leaflet-control-custom');
+        div.innerHTML = '<button title="Reset View" style="background: white; border: none; width: 30px; height: 30px; cursor: pointer;"><i class="bi bi-house"></i></button>';
+        div.onclick = function(){
+            map.setView([-23.5505, -46.6333], 12);
+        }
+        return div;
+    };
+    resetButton.addTo(dryPathMap);
+}
+
+function animateRiskMarkers() {
+    // Adicionar CSS para animações melhoradas
+    if (!document.getElementById('map-animations')) {
+        const style = document.createElement('style');
+        style.id = 'map-animations';
+        style.textContent = `
+            @keyframes markerPulse {
+                0% { transform: scale(1); opacity: 0.4; }
+                50% { transform: scale(1.5); opacity: 0.1; }
+                100% { transform: scale(2); opacity: 0; }
+            }
+            
+            .pulse-high {
+                animation: pulseHigh 1.5s infinite;
+            }
+            
+            .pulse-medium {
+                animation: pulseMedium 2s infinite;
+            }
+            
+            .pulse-low {
+                animation: pulseLow 3s infinite;
+            }
+            
+            @keyframes pulseHigh {
+                0%, 100% { transform: scale(1); }
+                50% { transform: scale(1.2); }
+            }
+            
+            @keyframes pulseMedium {
+                0%, 100% { transform: scale(1); }
+                50% { transform: scale(1.1); }
+            }
+            
+            @keyframes pulseLow {
+                0%, 100% { transform: scale(1); }
+                50% { transform: scale(1.05); }
+            }
+        `;
+        document.head.appendChild(style);
+    }
+}
+
+function showMapError() {
+    const mapContainer = document.getElementById('drypath-map');
+    if (mapContainer) {
+        mapContainer.innerHTML = `
+            <div class="d-flex align-items-center justify-content-center h-100 text-center p-4">
+                <div>
+                    <i class="bi bi-exclamation-triangle text-warning fs-1 mb-3"></i>
+                    <h6 class="text-dark mb-2">Erro ao carregar o mapa</h6>
+                    <p class="text-muted small mb-3">Verifique sua conexão com a internet</p>
+                    <button class="btn btn-primary btn-sm" onclick="initializeMap()">
+                        <i class="bi bi-arrow-clockwise me-1"></i>Tentar Novamente
+                    </button>
+                </div>
+            </div>
+        `;
+    }
+}
+
+// Funções de controle do mapa
+function zoomIn() {
+    if (dryPathMap) {
+        dryPathMap.zoomIn();
+    }
+}
+
+function toggleLayers() {
+    evacuationRoutes.forEach(route => {
+        if (dryPathMap.hasLayer(route)) {
+            dryPathMap.removeLayer(route);
+        } else {
+            dryPathMap.addLayer(route);
+        }
+    });
+}
+
+function showAreaDetails(areaName) {
+    alert(`Informações detalhadas sobre ${areaName} estarão disponíveis na versão completa do sistema.`);
+}
+
+// Inicializar o mapa quando a página carregar
+document.addEventListener('DOMContentLoaded', function() {
+    console.log('DOM carregado, inicializando componentes...');
+    
+    // Verificar se o Leaflet está disponível e inicializar imediatamente
+    if (typeof L !== 'undefined') {
+        const mapContainer = document.getElementById('drypath-map');
+        if (mapContainer) {
+            console.log('Container do mapa encontrado, inicializando...');
+            initializeMap();
+        } else {
+            console.log('Container do mapa não encontrado');
+        }
+    } else {
+        console.error('Leaflet não foi carregado');
+        // Tentar carregar novamente após um delay
+        setTimeout(() => {
+            if (typeof L !== 'undefined') {
+                const mapContainer = document.getElementById('drypath-map');
+                if (mapContainer) {
+                    initializeMap();
+                }
+            } else {
+                showMapError();
+            }
+        }, 2000);
+    }
+
+    // Inicializa todas as funcionalidades da home
+    initStatObserver();
+    simulateRealTimeAlerts();
+    initProblemCardEffects();
+    initFeatureAnimations();
+    createWaveEffect();
+    initParallaxEffect();
+    initMapPreview();
+    initEasterEgg();
+    
+    // Inicializa novas funcionalidades
+    initTypingEffect();
+    animateHeroStats();
+    initHeroParallax();
+    animateProblemStats();
+    animateProgressBars();
+    initTiltEffect();
+    createRainEffect();
+    
+    // Inicializa funcionalidades da seção solução
+    initSolutionAnimations();
+    simulateRealTimeData();
+    initFeatureInteractions();
+    
+    // Inicializa funcionalidades da seção CTA
+    initCTAAnimations();
+    initCTAInteractions();
+    
+    // Adiciona evento ao botão CTA principal
+    const ctaButton = document.querySelector('.cta-button');
+    if (ctaButton) {
+        ctaButton.addEventListener('click', function(e) {
+            e.preventDefault();
+            const targetId = this.getAttribute('onclick')?.match(/'([^']+)'/)?.[1];
+            if (targetId) {
+                scrollToSection(targetId);
+            }
+        });
+    }
+    
+    // Adiciona smooth scroll para todos os links internos
+    const internalLinks = document.querySelectorAll('a[href^="#"]');
+    internalLinks.forEach(link => {
+        link.addEventListener('click', function(e) {
+            e.preventDefault();
+            const targetId = this.getAttribute('href').substring(1);
+            scrollToSection(targetId);
+        });
+    });
+    
+    console.log('Home page initialized ✅');
+});
+
+// Verificar quando o Leaflet carrega
+window.addEventListener('load', function() {
+    if (typeof L === 'undefined') {
+        console.error('Leaflet não foi carregado corretamente');
+        showMapError();
+    } else {
+        console.log('Leaflet carregado com sucesso');
+        
+        // Se o mapa ainda não foi inicializado, tentar agora
+        if (!dryPathMap) {
+            const mapContainer = document.getElementById('drypath-map');
+            if (mapContainer && !mapContainer.querySelector('.leaflet-container')) {
+                initializeMap();
+            }
+        }
+    }
+});
