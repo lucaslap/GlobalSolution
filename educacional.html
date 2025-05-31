@@ -184,7 +184,7 @@
                     </div>
                 </div>
             </div>
-        </section> 
+        </section>
         <!-- Kit de Emergência -->
         <section class="py-5 bg-light">
             <div class="container">
@@ -193,124 +193,212 @@
                         <h2 class="display-6 fw-bold">
                             <i class="bi bi-backpack4 text-primary me-2"></i>Kit de Emergência Essencial
                         </h2>
+                        <p class="text-muted mt-2 mb-0">Prepare-se para situações de emergência com um kit completo e acessível.</p>
                     </div>
                 </div>
                 <div class="row g-4">
+                    <!-- Itens Básicos -->
                     <div class="col-lg-4">
-                        <div class="card h-100 shadow-sm">
+                        <div class="card h-100 shadow-sm border-0">
                             <div class="card-header bg-primary text-white text-center">
                                 <h3 class="h5 mb-0 fw-bold text-white">
                                     <i class="bi bi-backpack4 me-2"></i>Itens Básicos
                                 </h3>
                             </div>
                             <div class="card-body">
-                                <div class="d-flex align-items-center mb-3 p-2 border rounded">
-                                    <i class="bi bi-droplet-fill text-primary fs-3 me-3"></i>
-                                    <div>
-                                        <strong class="text-dark">Água</strong>
-                                        <p class="mb-0 small text-muted">4 litros por pessoa (3 dias)</p>
-                                    </div>
+                                <div class="text-center mb-3">
+                                    <button class="btn btn-outline-primary btn-sm w-100" type="button"
+                                        data-bs-toggle="collapse" data-bs-target="#itensBasicos" aria-expanded="false"
+                                        aria-controls="itensBasicos">
+                                        <span class="collapsed">Mostrar Itens</span>
+                                        <span class="expanded d-none">Ocultar Itens</span>
+                                    </button>
                                 </div>
-                                <div class="d-flex align-items-center mb-3 p-2 border rounded">
-                                    <i class="bi bi-box-seam text-primary fs-3 me-3"></i>
-                                    <div>
-                                        <strong class="text-dark">Alimentos</strong>
-                                        <p class="mb-0 small text-muted">Não perecíveis para 3 dias</p>
-                                    </div>
-                                </div>
-                                <div class="d-flex align-items-center mb-3 p-2 border rounded">
-                                    <i class="bi bi-lightbulb text-primary fs-3 me-3"></i>
-                                    <div>
-                                        <strong class="text-dark">Lanterna</strong>
-                                        <p class="mb-0 small text-muted">Com pilhas extras</p>
-                                    </div>
-                                </div>
-                                <div class="d-flex align-items-center p-2 border rounded">
-                                    <i class="bi bi-broadcast text-primary fs-3 me-3"></i>
-                                    <div>
-                                        <strong class="text-dark">Rádio</strong>
-                                        <p class="mb-0 small text-muted">A pilha ou manivela</p>
-                                    </div>
+                                <div class="collapse" id="itensBasicos">
+                                    <ul class="list-unstyled mb-0">
+                                        <li class="mb-2">
+                                            <button class="btn btn-link text-start w-100 p-0" type="button"
+                                                data-bs-toggle="collapse" data-bs-target="#aguaItem" aria-expanded="false"
+                                                aria-controls="aguaItem">
+                                                <i class="bi bi-droplet-fill text-primary fs-5 me-2"></i>
+                                                <strong>Água</strong>
+                                                <span class="collapsed text-muted small ms-2">Detalhes</span>
+                                                <span class="expanded d-none text-muted small ms-2">Ocultar</span>
+                                            </button>
+                                            <div class="collapse" id="aguaItem">
+                                                <div class="ps-4 pt-2 pb-2">
+                                                    <p class="mb-1 small">Recomenda-se 4 litros por pessoa para 3 dias. Armazene em garrafas limpas e troque regularmente.</p>
+                                                    <ul class="small mb-0">
+                                                        <li>Evite reutilizar garrafas de leite ou suco.</li>
+                                                        <li>Se possível, inclua pastilhas purificadoras.</li>
+                                                    </ul>
+                                                </div>
+                                            </div>
+                                        </li>
+                                        <li class="mb-2">
+                                            <button class="btn btn-link text-start w-100 p-0" type="button"
+                                                data-bs-toggle="collapse" data-bs-target="#alimentosItem" aria-expanded="false"
+                                                aria-controls="alimentosItem">
+                                                <i class="bi bi-box-seam text-primary fs-5 me-2"></i>
+                                                <strong>Alimentos</strong>
+                                                <span class="collapsed text-muted small ms-2">Detalhes</span>
+                                                <span class="expanded d-none text-muted small ms-2">Ocultar</span>
+                                            </button>
+                                            <div class="collapse" id="alimentosItem">
+                                                <div class="ps-4 pt-2 pb-2">
+                                                    <p class="mb-1 small">Escolha alimentos não perecíveis, fáceis de preparar e com validade longa.</p>
+                                                    <ul class="small mb-0">
+                                                        <li>Barras de cereal, enlatados, biscoitos integrais.</li>
+                                                        <li>Abra os alimentos apenas quando for consumir.</li>
+                                                    </ul>
+                                                </div>
+                                            </div>
+                                        </li>
+                                        <li class="mb-2">
+                                            <button class="btn btn-link text-start w-100 p-0" type="button"
+                                                data-bs-toggle="collapse" data-bs-target="#lanternaItem" aria-expanded="false"
+                                                aria-controls="lanternaItem">
+                                                <i class="bi bi-lightbulb text-primary fs-5 me-2"></i>
+                                                <strong>Lanterna</strong>
+                                                <span class="collapsed text-muted small ms-2">Detalhes</span>
+                                                <span class="expanded d-none text-muted small ms-2">Ocultar</span>
+                                            </button>
+                                            <div class="collapse" id="lanternaItem">
+                                                <div class="ps-4 pt-2 pb-2">
+                                                    <p class="mb-1 small">Prefira lanternas de LED e mantenha pilhas extras no kit.</p>
+                                                    <ul class="small mb-0">
+                                                        <li>Evite velas para reduzir risco de incêndio.</li>
+                                                        <li>Cheque o funcionamento periodicamente.</li>
+                                                    </ul>
+                                                </div>
+                                            </div>
+                                        </li>
+                                        <li>
+                                            <button class="btn btn-link text-start w-100 p-0" type="button"
+                                                data-bs-toggle="collapse" data-bs-target="#radioItem" aria-expanded="false"
+                                                aria-controls="radioItem">
+                                                <i class="bi bi-broadcast text-primary fs-5 me-2"></i>
+                                                <strong>Rádio</strong>
+                                                <span class="collapsed text-muted small ms-2">Detalhes</span>
+                                                <span class="expanded d-none text-muted small ms-2">Ocultar</span>
+                                            </button>
+                                            <div class="collapse" id="radioItem">
+                                                <div class="ps-4 pt-2 pb-2">
+                                                    <p class="mb-1 small">Rádio portátil a pilha ou manivela para receber alertas oficiais.</p>
+                                                    <ul class="small mb-0">
+                                                        <li>Inclua pilhas extras.</li>
+                                                        <li>Teste o rádio regularmente.</li>
+                                                    </ul>
+                                                </div>
+                                            </div>
+                                        </li>
+                                    </ul>
                                 </div>
                             </div>
                         </div>
                     </div>
 
+                    <!-- Primeiros Socorros -->
                     <div class="col-lg-4">
-                        <div class="card h-100 shadow-sm">
+                        <div class="card h-100 shadow-sm border-0">
                             <div class="card-header bg-danger text-white text-center">
                                 <h3 class="h5 mb-0 fw-bold text-white">
                                     <i class="bi bi-heart-pulse me-2"></i>Primeiros Socorros
                                 </h3>
                             </div>
                             <div class="card-body">
-                                <div class="d-flex align-items-center mb-3 p-2 border rounded">
-                                    <i class="bi bi-bandaid text-danger fs-3 me-3"></i>
-                                    <div>
-                                        <strong class="text-dark">Bandagens</strong>
-                                        <p class="mb-0 small text-muted">Diversos tamanhos</p>
-                                    </div>
+                                <div class="text-center mb-3">
+                                    <button class="btn btn-outline-danger btn-sm w-100" type="button"
+                                        data-bs-toggle="collapse" data-bs-target="#socorros" aria-expanded="false"
+                                        aria-controls="socorros">
+                                        <span class="collapsed">Mostrar Itens</span>
+                                        <span class="expanded d-none">Ocultar Itens</span>
+                                    </button>
                                 </div>
-                                <div class="d-flex align-items-center mb-3 p-2 border rounded">
-                                    <i class="bi bi-capsule text-danger fs-3 me-3"></i>
-                                    <div>
-                                        <strong class="text-dark">Medicamentos</strong>
-                                        <p class="mb-0 small text-muted">Básicos e pessoais</p>
-                                    </div>
-                                </div>
-                                <div class="d-flex align-items-center mb-3 p-2 border rounded">
-                                    <i class="bi bi-virus text-danger fs-3 me-3"></i>
-                                    <div>
-                                        <strong class="text-dark">Antisséptico</strong>
-                                        <p class="mb-0 small text-muted">Álcool gel, iodo</p>
-                                    </div>
-                                </div>
-                                <div class="d-flex align-items-center p-2 border rounded">
-                                    <i class="bi bi-thermometer text-danger fs-3 me-3"></i>
-                                    <div>
-                                        <strong class="text-dark">Termômetro</strong>
-                                        <p class="mb-0 small text-muted">Digital preferível</p>
-                                    </div>
+                                <div class="collapse" id="socorros">
+                                    <ul class="list-unstyled mb-0">
+                                        <li class="d-flex align-items-center mb-3 p-2 border rounded">
+                                            <i class="bi bi-bandaid text-danger fs-3 me-3"></i>
+                                            <div>
+                                                <strong class="text-dark">Bandagens</strong>
+                                                <p class="mb-0 small text-muted">Diversos tamanhos</p>
+                                            </div>
+                                        </li>
+                                        <li class="d-flex align-items-center mb-3 p-2 border rounded">
+                                            <i class="bi bi-capsule text-danger fs-3 me-3"></i>
+                                            <div>
+                                                <strong class="text-dark">Medicamentos</strong>
+                                                <p class="mb-0 small text-muted">Básicos e pessoais</p>
+                                            </div>
+                                        </li>
+                                        <li class="d-flex align-items-center mb-3 p-2 border rounded">
+                                            <i class="bi bi-virus text-danger fs-3 me-3"></i>
+                                            <div>
+                                                <strong class="text-dark">Antisséptico</strong>
+                                                <p class="mb-0 small text-muted">Álcool gel, iodo</p>
+                                            </div>
+                                        </li>
+                                        <li class="d-flex align-items-center p-2 border rounded">
+                                            <i class="bi bi-thermometer text-danger fs-3 me-3"></i>
+                                            <div>
+                                                <strong class="text-dark">Termômetro</strong>
+                                                <p class="mb-0 small text-muted">Digital preferível</p>
+                                            </div>
+                                        </li>
+                                    </ul>
                                 </div>
                             </div>
                         </div>
                     </div>
 
+                    <!-- Documentos -->
                     <div class="col-lg-4">
-                        <div class="card h-100 shadow-sm">
+                        <div class="card h-100 shadow-sm border-0">
                             <div class="card-header bg-success text-white text-center">
                                 <h3 class="h5 mb-0 fw-bold text-white">
                                     <i class="bi bi-file-earmark-text me-2"></i>Documentos
                                 </h3>
                             </div>
                             <div class="card-body">
-                                <div class="d-flex align-items-center mb-3 p-2 border rounded">
-                                    <i class="bi bi-person-badge text-success fs-3 me-3"></i>
-                                    <div>
-                                        <strong class="text-dark">Identificação</strong>
-                                        <p class="mb-0 small text-muted">Cópias plastificadas</p>
-                                    </div>
+                                <div class="text-center mb-3">
+                                    <button class="btn btn-outline-success btn-sm w-100" type="button"
+                                        data-bs-toggle="collapse" data-bs-target="#documentos" aria-expanded="false"
+                                        aria-controls="documentos">
+                                        <span class="collapsed">Mostrar Itens</span>
+                                        <span class="expanded d-none">Ocultar Itens</span>
+                                    </button>
                                 </div>
-                                <div class="d-flex align-items-center mb-3 p-2 border rounded">
-                                    <i class="bi bi-credit-card text-success fs-3 me-3"></i>
-                                    <div>
-                                        <strong class="text-dark">Cartões</strong>
-                                        <p class="mb-0 small text-muted">Banco, convênio médico</p>
-                                    </div>
-                                </div>
-                                <div class="d-flex align-items-center mb-3 p-2 border rounded">
-                                    <i class="bi bi-cash text-success fs-3 me-3"></i>
-                                    <div>
-                                        <strong class="text-dark">Dinheiro</strong>
-                                        <p class="mb-0 small text-muted">Notas e moedas</p>
-                                    </div>
-                                </div>
-                                <div class="d-flex align-items-center p-2 border rounded">
-                                    <i class="bi bi-list-ul text-success fs-3 me-3"></i>
-                                    <div>
-                                        <strong class="text-dark">Contatos</strong>
-                                        <p class="mb-0 small text-muted">Lista de emergência</p>
-                                    </div>
+                                <div class="collapse" id="documentos">
+                                    <ul class="list-unstyled mb-0">
+                                        <li class="d-flex align-items-center mb-3 p-2 border rounded">
+                                            <i class="bi bi-person-badge text-success fs-3 me-3"></i>
+                                            <div>
+                                                <strong class="text-dark">Identificação</strong>
+                                                <p class="mb-0 small text-muted">Cópias plastificadas</p>
+                                            </div>
+                                        </li>
+                                        <li class="d-flex align-items-center mb-3 p-2 border rounded">
+                                            <i class="bi bi-credit-card text-success fs-3 me-3"></i>
+                                            <div>
+                                                <strong class="text-dark">Cartões</strong>
+                                                <p class="mb-0 small text-muted">Banco, convênio médico</p>
+                                            </div>
+                                        </li>
+                                        <li class="d-flex align-items-center mb-3 p-2 border rounded">
+                                            <i class="bi bi-cash text-success fs-3 me-3"></i>
+                                            <div>
+                                                <strong class="text-dark">Dinheiro</strong>
+                                                <p class="mb-0 small text-muted">Notas e moedas</p>
+                                            </div>
+                                        </li>
+                                        <li class="d-flex align-items-center p-2 border rounded">
+                                            <i class="bi bi-list-ul text-success fs-3 me-3"></i>
+                                            <div>
+                                                <strong class="text-dark">Contatos</strong>
+                                                <p class="mb-0 small text-muted">Lista de emergência</p>
+                                            </div>
+                                        </li>
+                                    </ul>
                                 </div>
                             </div>
                         </div>
@@ -318,6 +406,21 @@
                 </div>
             </div>
         </section>
+        <script>
+            // Toggle button text for collapse
+            document.addEventListener('DOMContentLoaded', function () {
+                document.querySelectorAll('[data-bs-toggle="collapse"]').forEach(function (btn) {
+                    var target = document.getElementById(btn.getAttribute('data-bs-target').replace('#', ''));
+                    btn.addEventListener('click', function () {
+                        setTimeout(function () {
+                            var expanded = btn.getAttribute('aria-expanded') === 'true';
+                            btn.querySelector('.collapsed').classList.toggle('d-none', expanded);
+                            btn.querySelector('.expanded').classList.toggle('d-none', !expanded);
+                        }, 150);
+                    });
+                });
+            });
+        </script>
         <!-- Contatos de Emergência -->
         <section class="py-5 bg-light">
             <div class="container">
@@ -574,6 +677,3 @@
 </body>
 
 </html>
-
-    
-    
