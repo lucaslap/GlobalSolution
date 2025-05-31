@@ -360,3 +360,68 @@ window.FloodAlert = {
     generateWeatherData,
     calculateAlertLevel
 };
+
+// interactive and calendar map added //
+// === Módulo Educacional: Cursos + Mapa ===
+document.addEventListener('DOMContentLoaded', () => {
+  const locais = [
+    { nome: "CRAS Lapa", lat: -23.527, lng: -46.677 },
+    { nome: "CETEP Zona Sul", lat: -23.625, lng: -46.706 },
+    { nome: "Biblioteca Brasilândia", lat: -23.450, lng: -46.688 }
+  ];
+
+  const calendario = [
+    { data: '2025-06-12', evento: 'Curso: Noções de Primeiros Socorros - CRAS Lapa' },
+    { data: '2025-06-18', evento: 'Palestra: Gestão de Riscos - CETEP Zona Sul' },
+    { data: '2025-06-25', evento: 'Workshop: Alertas Comunitários - Biblioteca Brasilândia' }
+  ];
+
+  // Dropdown
+  const dropdown = document.getElementById('localDropdown');
+  if (dropdown) {
+    locais.forEach((l, i) => {
+      const opt = document.createElement('option');
+      opt.value = i;
+      opt.textContent = l.nome;
+      dropdown.appendChild(opt);
+    });
+  }
+
+  // Mapa
+  const mapDiv = document.getElementById('mapCursos');
+  if (mapDiv) {
+    const map = L.map('mapCursos').setView([locais[0].lat, locais[0].lng], 12);
+    L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+      attribution: '© OpenStreetMap contributors'
+    }).addTo(map);
+
+    const markers = locais.map(l => 
+      L.marker([l.lat, l.lng]).addTo(map).bindPopup(`<strong>${l.nome}</strong>`)
+    );
+
+    dropdown.addEventListener('change', e => {
+      const local = locais[e.target.value];
+      map.setView([local.lat, local.lng], 14);
+      markers[e.target.value].openPopup();
+    });
+  }
+
+  // Calendário
+  const calendarioEl = document.getElementById('calendarContainer');
+  if (calendarioEl) {
+    calendario.forEach(e => {
+      const item = document.createElement('div');
+      item.innerHTML = `<strong>${new Date(e.data).toLocaleDateString('pt-BR')}</strong>: ${e.evento}`;
+      calendarioEl.appendChild(item);
+    });
+  }
+
+  // Adicionar ao calendário
+  const addBtn = document.getElementById('addToCalendar');
+  if (addBtn) {
+    addBtn.addEventListener('click', () => {
+      const url = "https://calendar.google.com/calendar/render?action=TEMPLATE&text=Cursos+de+Prevenção+DryPath&details=Cursos+gratuitos+oferecidos+por+órgãos+públicos&location=São+Paulo&sf=true&output=xml";
+      window.open(url, '_blank');
+    });
+  }
+});

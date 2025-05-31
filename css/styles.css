@@ -552,3 +552,12 @@ footer hr {
 }
 
 /* ...existing code... */
+
+/* mapa educacional added */
+#calendarContainer div {
+  margin-bottom: 0.5rem;
+  padding: 0.5rem;
+  background: #e5f1ff;
+  border-left: 4px solid #2563eb;
+  border-radius: 4px;
+}
