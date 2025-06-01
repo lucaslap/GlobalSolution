@@ -496,22 +496,6 @@ Este projeto representa a aplicação prática de conhecimentos em desenvolvimen
 
 ---
 
-## 🏆 Reconhecimentos e Agradecimentos
-
-### 🎓 FIAP - Global Solution 2025
-Agradecemos à **FIAP** pela oportunidade de desenvolver este projeto como parte do programa Global Solution, que nos permitiu aplicar conhecimentos técnicos para resolver problemas reais da sociedade.
-
-### 👨‍🏫 Professores e Mentores
-Reconhecemos a orientação valiosa dos professores que nos guiaram durante o desenvolvimento, fornecendo feedback técnico e direcionamento estratégico.
-
-### 🌍 Comunidade Open Source
-Gratidão às comunidades de desenvolvedores que mantêm as ferramentas e recursos que tornaram este projeto possível:
-- **Bootstrap Team** pelo framework CSS robusto
-- **MDN Contributors** pela documentação excepcional
-- **Stack Overflow Community** pelo suporte técnico
-
----
-
 ## 📞 Contato e Suporte
 
 ### 🎓 Instituição Responsável
