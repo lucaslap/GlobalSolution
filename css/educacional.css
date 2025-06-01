@@ -220,4 +220,15 @@
     .item-icon {
         width: auto;
     }
+    /* feat add: calendario educacional */
+#calendarContainer div {
+  margin-bottom: 0.5rem;
+  padding: 0.5rem;
+  background: #e5f1ff;
+  border-left: 4px solid #2563eb;
+  border-radius: 4px;
+}
+.text-white-75 {
+  color: rgba(255, 255, 255, 0.85);
+}
 }

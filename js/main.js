@@ -360,3 +360,71 @@ window.FloodAlert = {
     generateWeatherData,
     calculateAlertLevel
 };
+
+// Mapa pagina educacional
+
+// Mock de dados (remover quando for buscar via API)
+const locais = [
+  { nome: "Centro de Treinamento - Zona Norte", lat: -23.49, lng: -46.62 },
+  { nome: "Centro de Defesa Civil - Sul", lat: -23.60, lng: -46.68 },
+  { nome: "Centro Cultural SP", lat: -23.5747, lng: -46.6417 },
+  { nome: "CEU Paraisópolis", lat: -23.6232, lng: -46.7377 },
+  { nome: "Etec Guarulhos", lat: -23.4645, lng: -46.5294 },
+  { nome: "Casa de Cultura Diadema", lat: -23.6814, lng: -46.6235 }
+];
+
+const calendario = [
+  { data: "2025-06-10", evento: "Curso de Primeiros Socorros" },
+  { data: "2025-06-12", evento: "Prevenção de Enchentes" },
+  { data: '2025-06-15', evento: 'Curso: Noções Básicas de Prevenção de Enchentes - Centro Cultural SP' },
+  { data: '2025-06-15', evento: 'Oficina: Primeiros Socorros em Desastres - CEU Paraisópolis' },
+  { data: '2025-06-18', evento: 'Workshop: Monitoramento Comunitário - Etec Guarulhos' },
+  { data: '2025-06-25', evento: 'Palestra: Gestão de Riscos Urbanos - Casa de Cultura Diadema' }
+];
+
+// Inicialização do mapa
+const mapDiv = document.getElementById('mapCursos');
+const dropdown = document.getElementById('localDropdown');
+
+if (mapDiv && dropdown) {
+  locais.forEach((local, index) => {
+    const option = document.createElement('option');
+    option.value = index;
+    option.textContent = local.nome;
+    dropdown.appendChild(option);
+  });
+
+  const map = L.map('mapCursos').setView([locais[0].lat, locais[0].lng], 12);
+  L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+    attribution: '© OpenStreetMap contributors'
+  }).addTo(map);
+
+  const markers = locais.map(l =>
+    L.marker([l.lat, l.lng]).addTo(map).bindPopup(`<strong>${l.nome}</strong>`)
+  );
+
+  dropdown.addEventListener('change', e => {
+    const local = locais[e.target.value];
+    map.setView([local.lat, local.lng], 14);
+    markers[e.target.value].openPopup();
+  });
+}
+
+// Preenche o calendário
+const calendarioEl = document.getElementById('calendarContainer');
+if (calendarioEl) {
+  calendario.forEach(e => {
+    const item = document.createElement('div');
+    item.innerHTML = `<strong>${new Date(e.data).toLocaleDateString('pt-BR')}</strong>: ${e.evento}`;
+    calendarioEl.appendChild(item);
+  });
+}
+
+// Botão de adicionar ao calendário externo
+const addBtn = document.getElementById('addToCalendar');
+if (addBtn) {
+  addBtn.addEventListener('click', () => {
+    const url = "https://calendar.google.com/calendar/render?action=TEMPLATE&text=Cursos+de+Prevenção+DryPath&details=Cursos+gratuitos+oferecidos+por+órgãos+públicos&location=São+Paulo&sf=true&output=xml";
+    window.open(url, '_blank');
+  });
+}
