@@ -10,30 +10,31 @@
   [![Projeto](https://img.shields.io/badge/Projeto-Global%20Solution-blue)](https://www.fiap.com.br)
   [![Tecnologia](https://img.shields.io/badge/Tecnologia-HTML%2BCSS%2BJS-green)](#tecnologias)
   [![Status](https://img.shields.io/badge/Status-Completo-brightgreen)](#)
-  [![Precisão](https://img.shields.io/badge/Precisão-95%25-orange)](#)
+  [![Linhas de Código](https://img.shields.io/badge/Linhas%20de%20Código-9.545-orange)](#)
 </div>
 
 ---
 
 ## 📋 Sobre o Projeto
 
-O **DryPath** é um sistema web inovador desenvolvido para o Global Solution da FIAP, focado em criar uma solução abrangente para alertas de enchentes e coordenação de evacuação. O projeto integra monitoramento meteorológico em tempo real, mapeamento inteligente de áreas de risco e algoritmos avançados de roteamento para proteger comunidades vulneráveis.
+O **DryPath** é um sistema web completo e funcional desenvolvido para o Global Solution da FIAP 2025, criando uma solução abrangente para alertas de enchentes e coordenação de evacuação. O projeto implementa um sistema robusto de monitoramento simulado em tempo real, mapeamento interativo de áreas de risco com **Leaflet**, e interface responsiva completa para gestão de emergências.
 
 ### 🎯 Missão
 
-Revolucionar a gestão de emergências relacionadas a enchentes através de:
-- **Tecnologia Inteligente:** IA/ML para previsão e análise de riscos
-- **Alertas Antecipados:** Sistema de notificações com até 6 horas de antecedência
-- **Coordenação Eficiente:** Plataforma colaborativa para autoridades e cidadãos
-- **Educação Preventiva:** Recursos educacionais para preparação de emergências
+Criar uma plataforma web completa e funcional para gestão de emergências relacionadas a enchentes através de:
+- **Interface Interativa:** Sistema web responsivo com navegação intuitiva
+- **Simulação Realística:** Engine de simulação com dados meteorológicos dinâmicos
+- **Mapeamento Avançado:** Integração com Leaflet para visualização geográfica
+- **Educação e Prevenção:** Recursos educacionais completos para preparação
 
-### 🌟 Diferenciais
+### 🌟 Principais Características
 
-- ✨ **95% de precisão** nos alertas preditivos
-- ⚡ **15 segundos** de tempo de resposta médio
-- 🌐 **Monitoramento 24/7** em tempo real
-- 📱 **Interface responsiva** e acessível
-- 🎯 **Rotas otimizadas** de evacuação dinâmica
+- ✨ **9.545 linhas de código** implementadas e funcionais
+- ⚡ **4 páginas completas** com funcionalidades distintas
+- 🌐 **Simulação em tempo real** com dados meteorológicos
+- 📱 **Design totalmente responsivo** (mobile-first)
+- 🎯 **Mapa interativo** com áreas de risco e rotas de evacuação
+- 🔄 **Validação de formulários** com padrões brasileiros (CPF, telefone, CEP)
 
 ---
 
@@ -41,53 +42,55 @@ Revolucionar a gestão de emergências relacionadas a enchentes através de:
 
 ### 📱 Páginas Principais
 
-| Página | Descrição | Funcionalidades |
-|--------|-----------|-----------------|
-| **[Início](index.html)** | Landing page com visão geral | Hero animado, estatísticas, seções problema/solução |
-| **[Simulação](simulacao.html)** | Centro de monitoramento interativo | Mapa em tempo real, alertas, dados meteorológicos |
-| **[Sobre](sobre.html)** | Informações detalhadas do projeto | Tecnologias, dicas de segurança, kit de emergência |
-| **[Educacional](educacional.html)** | Recursos educativos | Guias de preparação e prevenção |
+| Página | Descrição | Funcionalidades Implementadas | Linhas de Código |
+|--------|-----------|------------------------------|------------------|
+| **[Início](index.html)** | Landing page com hero animado | Animações CSS/JS, estatísticas, mapa Leaflet | 1.072 HTML + 1.548 CSS + 2.201 JS |
+| **[Simulação](simulacao.html)** | Centro de monitoramento interativo | Dados em tempo real, alertas, mapa SVG clicável | 659 HTML + 539 CSS + 547 JS |
+| **[Sobre](sobre.html)** | Informações e recursos do projeto | Dicas expandíveis, kit de emergência, contatos | 495 HTML + 456 CSS + 453 JS |
+| **[Educacional](educacional.html)** | Recursos educativos e prevenção | Guias de segurança, kits de emergência, contatos | 567 HTML + 195 CSS |
 
 ---
 
-## ✨ Funcionalidades Avançadas
+## ✨ Funcionalidades Implementadas
 
-### 🏠 Página Inicial (Enhanced)
-- ✅ **Hero Section Dinâmico:** Animações fluidas com typing effect e partículas
-- ✅ **Seção Problema Interativa:** Cards 3D com hover effects e métricas animadas
-- ✅ **Seção Solução Avançada:** Dashboard preview interativo com mapa de riscos
-- ✅ **CTA Final Aprimorado:** Elementos flutuantes e contadores dinâmicos
-- ✅ **Scroll Animations:** Efeitos parallax e revelação progressiva
+### 🏠 Página Inicial (index.html)
+- ✅ **Hero Section Avançado:** Animação de typing effect com typewriter dinâmico
+- ✅ **Estatísticas Animadas:** Contadores com easing e animações CSS
+- ✅ **Seção Problema Interativa:** Cards 3D com hover effects e efeito de chuva
+- ✅ **Mapa Leaflet Integrado:** Sistema real de mapas com áreas de risco e rotas de evacuação
+- ✅ **Dashboard Preview:** Simulação de interface com dados em tempo real
+- ✅ **Parallax Effects:** Efeitos de scroll e revelação progressiva
 
-### 🗺️ Simulação Interativa
-- ✅ **Mapa Dinâmico:** Áreas de risco clicáveis com tooltips informativos
-- ✅ **Dados em Tempo Real:** Simulação de sensores IoT e condições meteorológicas
-- ✅ **Sistema de Alertas Multi-nível:** Verde/Amarelo/Vermelho com notificações
-- ✅ **Dashboard Completo:** Métricas, gráficos e histórico de eventos
-- ✅ **Formulário Inteligente:** Validação brasileira e cadastro de alertas
-- ✅ **Localização de Recursos:** Abrigos, hospitais e rotas de evacuação
+### 🗺️ Simulação Interativa (simulacao.html)
+- ✅ **Engine de Simulação:** Sistema completo com estado global e dados dinâmicos
+- ✅ **Mapa SVG Clicável:** Áreas de risco interativas com tooltips e feedback
+- ✅ **Dados Meteorológicos:** Simulação realística com 4 condições climáticas
+- ✅ **Sistema de Alertas:** 4 níveis (Verde/Amarelo/Laranja/Vermelho) com notificações
+- ✅ **Controles Dinâmicos:** Sliders para nível de água e seleção de clima
+- ✅ **Evacuação Simulada:** Contador de pessoas evacuadas com animação
+- ✅ **Formulário Completo:** Validação brasileira (CPF, telefone, CEP) com feedback
 
-### ℹ️ Página Sobre Completa
-- ✅ **Arquitetura Técnica:** Diagrama interativo do sistema
-- ✅ **Tecnologias Detalhadas:** Stack completo com badges e descrições
-- ✅ **Dicas de Segurança:** Cards expandíveis por fase (antes/durante/depois)
-- ✅ **Kit de Emergência:** Checklist visual com ícones e descrições
-- ✅ **Contatos de Emergência:** Cards informativos com códigos oficiais
-- ✅ **Timeline do Projeto:** Cronograma de desenvolvimento
+### ℹ️ Página Sobre (sobre.html)
+- ✅ **Cards Expansíveis:** Sistema de dicas de segurança por fase (antes/durante/depois)
+- ✅ **Kit de Emergência:** Checklist visual com 3 categorias organizadas
+- ✅ **Contatos de Emergência:** Modal interativo com botões de ligação
+- ✅ **Local Storage:** Persistência de dados dos checklists
+- ✅ **Animações de Scroll:** Elementos aparecem progressivamente
+- ✅ **Timeline do Projeto:** Cronograma visual de desenvolvimento
 
-### 🎓 Página Educacional
-- ✅ **Guias Interativos:** Preparação para emergências step-by-step
-- ✅ **Quiz de Conhecimento:** Teste seus conhecimentos sobre enchentes
-- ✅ **Recursos Visuais:** Infográficos e vídeos educativos
-- ✅ **Downloads:** PDFs com materiais para impressão
+### 🎓 Página Educacional (educacional.html)
+- ✅ **Guias de Segurança:** 3 fases estruturadas (antes/durante/depois)
+- ✅ **Kit de Emergência Detalhado:** 3 categorias (básicos/primeiros socorros/documentos)
+- ✅ **Contatos de Emergência:** Cards visuais com códigos oficiais (190, 192, 193, 199)
+- ✅ **Integração com Footer:** Sistema unificado de navegação
 
-### 🔧 Funcionalidades Técnicas Avançadas
-- ✅ **Design System Completo:** CSS Variables e componentes reutilizáveis
-- ✅ **Animações Avançadas:** CSS3 + JavaScript para micro-interações
-- ✅ **Performance Otimizada:** Lazy loading e otimização de assets
-- ✅ **Acessibilidade Total:** ARIA labels, navegação por teclado, contraste
-- ✅ **PWA Ready:** Service workers e offline capability
-- ✅ **Cross-Browser:** Compatibilidade com todos os navegadores modernos
+### 🔧 Funcionalidades Técnicas Implementadas
+- ✅ **Sistema de Design Completo:** CSS Variables e 469 linhas de estilos globais
+- ✅ **JavaScript Modular:** 4 arquivos JS com funções específicas (3.545 linhas total)
+- ✅ **Animações Avançadas:** CSS3 + JavaScript para micro-interações fluidas
+- ✅ **Local Storage:** Persistência de dados de formulários e preferências
+- ✅ **Responsividade Total:** Mobile-first design com breakpoints Bootstrap
+- ✅ **Validação Brasileira:** CPF, telefone e CEP com regex específicos
 
 ---
 
@@ -103,6 +106,7 @@ Revolucionar a gestão de emergências relacionadas a enchentes através de:
 ### Frameworks & Libraries
 ![Bootstrap](https://img.shields.io/badge/Bootstrap-563D7C?style=for-the-badge&logo=bootstrap&logoColor=white)
 ![Bootstrap Icons](https://img.shields.io/badge/Bootstrap_Icons-7952B3?style=for-the-badge&logo=bootstrap&logoColor=white)
+![Leaflet](https://img.shields.io/badge/Leaflet-199900?style=for-the-badge&logo=leaflet&logoColor=white)
 
 ### Ferramentas de Desenvolvimento
 ![VS Code](https://img.shields.io/badge/VS%20Code-007ACC?style=for-the-badge&logo=visual-studio-code&logoColor=white)
@@ -110,33 +114,31 @@ Revolucionar a gestão de emergências relacionadas a enchentes através de:
 
 </div>
 
-### 🏗️ Arquitetura Avançada
+### 🏗️ Arquitetura Implementada
 
 ```
-📁 DryPath/
-├── 📄 index.html                    # Landing page com hero e seções principais
-├── 📄 simulacao.html               # Centro de monitoramento e simulação
-├── 📄 sobre.html                   # Informações, dicas e recursos
-├── 📄 educacional.html             # Conteúdo educativo e prevenção
-├── 📁 css/
-│   ├── styles.css                  # Estilos globais, variables e navbar
-│   ├── home.css                    # Estilos da página inicial (2000+ linhas)
-│   ├── simulacao.css               # Estilos do centro de monitoramento
-│   ├── sobre.css                   # Estilos da página informativa
-│   └── educacional.css             # Estilos do conteúdo educativo
-├── 📁 js/
-│   ├── main.js                     # Utilitários globais e funções core
-│   ├── performance.js              # Otimizações de performance
-│   ├── home.js                     # Funcionalidades da landing page
-│   ├── simulacao.js                # Engine de simulação e dados
-│   ├── sobre.js                    # Interações da página sobre
-│   └── educacional.js              # Recursos educativos interativos
+📁 DryPath/ (9.545 linhas de código total)
+├── 📄 index.html                    # Landing page principal (1.072 linhas)
+├── 📄 simulacao.html               # Centro de monitoramento (659 linhas)
+├── 📄 sobre.html                   # Página informativa (495 linhas)
+├── 📄 educacional.html             # Conteúdo educativo (567 linhas)
+├── 📁 css/ (3.207 linhas total)
+│   ├── styles.css                  # Estilos globais e variables (469 linhas)
+│   ├── home.css                    # Estilos da página inicial (1.548 linhas)
+│   ├── simulacao.css               # Estilos do centro de monitoramento (539 linhas)
+│   ├── sobre.css                   # Estilos da página sobre (456 linhas)
+│   └── educacional.css             # Estilos do conteúdo educativo (195 linhas)
+├── 📁 js/ (3.545 linhas total)
+│   ├── main.js                     # Funções globais e utilitários (344 linhas)
+│   ├── home.js                     # Engine da página inicial (2.201 linhas)
+│   ├── simulacao.js                # Sistema de simulação (547 linhas)
+│   └── sobre.js                    # Funcionalidades da página sobre (453 linhas)
 ├── 📁 images/
-│   ├── favicon.svg                 # Ícone do site (shield-check)
-│   ├── favicon.ico                 # Fallback para navegadores antigos
-│   └── assets/                     # Recursos visuais adicionais
-├── 📄 README.md                    # Documentação completa
-└── 📄 PARTICIPANTES.md             # Informações da equipe
+│   ├── favicon.svg                 # Ícone shield-check
+│   ├── hero-bg.svg                 # Background do hero
+│   ├── logo-floodalert.svg         # Logo alternativo
+│   └── README.md                   # Documentação de assets
+└── 📄 README.md                    # Esta documentação
 ```
 
 ---
@@ -181,34 +183,36 @@ Para funcionalidades básicas, abra `index.html` diretamente no navegador.
 
 ---
 
-## 🎮 Guia de Funcionalidades
+## 🎮 Guia de Funcionalidades Implementadas
 
 ### 🏠 Explorando a Página Inicial
 
-| Seção | Interações | Como Testar |
-|-------|------------|-------------|
-| **Hero Animado** | Typing effect, botões flutuantes | Observe as animações ao carregar |
-| **Problemas** | Cards 3D, hover effects | Passe o mouse sobre os cards |
-| **Solução** | Dashboard preview, tech demo | Clique em "Ver Demonstração" |
-| **CTA Final** | Elementos flutuantes, contadores | Role até o final da página |
+| Funcionalidade | Como Testar | Resultado Esperado |
+|---------------|-------------|-------------------|
+| **Hero Animado** | Carregue a página | Typing effect automático + animações fluidas |
+| **Estatísticas** | Role até a seção | Contadores animados com easing |
+| **Cards 3D** | Hover nos cards de problema | Transformação 3D + efeito de chuva |
+| **Mapa Leaflet** | Clique nos marcadores | Popups com informações + rotas de evacuação |
+| **Dashboard** | Clique em "Ver Demonstração" | Modal com tabs funcionais |
 
 ### 🗺️ Centro de Monitoramento
 
-| Funcionalidade | Descrição | Teste |
-|---------------|-----------|-------|
-| **Mapa Interativo** | Clique em áreas de risco | Explore as diferentes zonas |
-| **Alertas Automáticos** | Notificações baseadas em dados | Aguarde 30s para alertas |
-| **Formulário Validado** | Validação brasileira completa | Teste com dados inválidos |
-| **Dashboard Live** | Métricas atualizadas em tempo real | Observe os números mudando |
+| Funcionalidade | Como Testar | Resultado Esperado |
+|---------------|-------------|-------------------|
+| **Simulação em Tempo Real** | Aguarde carregamento | Dados atualizados a cada 3 segundos |
+| **Áreas de Risco** | Clique nas áreas coloridas | Tooltip + notificação + destaque |
+| **Controles Climáticos** | Mude o clima no select | Dados ajustados automaticamente |
+| **Slider de Água** | Arraste o slider | Atualização em tempo real + alertas |
+| **Formulário** | Teste com dados inválidos | Validação brasileira completa |
 
 ### 📖 Página Sobre e Educacional
 
-| Recurso | Interação | Resultado |
-|---------|-----------|-----------|
-| **Cards Informativos** | Hover e clique | Animações e detalhes |
-| **Checklists** | Marcar/desmarcar itens | Progresso salvo localmente |
-| **Modal de Contatos** | Clique nos cartões | Informações detalhadas |
-| **Timeline** | Scroll e hover | Revelação progressiva |
+| Funcionalidade | Como Testar | Resultado Esperado |
+|---------------|-------------|-------------------|
+| **Cards Expansíveis** | Clique nos headers | Animação de abertura/fechamento |
+| **Checklists** | Marque/desmarque itens | Salvamento automático no localStorage |
+| **Contatos de Emergência** | Clique nos cartões | Modal com opção de ligação |
+| **Responsividade** | Redimensione a janela | Layout adapta perfeitamente |
 
 ---
 
