@@ -363,6 +363,14 @@
     color: #3b82f6;
 }
 
+/* Responsive Solution Content */
+
+@media (max-width: 1000px) {
+    .solution-content {
+        margin-top: 40px !important;
+    }
+}
+
 /* CTA section gradient background */
 .cta-gradient {
     background: linear-gradient(135deg, #1e40af, #3b82f6);
