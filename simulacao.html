@@ -106,7 +106,7 @@
                     <div class="col-lg-6 mb-4">
                         <div class="card h-100 shadow-sm">
                             <div class="card-header bg-primary text-white">
-                                <h3 class="card-title h5 mb-0">
+                                <h3 class="card-title h5 mb-0 text-white">
                                     <i class="bi bi-sliders me-2"></i>Controles de Simulação
                                 </h3>
                             </div>
@@ -145,11 +145,11 @@
                     <div class="col-lg-6 mb-4">
                         <div class="card h-100 shadow-sm">
                             <div class="card-header bg-warning text-dark">
-                                <h3 class="card-title h5 mb-0">
+                                <h3 class="card-title h5 mb-0 text-white">
                                     <i class="bi bi-bell-fill me-2"></i>Alertas Ativos
                                 </h3>
                             </div>
-                            <div class="card-body">
+                            
                                 <div id="alertsContainer" class="alerts-list"
                                     style="max-height: 300px; overflow-y: auto;">
                                     <div class="alert alert-info d-flex align-items-center mb-2" role="alert">
@@ -160,7 +160,7 @@
                                         </div>
                                     </div>
                                 </div>
-                            </div>
+                            
                         </div>
                     </div>
                 </div>
@@ -260,7 +260,7 @@
                     <div class="col-lg-3">
                         <div class="card shadow-sm">
                             <div class="card-header bg-secondary text-white">
-                                <h4 class="card-title h6 mb-0">
+                                <h4 class="card-title h6 mb-0 text-white">
                                     <i class="bi bi-list-ul me-2"></i>Legenda
                                 </h4>
                             </div>
@@ -316,7 +316,7 @@
                 <div class="row justify-content-center">
                     <div class="col-lg-8">
                         <div class="card shadow-lg">
-                            <div class="card-body p-4">
+                            
                                 <form id="alertForm" class="alert-form" novalidate
                                     aria-label="Formulário de cadastro de alerta personalizado">
                                     <fieldset>
@@ -421,7 +421,7 @@
                                         </p>
                                     </div>
                                 </div>
-                            </div>
+                            
                         </div>
                     </div>
                 </div>
@@ -440,16 +440,16 @@
                     <div class="col-md-6 col-lg-3">
                         <div class="card h-100 shadow-sm border-primary">
                             <div class="card-header bg-primary text-white text-center">
-                                <h4 class="card-title h6 mb-0">
+                                <h4 class="card-title h6 mb-0 text-white">
                                     <i class="bi bi-cloud-rain me-2"></i>Precipitação
                                 </h4>
                             </div>
                             <div class="card-body text-center">
                                 <div class="data-value display-4 fw-bold text-primary" id="precipitation">--</div>
-                                <div class="data-unit text-muted">mm/h</div>
+                                <div class="data-unit text-dark">mm/h</div>
                                 <div class="data-chart mt-3 bg-light rounded p-2" id="precipitationChart"
                                     style="height: 60px;">
-                                    <small class="text-muted">Gráfico em tempo real</small>
+                                    <small class="text-dark">Gráfico em tempo real</small>
                                 </div>
                             </div>
                         </div>
@@ -457,15 +457,15 @@
                     <div class="col-md-6 col-lg-3">
                         <div class="card h-100 shadow-sm border-info">
                             <div class="card-header bg-info text-white text-center">
-                                <h4 class="card-title h6 mb-0">
+                                <h4 class="card-title h6 mb-0 text-white">
                                     <i class="bi bi-water me-2"></i>Nível do Rio
                                 </h4>
                             </div>
                             <div class="card-body text-center">
                                 <div class="data-value display-4 fw-bold text-info" id="riverLevel">--</div>
-                                <div class="data-unit text-muted">metros</div>
+                                <div class="data-unit text-dark">metros</div>
                                 <div class="data-chart mt-3 bg-light rounded p-2" id="riverChart" style="height: 60px;">
-                                    <small class="text-muted">Gráfico em tempo real</small>
+                                    <small class="text-dark">Gráfico em tempo real</small>
                                 </div>
                             </div>
                         </div>
@@ -473,15 +473,15 @@
                     <div class="col-md-6 col-lg-3">
                         <div class="card h-100 shadow-sm border-warning">
                             <div class="card-header bg-warning text-dark text-center">
-                                <h4 class="card-title h6 mb-0">
+                                <h4 class="card-title h6 mb-0 text-white">
                                     <i class="bi bi-wind me-2"></i>Velocidade do Vento
                                 </h4>
                             </div>
                             <div class="card-body text-center">
                                 <div class="data-value display-4 fw-bold text-warning" id="windSpeed">--</div>
-                                <div class="data-unit text-muted">km/h</div>
+                                <div class="data-unit text-dark">km/h</div>
                                 <div class="data-chart mt-3 bg-light rounded p-2" id="windChart" style="height: 60px;">
-                                    <small class="text-muted">Gráfico em tempo real</small>
+                                    <small class="text-dark">Gráfico em tempo real</small>
                                 </div>
                             </div>
                         </div>
@@ -489,13 +489,13 @@
                     <div class="col-md-6 col-lg-3">
                         <div class="card h-100 shadow-sm border-success">
                             <div class="card-header bg-success text-white text-center">
-                                <h4 class="card-title h6 mb-0">
+                                <h4 class="card-title h6 mb-0 text-white">
                                     <i class="bi bi-people-fill me-2"></i>Pessoas Evacuadas
                                 </h4>
                             </div>
                             <div class="card-body text-center">
                                 <div class="data-value display-4 fw-bold text-success" id="evacuated">0</div>
-                                <div class="data-unit text-muted">pessoas</div>
+                                <div class="data-unit text-dark">pessoas</div>
                                 <div class="data-trend mt-3">
                                     <span class="badge bg-success" id="evacuationTrend">+12 na última hora</span>
                                 </div>
