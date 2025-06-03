@@ -113,13 +113,10 @@ function updateCharts(data) {
     const charts = document.querySelectorAll('.data-chart');
     charts.forEach(chart => {
         const height = Math.min(90, (parseFloat(data.precipitation || 0) / 50) * 100); // Fallback para 0 se `data.precipitation` for inválido
-        const before = chart.querySelector('::before') || chart;
 
-        // Atualiza altura do gráfico com transição suave
-        if (before.style) {
-            before.style.transition = 'height 0.5s ease-in-out';
-            before.style.setProperty('--chart-height', `${height}%`);
-        }
+        // A pseudo-classe ::before não pode ser selecionada via querySelector.
+        // Em vez disso, usamos uma CSS custom property para controlar sua altura.
+        chart.style.setProperty('--chart-height', `${height}%`);
     });
 }
 
