@@ -1726,14 +1726,14 @@ function toggleMapLegend() {
     const toggleBtn = document.getElementById('legendToggle');
     
     if (legend && toggleBtn) {
-        legend.classList.toggle('collapsed');
+        legend.classList.toggle('show');
         
-        if (legend.classList.contains('collapsed')) {
-            toggleBtn.innerHTML = '<i class="bi bi-list-ul"></i>';
-            toggleBtn.title = 'Mostrar Legenda';
-        } else {
+        if (legend.classList.contains('show')) {
             toggleBtn.innerHTML = '<i class="bi bi-x-lg"></i>';
             toggleBtn.title = 'Ocultar Legenda';
+        } else {
+            toggleBtn.innerHTML = '<i class="bi bi-list-ul"></i>';
+            toggleBtn.title = 'Mostrar Legenda';
         }
     }
 }

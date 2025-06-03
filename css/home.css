@@ -1690,6 +1690,19 @@
 }
 
 /* Legenda expandida/colapsada */
+.map-legend {
+    visibility: hidden;
+    opacity: 0;
+    transform: translateY(10px) scale(0.95);
+    transition: all 0.3s ease;
+}
+
+.map-legend.show {
+    visibility: visible;
+    opacity: 1;
+    transform: translateY(0) scale(1);
+}
+
 .map-legend.collapsed {
     padding: 0.5rem;
 }
