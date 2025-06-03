@@ -1,4 +1,4 @@
-# IMAGENS NECESSÁRIAS PARA O PROJETO FLOODALERT
+# IMAGENS NECESSÁRIAS PARA O PROJETO DryPath
 
 ## 📁 Estrutura de Imagens Recomendada
 
