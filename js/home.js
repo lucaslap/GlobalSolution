@@ -1064,10 +1064,8 @@ document.addEventListener('DOMContentLoaded', function() {
     initTypingEffect();
     animateProblemStats();
     animateProgressBars();
-    createRainEffect();
     initSolutionAnimations();
     initFeatureInteractions();
-    initCTAAnimations();
     initCTAInteractions();
     
     // Adiciona evento ao botão CTA principal

@@ -168,7 +168,7 @@
                     </div>
                 </div>
             </div>
-        </section> 
+        </section>
         <!-- Tecnologias Utilizadas -->
         <section class="py-5 bg-light">
             <div class="container">
@@ -279,7 +279,7 @@
                     </div>
                 </div>
             </div>
-        </section>  
+        </section>
         <!-- Equipe do Projeto -->
         <section class="py-5">
             <div class="container">
@@ -339,27 +339,408 @@
             <!-- Chatbot demonstrativo-->
             <div id="chat-window-container">
                 <div class="card shadow-lg">
-                    <div id="chat-header" class="card-header bg-primary text-white d-flex justify-content-between align-items-center p-3">
+                    <div id="chat-header"
+                        class="card-header bg-primary text-white d-flex justify-content-between align-items-center p-3">
                         <div class="d-flex align-items-center">
                             <h5 class="mb-0 text-white">Assistente Virtual Nautilus</h5>
                         </div>
-                        
-                        <button id="close-chat-btn" type="button" class="btn-close btn-close-white" aria-label="Fechar"></button>
+
+                        <button id="close-chat-btn" type="button" class="btn-close btn-close-white"
+                            aria-label="Fechar"></button>
                     </div>
                     <div id="chat-messages" class="card-body"></div>
                     <div id="chat-input-area" class="card-footer d-flex align-items-center p-2">
-                        <input type="text" id="user-input" class="form-control me-2" placeholder="Digite sua mensagem...">
+                        <input type="text" id="user-input" class="form-control me-2"
+                            placeholder="Digite sua mensagem...">
                         <button id="send-button" class="btn btn-primary">
                             <i class="bi bi-send-fill"></i>
                         </button>
                     </div>
                 </div>
             </div>
-            <button id="fab-chat-button" class="btn btn-primary btn-lg rounded-circle" type="button" aria-label="Abrir chat">
+            <button id="fab-chat-button" class="btn btn-primary btn-lg rounded-circle" type="button"
+                aria-label="Abrir chat">
                 <i id="fab-icon" class="bi bi-chat-dots-fill"></i>
             </button>
-        </section> 
-        
+        </section>
+
+        <!-- Roadmap de Desenvolvimento -->
+        <section class="py-5 bg-light">
+            <div class="container">
+                <div class="row">
+                    <div class="col-12 text-center mb-5">
+                        <h2 class="display-6 fw-bold">
+                            <i class="bi bi-map text-primary me-2"></i>Roadmap de Desenvolvimento
+                        </h2>
+                        <p class="lead text-dark">Acompanhe a evolução do DryPath e os próximos marcos do projeto</p>
+                    </div>
+                </div>
+
+                <!-- Timeline do Roadmap -->
+                <div class="row">
+                    <div class="col-12">
+                        <div class="roadmap-timeline">
+                            <!-- Fase 1 - Concluída -->
+                            <div class="timeline-item completed" data-animate="fadeInLeft">
+                                <div class="timeline-marker">
+                                    <i class="bi bi-check-circle-fill text-white"></i>
+                                </div>
+                                <div class="timeline-content">
+                                    <div class="timeline-card bg-white shadow-sm">
+                                        <div class="status-indicator"></div>
+                                        <div class="card-header bg-success text-white">
+                                            <h4 class="h6 mb-0 text-white fw-semibold">
+                                                <i class="bi bi-flag-fill me-2 text-dark"></i>Fase 1 - Protótipo Inicial
+                                                <span class="badge bg-dark text-white fw-bold ms-2">Concluído</span>
+                                            </h4>
+                                        </div>
+                                        <div class="card-body">
+                                            <div class="row">
+                                                <div class="col-md-8">
+                                                    <p class="mb-2"><strong>Período:</strong> Maio - Junho 2025</p>
+                                                    <ul class="list-unstyled mb-0">
+                                                        <li><i class="bi bi-check2 text-success me-2"></i>Interface web
+                                                            responsiva</li>
+                                                        <li><i class="bi bi-check2 text-success me-2"></i>Mapa
+                                                            Interativo</li>
+                                                        <li><i class="bi bi-check2 text-success me-2"></i>Protótipo
+                                                            Chatbot Nautilus</li>
+                                                        <li><i class="bi bi-check2 text-success me-2"></i>Página
+                                                            educacional</li>
+                                                    </ul>
+                                                </div>
+                                                <div class="col-md-4 text-end">
+                                                    <div class="progress-circle completed">
+                                                        <span>100%</span>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Fase 2 - Em Andamento -->
+                            <div class="timeline-item current" data-animate="fadeInRight">
+                                <div class="timeline-marker">
+                                    <i class="bi bi-gear-fill text-warning spinning"></i>
+                                </div>
+                                <div class="timeline-content">
+                                    <div class="timeline-card bg-white shadow-sm border-warning">
+                                        <div class="status-indicator"></div>
+                                        <div class="card-header bg-warning text-dark">
+                                            <h4 class="h6 mb-0 fw-semibold">
+                                                <i class="bi bi-cpu me-2"></i>Fase 2 - Backend e IA
+                                                <span class="badge bg-dark text-warning ms-2">Planejado</span>
+                                            </h4>
+                                        </div>
+                                        <div class="card-body">
+                                            <div class="row">
+                                                <div class="col-md-8">
+                                                    <p class="mb-2"><strong>Período:<br></strong>Em breve</p>
+                                                    <ul class="list-unstyled mb-0">
+                                                        <li><i class="bi bi-circle text-warning me-2"></i>API REST com
+                                                            Node.js</li>
+                                                        <li><i class="bi bi-circle text-warning me-2"></i>Banco de dados
+                                                            MongoDB</li>
+                                                        <li><i class="bi bi-circle text-warning me-2"></i>Algoritmos de
+                                                            ML para previsão</li>
+                                                        <li><i class="bi bi-circle text-warning me-2"></i>Integração com
+                                                            APIs meteorológicas</li>
+                                                    </ul>
+                                                </div>
+                                                <div class="col-md-4 text-end">
+                                                    <div class="progress-circle future">
+                                                        <span>0%</span>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Fase 3 - Planejada -->
+                            <div class="timeline-item future" data-animate="fadeInLeft">
+                                <div class="timeline-marker">
+                                    <i class="bi bi-phone text-info"></i>
+                                </div>
+                                <div class="timeline-content">
+                                    <div class="timeline-card bg-white shadow-sm">
+                                        <div class="status-indicator"></div>
+                                        <div class="card-header bg-info text-white">
+                                            <h4 class="h6 mb-0 fw-semibold">
+                                                <i class="bi bi-phone me-2"></i>Fase 3 - App Mobile
+                                                <span class="badge bg-dark text-white fw-bold ms-2">Planejado</span>
+                                            </h4>
+                                        </div>
+                                        <div class="card-body">
+                                            <div class="row">
+                                                <div class="col-md-8">
+                                                    <p class="mb-2"><strong>Período:<br></strong>Em breve</p>
+                                                    <ul class="list-unstyled mb-0">
+                                                        <li><i class="bi bi-circle text-muted me-2"></i>App React Native
+                                                        </li>
+                                                        <li><i class="bi bi-circle text-muted me-2"></i>Notificações
+                                                            push</li>
+                                                        <li><i class="bi bi-circle text-muted me-2"></i>GPS e
+                                                            localização</li>
+                                                        <li><i class="bi bi-circle text-muted me-2"></i>Modo offline
+                                                        </li>
+                                                    </ul>
+                                                </div>
+                                                <div class="col-md-4 text-end">
+                                                    <div class="progress-circle future">
+                                                        <span>0%</span>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Fase 4 - Futura -->
+                            <div class="timeline-item plan" data-animate="fadeInRight">
+                                <div class="timeline-marker">
+                                    <i class="bi bi-cloud text-primary"></i>
+                                </div>
+                                <div class="timeline-content">
+                                    <div class="timeline-card bg-white shadow-sm">
+                                        <div class="status-indicator"></div>
+                                        <div class="card-header bg-primary text-white">
+                                            <h4 class="h6 mb-0 fw-semibold text-white">
+                                                <i class="bi bi-cloud me-2"></i>Fase 4 - IoT e Escalabilidade
+                                                <span class="badge bg-dark text-white fw-bold ms-2">Futuro</span>
+                                            </h4>
+                                        </div>
+                                        <div class="card-body">
+                                            <div class="row">
+                                                <div class="col-md-8">
+                                                    <p class="mb-2"><strong>Período:<br></strong>Em breve
+                                                    </p>
+                                                    <ul class="list-unstyled mb-0">
+                                                        <li><i class="bi bi-circle text-muted me-2"></i>Sensores IoT em
+                                                            campo</li>
+                                                        <li><i class="bi bi-circle text-muted me-2"></i>Infraestrutura
+                                                            em nuvem</li>
+                                                        <li><i class="bi bi-circle text-muted me-2"></i>Parcerias
+                                                            governamentais</li>
+                                                        <li><i class="bi bi-circle text-muted me-2"></i>Sistema
+                                                            multi-cidades</li>
+                                                    </ul>
+                                                </div>
+                                                <div class="col-md-4 text-end">
+                                                    <div class="progress-circle future">
+                                                        <span>0%</span>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Métricas do Projeto -->
+                <div class="row mt-5">
+                    <div class="col-12">
+                        <div class="card bg-info-light text-white">
+                            <div class="card-body">
+                                <div class="row text-center">
+                                    <div class="col-md-3 mb-3 mb-md-0">
+                                        <div class="metric-item">
+                                            <i class="bi bi-calendar-check fs-1 mb-2"></i>
+                                            <h3 class="h4 fw-bold">12</h3>
+                                            <p class="mb-0">Meses de Desenvolvimento</p>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-3 mb-3 mb-md-0">
+                                        <div class="metric-item">
+                                            <i class="bi bi-code-slash fs-1 mb-2"></i>
+                                            <h3 class="h4 fw-bold">5,000+</h3>
+                                            <p class="mb-0">Linhas de Código</p>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-3 mb-3 mb-md-0">
+                                        <div class="metric-item">
+                                            <i class="bi bi-shield-check fs-1 mb-2"></i>
+                                            <h3 class="h4 fw-bold">15</h3>
+                                            <p class="mb-0">Features Implementadas</p>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-3">
+                                        <div class="metric-item">
+                                            <i class="bi bi-people fs-1 mb-2"></i>
+                                            <h3 class="h4 fw-bold">1,000+</h3>
+                                            <p class="mb-0">Vidas Potenciais Salvas</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div> <!-- Próximos Marcos -->
+                <div class="row mt-5">
+                    <div class="col-12">
+                        <h3 class="h4 fw-bold text-center mb-2">
+                            <i class="bi bi-bookmark-star text-warning me-2"></i>Próximos Marcos & Objetivos
+                        </h3>
+                        <p class="text-center text-muted mb-5">Principais metas para expansão e aperfeiçoamento do
+                            DryPath</p>
+
+                        <div class="row g-4">
+                            <!-- Marco 1 - App Mobile -->
+                            <div class="col-lg-4 col-md-6">
+                                <div
+                                    class="milestone-card card border-0 shadow-lg h-100 position-relative overflow-hidden">
+                                    <div class="milestone-header bg-gradient-warning text-white text-center py-3">
+                                        <i class="bi bi-phone-fill fs-1 mb-2"></i>
+                                        <div class="milestone-date badge bg-warning text-warning fw-bold px-3 py-2">
+                                            Acessibilidade
+                                        </div>
+                                    </div>
+                                    <div class="card-body p-4">
+                                        <h5 class="fw-bold text-warning mb-3">
+                                            <i class="bi bi-trophy me-2"></i>App Mobile Nativo
+                                        </h5>
+                                        <p class="text-muted mb-3">Desenvolvimento e lançamento do aplicativo móvel nas
+                                            principais stores</p>
+
+                                        <div class="milestone-features mb-3">
+                                            <div class="feature-item d-flex align-items-center mb-2">
+                                                <i class="bi bi-check-circle-fill text-success me-2"></i>
+                                                <small>Notificações push em tempo real</small>
+                                            </div>
+                                            <div class="feature-item d-flex align-items-center mb-2">
+                                                <i class="bi bi-check-circle-fill text-success me-2"></i>
+                                                <small>Geolocalização e rotas de fuga</small>
+                                            </div>
+                                            <div class="feature-item d-flex align-items-center mb-2">
+                                                <i class="bi bi-check-circle-fill text-success me-2"></i>
+                                                <small>Modo offline para emergências</small>
+                                            </div>
+                                        </div>
+
+                                        <div class="milestone-progress">
+                                            <div class="d-flex justify-content-between align-items-center mb-2">
+                                                <small class="text-muted">Progresso</small>
+                                                <small class="fw-bold text-warning">25%</small>
+                                            </div>
+                                            <div class="progress" style="height: 6px;">
+                                                <div class="progress-bar bg-warning" style="width: 25%"></div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="milestone-corner">
+                                        <i class="bi bi-star-fill"></i>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Marco 2 - Parcerias Institucionais -->
+                            <div class="col-lg-4 col-md-6">
+                                <div
+                                    class="milestone-card card border-0 shadow-lg h-100 position-relative overflow-hidden">
+                                    <div class="milestone-header bg-gradient-success text-white text-center py-3">
+                                        <i class="bi bi-building-fill fs-1 mb-2"></i>
+                                        <div class="milestone-date badge bg-success text-success fw-bold px-3 py-2">
+                                            Parcerias
+                                        </div>
+                                    </div>
+                                    <div class="card-body p-4">
+                                        <h5 class="fw-bold text-success mb-3">
+                                            <i class="bi bi-award me-2"></i>Parcerias Estratégicas
+                                        </h5>
+                                        <p class="text-muted mb-3">Estabelecimento de parcerias com órgãos
+                                            governamentais e ONGs</p>
+
+                                        <div class="milestone-features mb-3">
+                                            <div class="feature-item d-flex align-items-center mb-2">
+                                                <i class="bi bi-shield-check text-success me-2"></i>
+                                                <small>Defesa Civil Municipal</small>
+                                            </div>
+                                            <div class="feature-item d-flex align-items-center mb-2">
+                                                <i class="bi bi-shield-check text-success me-2"></i>
+                                                <small>Corpo de Bombeiros</small>
+                                            </div>
+                                            <div class="feature-item d-flex align-items-center mb-2">
+                                                <i class="bi bi-shield-check text-success me-2"></i>
+                                                <small>Instituto Nacional de Meteorologia</small>
+                                            </div>
+                                        </div>
+
+                                        <div class="milestone-progress">
+                                            <div class="d-flex justify-content-between align-items-center mb-2">
+                                                <small class="text-muted">Negociações</small>
+                                                <small class="fw-bold text-success">15%</small>
+                                            </div>
+                                            <div class="progress" style="height: 6px;">
+                                                <div class="progress-bar bg-success" style="width: 15%"></div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="milestone-corner">
+                                        <i class="bi bi-patch-check-fill"></i>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Marco 3 - Expansão Regional -->
+                            <div class="col-lg-4 col-md-6 mx-auto">
+                                <div
+                                    class="milestone-card card border-0 shadow-lg h-100 position-relative overflow-hidden">
+                                    <div class="milestone-header bg-gradient-primary text-white text-center py-3">
+                                        <i class="bi bi-globe-americas fs-1 mb-2"></i>
+                                        <div class="milestone-date badge bg-gradient-primary text-primary fw-bold px-3 py-2">
+                                            Regionalização
+                                        </div>
+                                    </div>
+                                    <div class="card-body p-4">
+                                        <h5 class="fw-bold text-primary mb-3">
+                                            <i class="bi bi-rocket me-2"></i>Expansão Nacional
+                                        </h5>
+                                        <p class="text-muted mb-3">Implementação em múltiplas cidades e regiões
+                                            metropolitanas</p>
+
+                                        <div class="milestone-features mb-3">
+                                            <div class="feature-item d-flex align-items-center mb-2">
+                                                <i class="bi bi-geo-alt-fill text-primary me-2"></i>
+                                                <small>5 cidades piloto iniciais</small>
+                                            </div>
+                                            <div class="feature-item d-flex align-items-center mb-2">
+                                                <i class="bi bi-geo-alt-fill text-primary me-2"></i>
+                                                <small>Cobertura de áreas de risco</small>
+                                            </div>
+                                            <div class="feature-item d-flex align-items-center mb-2">
+                                                <i class="bi bi-geo-alt-fill text-primary me-2"></i>
+                                                <small>Rede nacional de sensores</small>
+                                            </div>
+                                        </div>
+
+                                        <div class="milestone-progress">
+                                            <div class="d-flex justify-content-between align-items-center mb-2">
+                                                <small class="text-muted">Planejamento</small>
+                                                <small class="fw-bold text-primary">5%</small>
+                                            </div>
+                                            <div class="progress" style="height: 6px;">
+                                                <div class="progress-bar bg-primary" style="width: 5%"></div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="milestone-corner">
+                                        <i class="bi bi-lightning-fill"></i>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
     </main>
     <footer class="footer text-white py-5">
         <div class="container">
@@ -406,7 +787,8 @@
                             </a>
                         </li>
                         <li class="mb-2">
-                            <a href="educacional.html" class="text-white text-decoration-none d-flex align-items-center">
+                            <a href="educacional.html"
+                                class="text-white text-decoration-none d-flex align-items-center">
                                 <i class="bi bi-book-half me-2"></i>Educacional
                             </a>
                         </li>
@@ -510,4 +892,5 @@
     <script src="js/sobre.js"></script>
     <script src="js/chatbot.js"></script>
 </body>
+
 </html>

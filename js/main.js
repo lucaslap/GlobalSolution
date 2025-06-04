@@ -239,22 +239,8 @@ function initScrollEffects() {
 document.addEventListener('DOMContentLoaded', function() {
     // Inicializa funcionalidades básicas
     updateTimestamp();
-    initMobileNavigation();
     initLazyLoading();
     initScrollEffects();
-    initThemeToggle();
-    
-    // Atualiza timestamp a cada minuto
-    setInterval(updateTimestamp, 60000);
-    
-    // Adiciona efeito de carregamento suave
-    document.body.classList.add('loaded');
-    
-    // Adiciona classe para elementos animados
-    const elements = document.querySelectorAll('.card, .problema-card, .tech-card, .stat-card');
-    elements.forEach(el => el.classList.add('animate-on-scroll'));
-    
-    console.log('FloodAlert System Initialized ✅');
 });
 
 // Adiciona CSS para animações via JavaScript
@@ -353,7 +339,6 @@ window.FloodAlert = {
     showNotification,
     validateEmail,
     validatePhone,
-    formatPhone,
     generateUniqueId,
     saveToLocalStorage,
     getFromLocalStorage,
