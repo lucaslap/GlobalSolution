@@ -30,84 +30,7 @@ function animateStatNumbers() {
     });
 }
 
-// Observer para iniciar animação quando entrar na tela
-function initStatObserver() {
-    const statsSection = document.querySelector('.estatisticas');
-    if (!statsSection) return;
-    
-    const observer = new IntersectionObserver((entries) => {
-        entries.forEach(entry => {
-            if (entry.isIntersecting && !entry.target.classList.contains('animated')) {
-                entry.target.classList.add('animated');
-                setTimeout(animateStatNumbers, 300);
-            }
-        });
-    }, { threshold: 0.5 });
-    
-    observer.observe(statsSection);
-}
-
-// Função para simular alertas em tempo real na home
-function simulateRealTimeAlerts() {
-    const alertMessages = [
-        { message: "Sistema de monitoramento ativo", type: "info" },
-        { message: "Condições meteorológicas normais", type: "success" },
-        { message: "Sensores funcionando corretamente", type: "info" },
-        { message: "Última verificação: dados atualizados", type: "success" }
-    ];
-    
-    let currentIndex = 0;
-    
-    setInterval(() => {
-        const alert = alertMessages[currentIndex];
-        
-        // Atualiza o dashboard preview se existir
-        const alertBox = document.querySelector('.alert-box p');
-        if (alertBox) {
-            alertBox.textContent = alert.message;
-        }
-        
-        currentIndex = (currentIndex + 1) % alertMessages.length;
-    }, 8000);
-}
-
-// Função para adicionar efeitos de hover nos cards de problema
-function initProblemCardEffects() {
-    const problemCards = document.querySelectorAll('.problema-card');
-    
-    problemCards.forEach(card => {
-        card.addEventListener('mouseenter', function() {
-            this.style.transform = 'translateY(-8px) scale(1.02)';
-            this.style.boxShadow = '0 20px 40px rgba(0, 0, 0, 0.15)';
-        });
-        
-        card.addEventListener('mouseleave', function() {
-            this.style.transform = 'translateY(0) scale(1)';
-            this.style.boxShadow = '0 4px 6px -1px rgb(0 0 0 / 0.1)';
-        });
-    });
-}
-
-// Função para animar as features da solução
-function initFeatureAnimations() {
-    const features = document.querySelectorAll('.feature');
-    
-    features.forEach((feature, index) => {
-        feature.style.animationDelay = `${index * 0.2}s`;
-        
-        feature.addEventListener('mouseenter', function() {
-            this.style.transform = 'translateX(12px) scale(1.02)';
-            this.style.backgroundColor = '#e0f2fe';
-        });
-        
-        feature.addEventListener('mouseleave', function() {
-            this.style.transform = 'translateX(0) scale(1)';
-            this.style.backgroundColor = '#f9fafb';
-        });
-    });
-}
-
-// Função para criar efeito de ondas no hero melhorada
+// Função para criar efeito de ondas na hero section
 function createWaveEffect() {
     const hero = document.querySelector('.hero');
     if (!hero) return;
@@ -138,7 +61,7 @@ function createWaveEffect() {
     hero.style.overflow = 'hidden';
     hero.appendChild(waves);
     
-    // Adiciona estilos avançados para as ondas
+    // Adiciona estilos para as ondas
     const waveStyles = document.createElement('style');
     waveStyles.textContent = `
         .hero-waves {
@@ -344,42 +267,6 @@ function createWaveEffect() {
     `;
     
     document.head.appendChild(waveStyles);
-    
-    // Adiciona efeito de scroll às ondas
-    let ticking = false;
-    
-    function updateWaves() {
-        const scrolled = window.pageYOffset;
-        const rate = scrolled * 0.5;
-        
-        if (scrolled > 100) {
-            waves.classList.add('scrolled');
-        } else {
-            waves.classList.remove('scrolled');
-        }
-        
-        // Parallax suave nas ondas
-        waves.style.transform = `translateY(${rate * 0.3}px)`;
-        
-        ticking = false;
-    }
-    
-    function requestTick() {
-        if (!ticking) {
-            requestAnimationFrame(updateWaves);
-            ticking = true;
-        }
-    }
-    
-    window.addEventListener('scroll', requestTick, { passive: true });
-    
-    // Cleanup function
-    waves.cleanup = () => {
-        window.removeEventListener('scroll', requestTick);
-        waves.remove();
-        waveStyles.remove();
-    };
-    
     return waves;
 }
 
@@ -439,48 +326,6 @@ function getPointColor(type) {
     return colors[type] || colors.safe;
 }
 
-// Função para adicionar easter egg interativo
-function initEasterEgg() {
-    let clickCount = 0;
-    const floodAnimation = document.querySelector('.flood-animation');
-    
-    if (floodAnimation) {
-        floodAnimation.addEventListener('click', () => {
-            clickCount++;
-            
-            if (clickCount === 5) {
-                showNotification('🎉 Você descobriu um easter egg! Sistema FloodAlert ativado!', 'success');
-                floodAnimation.style.animation = 'float 1s ease-in-out infinite, spin 2s linear infinite';
-                
-                setTimeout(() => {
-                    floodAnimation.style.animation = 'float 3s ease-in-out infinite';
-                    clickCount = 0;
-                }, 3000);
-            }
-        });
-    }
-}
-
-// Função para carousel de depoimentos (se implementado)
-function initTestimonialCarousel() {
-    const testimonials = [
-        {
-            text: "O FloodAlert salvou nossa comunidade com alertas precisos.",
-            author: "Maria Silva, Residente"
-        },
-        {
-            text: "Sistema eficiente que realmente funciona em emergências.",
-            author: "João Santos, Defesa Civil"
-        },
-        {
-            text: "Interface intuitiva e notificações em tempo real.",
-            author: "Ana Costa, Coordenadora"
-        }
-    ];
-    
-    // Implementação do carousel seria adicionada aqui se necessário
-}
-
 // Função para efeito de digitação no hero
 function initTypingEffect() {
     const typingElement = document.getElementById('typingText');
@@ -518,104 +363,6 @@ function initTypingEffect() {
     type();
 }
 
-// Função para animar estatísticas do hero
-function animateHeroStats() {
-    const statNumbers = document.querySelectorAll('.hero-stats .stat-number');
-    
-    const observer = new IntersectionObserver((entries) => {
-        entries.forEach(entry => {
-            if (entry.isIntersecting && !entry.target.dataset.animated) {
-                entry.target.dataset.animated = 'true';
-                
-                const finalText = entry.target.textContent;
-                const isPercentage = finalText.includes('%');
-                const hasUnit = finalText.includes('h') || finalText.includes('/');
-                
-                if (isPercentage) {
-                    const number = parseInt(finalText);
-                    animateNumber(entry.target, 0, number, '%');
-                } else if (hasUnit) {
-                    // Para textos como "24/7" ou "6h", não animar
-                    entry.target.style.opacity = '0';
-                    entry.target.style.transform = 'translateY(20px)';
-                    setTimeout(() => {
-                        entry.target.style.transition = 'all 0.6s ease';
-                        entry.target.style.opacity = '1';
-                        entry.target.style.transform = 'translateY(0)';
-                    }, 200);
-                }
-            }
-        });
-    }, { threshold: 0.5 });
-    
-    statNumbers.forEach(stat => observer.observe(stat));
-}
-
-function animateNumber(element, start, end, suffix = '') {
-    const duration = 1500;
-    const startTime = Date.now();
-    
-    function update() {
-        const elapsed = Date.now() - startTime;
-        const progress = Math.min(elapsed / duration, 1);
-        
-        const easeOut = 1 - Math.pow(1 - progress, 3);
-        const current = Math.round(start + (end - start) * easeOut);
-        
-        element.textContent = current + suffix;
-        
-        if (progress < 1) {
-            requestAnimationFrame(update);
-        }
-    }
-    
-    update();
-}
-
-// Função para parallax scroll no hero
-function initHeroParallax() {
-    const hero = document.querySelector('.hero');
-    const floodAnimation = document.querySelector('.flood-animation');
-    const floatingCards = document.querySelectorAll('.floating-card');
-    
-    if (!hero) return;
-    
-    let ticking = false;
-    
-    function updateParallax() {
-        const scrolled = window.pageYOffset;
-        const rate = scrolled * -0.5;
-        const heroHeight = hero.offsetHeight;
-        
-        if (scrolled < heroHeight) {
-            // Parallax no background
-            hero.style.transform = `translateY(${rate * 0.3}px)`;
-            
-            // Parallax na animação de enchente
-            if (floodAnimation) {
-                floodAnimation.style.transform = `translateY(${rate * 0.2}px) rotate(${scrolled * 0.1}deg)`;
-            }
-            
-            // Parallax nos cards flutuantes
-            floatingCards.forEach((card, index) => {
-                const cardRate = rate * (0.1 + index * 0.05);
-                card.style.transform = `translateY(${cardRate}px) translateX(${cardRate * 0.5}px)`;
-            });
-        }
-        
-        ticking = false;
-    }
-    
-    function requestTick() {
-        if (!ticking) {
-            requestAnimationFrame(updateParallax);
-            ticking = true;
-        }
-    }
-    
-    window.addEventListener('scroll', requestTick, { passive: true });
-}
-
 // Função para animar estatísticas da seção problema
 function animateProblemStats() {
     const problemStats = document.querySelectorAll('.stat-number-problem');
@@ -626,7 +373,8 @@ function animateProblemStats() {
                 entry.target.dataset.animated = 'true';
                 
                 const finalText = entry.target.textContent;
-                const target = parseInt(entry.target.getAttribute('data-target'));
+                const target = parseFloat(entry.target.dataset.target || entry.target.textContent.replace(/[^\d]/g, ''));
+                const suffix = entry.target.dataset.suffix || '';
                 
                 if (finalText.includes('M+')) {
                     animateCounter(entry.target, 0, target, 'M+');
@@ -634,6 +382,8 @@ function animateProblemStats() {
                     animateCounter(entry.target, 0, target, 'min');
                 } else if (finalText.includes('%')) {
                     animateCounter(entry.target, 0, target, '%');
+                } else {
+                    animateCounter(entry.target, 0, target, suffix, 2000, 1);
                 }
             }
         });
@@ -642,25 +392,31 @@ function animateProblemStats() {
     problemStats.forEach(stat => observer.observe(stat));
 }
 
-function animateCounter(element, start, end, suffix) {
-    const duration = 2000;
-    const startTime = Date.now();
-    
-    function update() {
-        const elapsed = Date.now() - startTime;
-        const progress = Math.min(elapsed / duration, 1);
-        
-        const easeOut = 1 - Math.pow(1 - progress, 3);
-        const current = Math.round(start + (end - start) * easeOut);
-        
-        element.textContent = current + suffix;
-        
-        if (progress < 1) {
+function animateCounter(element, start, end, suffix = '', duration = 2000, decimals = 1) {
+    let startTime = null;
+
+    function update(currentTime) {
+        if (!startTime) startTime = currentTime;
+        const progress = currentTime - startTime;
+        const percent = Math.min(progress / duration, 1);
+        const current = start + (end - start) * percent;
+
+        // Formata com casas decimais se necessário
+        element.textContent = (suffix === 'Bi' || suffix === 'M+' || suffix === 'min' || suffix === '%')
+            ? current.toFixed(decimals) + suffix
+            : Math.floor(current) + suffix;
+
+        if (percent < 1) {
             requestAnimationFrame(update);
+        } else {
+            // Garante o valor final exato
+            element.textContent = (suffix === 'Bi' || suffix === 'M+' || suffix === 'min' || suffix === '%')
+                ? end.toFixed(decimals) + suffix
+                : Math.floor(end) + suffix;
         }
     }
-    
-    update();
+
+    requestAnimationFrame(update);
 }
 
 // Função para animar barras de progresso
@@ -683,40 +439,6 @@ function animateProgressBars() {
     }, { threshold: 0.5 });
     
     progressBars.forEach(bar => observer.observe(bar));
-}
-
-// Função para efeito tilt nos cards
-function initTiltEffect() {
-    const tiltCards = document.querySelectorAll('[data-tilt]');
-    
-    tiltCards.forEach(card => {
-        let isHovering = false;
-        
-        card.addEventListener('mouseenter', () => {
-            isHovering = true;
-        });
-        
-        card.addEventListener('mouseleave', () => {
-            isHovering = false;
-            card.style.transform = 'perspective(1000px) rotateX(0deg) rotateY(0deg) translateY(0px)';
-        });
-        
-        card.addEventListener('mousemove', (e) => {
-            if (!isHovering) return;
-            
-            const rect = card.getBoundingClientRect();
-            const centerX = rect.left + rect.width / 2;
-            const centerY = rect.top + rect.height / 2;
-            
-            const deltaX = e.clientX - centerX;
-            const deltaY = e.clientY - centerY;
-            
-            const rotateX = (deltaY / rect.height) * -10;
-            const rotateY = (deltaX / rect.width) * 10;
-            
-            card.style.transform = `perspective(1000px) rotateX(${rotateX}deg) rotateY(${rotateY}deg) translateY(-15px)`;
-        });
-    });
 }
 
 // Função para efeitos de hover nos cards de problemas
@@ -776,455 +498,53 @@ function showProblemDetails(index) {
     showNotification(`💡 ${problemData[index].title}: ${problemData[index].details}`, 'info', 5000);
 }
 
-// Função para criar efeito de partículas de chuva
-function createRainEffect() {
-    const problemSection = document.getElementById('problema');
-    if (!problemSection) return;
-    
-    const rainContainer = document.createElement('div');
-    rainContainer.className = 'rain-effect position-absolute w-100 h-100';
-    rainContainer.style.cssText = `
-        top: 0;
-        left: 0;
-        pointer-events: none;
-        z-index: 1;
-        overflow: hidden;
-    `;
-    
-    // Criar gotas de chuva
-    for (let i = 0; i < 20; i++) {
-        const drop = document.createElement('div');
-        drop.className = 'rain-drop';
-        drop.style.cssText = `
-            position: absolute;
-            width: 2px;
-            height: 10px;
-            background: linear-gradient(to bottom, rgba(59, 130, 246, 0.3), rgba(59, 130, 246, 0.1));
-            border-radius: 1px;
-            left: ${Math.random() * 100}%;
-            animation: rainFall ${3 + Math.random() * 2}s linear infinite;
-            animation-delay: ${Math.random() * 2}s;
-        `;
-        
-        rainContainer.appendChild(drop);
-    }
-    
-    problemSection.appendChild(rainContainer);
-    
-    // Adicionar keyframes para animação da chuva
-    if (!document.getElementById('rainStyles')) {
-        const rainStyles = document.createElement('style');
-        rainStyles.id = 'rainStyles';
-        rainStyles.textContent = `
-            @keyframes rainFall {
-                0% {
-                    transform: translateY(-100vh);
-                    opacity: 0;
-                }
-                10% {
-                    opacity: 1;
-                }
-                90% {
-                    opacity: 1;
-                }
-                100% {
-                    transform: translateY(100vh);
-                    opacity: 0;
-                }
-            }
-            
-            @keyframes metricPulse {
-                0%, 100% { transform: scale(1); }
-                50% { transform: scale(1.1); color: #0d6efd; }
-            }
-        `;
-        document.head.appendChild(rainStyles);
-    }
-}
-
-
-
-// Função para mostrar vídeo de demonstração
-function showDemoVideo() {
-    const videoModal = createVideoModal();
-    document.body.appendChild(videoModal);
-    
-    setTimeout(() => {
-        videoModal.classList.add('show');
-    }, 100);
-}
-
-function createVideoModal() {
-    const modal = document.createElement('div');
-    modal.className = 'video-demo-modal';
-    modal.innerHTML = `
-        <div class="modal-backdrop"></div>
-        <div class="modal-content">
-            <div class="modal-header">
-                <h3 class="modal-title">
-                    <i class="bi bi-camera-video-fill me-2"></i>
-                    Demonstração do DryPath
-                </h3>
-                <button class="btn-close" onclick="closeVideoDemo(this)">
-                    <i class="bi bi-x-lg"></i>
-                </button>
-            </div>
-            <div class="modal-body">
-                <div class="video-container">
-                    <div class="video-placeholder">
-                        <div class="video-icon">
-                            <i class="bi bi-play-circle-fill"></i>
-                        </div>
-                        <h4>Vídeo Demonstrativo</h4>
-                        <p class="text-muted">Conheça as principais funcionalidades do sistema DryPath</p>
-                        <div class="video-features">
-                            <div class="feature-item">
-                                <i class="bi bi-check-circle text-success me-2"></i>
-                                Interface intuitiva e responsiva
-                            </div>
-                            <div class="feature-item">
-                                <i class="bi bi-check-circle text-success me-2"></i>
-                                Sistema de alertas em tempo real
-                            </div>
-                            <div class="feature-item">
-                                <i class="bi bi-check-circle text-success me-2"></i>
-                                Mapas interativos e rotas otimizadas
-                            </div>
-                            <div class="feature-item">
-                                <i class="bi bi-check-circle text-success me-2"></i>
-                                Dashboard com métricas avançadas
-                            </div>
-                        </div>
-                        <button class="btn btn-primary mt-3" onclick="playVideoDemo()">
-                            <i class="bi bi-play-fill me-2"></i>Assistir Demonstração
-                        </button>
-                    </div>
-                </div>
-            </div>
-        </div>
-    `;
-    
-    // Add styles for video modal
-    if (!document.getElementById('videoDemoStyles')) {
-        const styles = document.createElement('style');
-        styles.id = 'videoDemoStyles';
-        styles.textContent = `
-            .video-demo-modal {
-                position: fixed;
-                top: 0;
-                left: 0;
-                width: 100%;
-                height: 100%;
-                z-index: 9999;
-                opacity: 0;
-                visibility: hidden;
-                transition: all 0.3s ease;
-            }
-            
-            .video-demo-modal.show {
-                opacity: 1;
-                visibility: visible;
-            }
-            
-            .video-container {
-                max-width: 800px;
-                margin: 0 auto;
-            }
-            
-            .video-placeholder {
-                background: linear-gradient(135deg, #f8f9fa, #e9ecef);
-                border-radius: 15px;
-                padding: 3rem 2rem;
-                text-align: center;
-                border: 2px dashed #dee2e6;
-            }
-            
-            .video-icon i {
-                font-size: 4rem;
-                color: #2563eb;
-                margin-bottom: 1rem;
-            }
-            
-            .video-features {
-                text-align: left;
-                max-width: 400px;
-                margin: 2rem auto;
-            }
-            
-            .feature-item {
-                padding: 0.5rem 0;
-                border-bottom: 1px solid rgba(0,0,0,0.1);
-            }
-            
-            .feature-item:last-child {
-                border-bottom: none;
-            }
-        `;
-        document.head.appendChild(styles);
-    }
-    
-    return modal;
-}
-
-function playVideoDemo() {
-    // Simula o carregamento e reprodução do vídeo
-    showNotification('🎬 Vídeo de demonstração iniciado! (Funcionalidade simulada)', 'success', 4000);
-}
-
-function closeVideoDemo(button) {
-    const modal = button.closest('.video-demo-modal');
-    modal.classList.remove('show');
-    
-    setTimeout(() => {
-        modal.remove();
-    }, 300);
-}
-
-// Função para compartilhar projeto
-function shareProject() {
-    if (navigator.share) {
-        navigator.share({
-            title: 'DryPath - Sistema de Alerta para Enchentes',
-            text: 'Conheça o DryPath, um sistema revolucionário para alertas e evacuação durante enchentes!',
-            url: window.location.href,
-        }).then(() => {
-            showNotification('✅ Projeto compartilhado com sucesso!', 'success', 3000);
-        }).catch((error) => {
-            console.log('Erro ao compartilhar:', error);
-            fallbackShare();
-        });
-    } else {
-        fallbackShare();
-    }
-}
-
-function fallbackShare() {
-    const shareModal = createShareModal();
-    document.body.appendChild(shareModal);
-    
-    setTimeout(() => {
-        shareModal.classList.add('show');
-    }, 100);
-}
-
-function createShareModal() {
-    const modal = document.createElement('div');
-    modal.className = 'share-modal';
-    modal.innerHTML = `
-        <div class="modal-backdrop"></div>
-        <div class="modal-content">
-            <div class="modal-header">
-                <h3 class="modal-title">
-                    <i class="bi bi-share-fill me-2"></i>
-                    Compartilhar DryPath
-                </h3>
-                <button class="btn-close" onclick="closeShareModal(this)">
-                    <i class="bi bi-x-lg"></i>
-                </button>
-            </div>
-            <div class="modal-body">
-                <p class="text-muted mb-3">Compartilhe o DryPath e ajude a salvar vidas!</p>
-                
-                <div class="share-options">
-                    <button class="share-option" onclick="shareToSocial('facebook')">
-                        <i class="bi bi-facebook text-primary"></i>
-                        <span>Facebook</span>
-                    </button>
-                    <button class="share-option" onclick="shareToSocial('twitter')">
-                        <i class="bi bi-twitter text-info"></i>
-                        <span>Twitter</span>
-                    </button>
-                    <button class="share-option" onclick="shareToSocial('linkedin')">
-                        <i class="bi bi-linkedin text-primary"></i>
-                        <span>LinkedIn</span>
-                    </button>
-                    <button class="share-option" onclick="shareToSocial('whatsapp')">
-                        <i class="bi bi-whatsapp text-success"></i>
-                        <span>WhatsApp</span>
-                    </button>
-                </div>
-                
-                <div class="share-link mt-4">
-                    <label class="form-label">Link para compartilhar:</label>
-                    <div class="input-group">
-                        <input type="text" class="form-control" value="${window.location.href}" readonly id="shareLink">
-                        <button class="btn btn-outline-primary" onclick="copyShareLink()">
-                            <i class="bi bi-clipboard"></i>
-                        </button>
-                    </div>
-                </div>
-            </div>
-        </div>
-    `;
-    
-    // Add styles for share modal
-    if (!document.getElementById('shareModalStyles')) {
-        const styles = document.createElement('style');
-        styles.id = 'shareModalStyles';
-        styles.textContent = `
-            .share-modal {
-                position: fixed;
-                top: 0;
-                left: 0;
-                width: 100%;
-                height: 100%;
-                z-index: 9999;
-                opacity: 0;
-                visibility: hidden;
-                transition: all 0.3s ease;
-            }
-            
-            .share-modal.show {
-                opacity: 1;
-                visibility: visible;
-            }
-            
-            .share-options {
-                display: grid;
-                grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
-                gap: 1rem;
-                margin: 1rem 0;
-            }
-            
-            .share-option {
-                display: flex;
-                flex-direction: column;
-                align-items: center;
-                gap: 0.5rem;
-                padding: 1rem;
-                border: 1px solid #dee2e6;
-                border-radius: 10px;
-                background: white;
-                transition: all 0.3s ease;
-                cursor: pointer;
-            }
-            
-            .share-option:hover {
-                transform: translateY(-3px);
-                box-shadow: 0 5px 15px rgba(0,0,0,0.1);
-                border-color: #2563eb;
-            }
-            
-            .share-option i {
-                font-size: 1.5rem;
-            }
-        `;
-        document.head.appendChild(styles);
-    }
-    
-    return modal;
-}
-
-function shareToSocial(platform) {
-    const url = encodeURIComponent(window.location.href);
-    const text = encodeURIComponent('Conheça o DryPath - Sistema revolucionário de alertas para enchentes!');
-    
-    const urls = {
-        facebook: `https://www.facebook.com/sharer/sharer.php?u=${url}`,
-        twitter: `https://twitter.com/intent/tweet?url=${url}&text=${text}`,
-        linkedin: `https://www.linkedin.com/sharing/share-offsite/?url=${url}`,
-        whatsapp: `https://wa.me/?text=${text} ${url}`
-    };
-    
-    if (urls[platform]) {
-        window.open(urls[platform], '_blank', 'width=600,height=400');
-        showNotification(`📱 Compartilhando no ${platform}!`, 'info', 3000);
-    }
-}
-
-function copyShareLink() {
-    const linkInput = document.getElementById('shareLink');
-    linkInput.select();
-    linkInput.setSelectionRange(0, 99999);
-    
-    try {
-        document.execCommand('copy');
-        showNotification('📋 Link copiado para a área de transferência!', 'success', 3000);
-    } catch (err) {
-        showNotification('❌ Erro ao copiar link', 'error', 3000);
-    }
-}
-
-function closeShareModal(button) {
-    const modal = button.closest('.share-modal');
-    modal.classList.remove('show');
-    
-    setTimeout(() => {
-        modal.remove();
-    }, 300);
-}
-
-// Função para scroll suave até o topo
-function scrollToTop() {
-    window.scrollTo({
-        top: 0,
-        behavior: 'smooth'
-    });
-}
-
-// Animação dos contadores na seção CTA
-function animateCTACounters() {
-    const counters = document.querySelectorAll('#cta-final .counter-value');
-    
-    counters.forEach(counter => {
-        const target = parseInt(counter.getAttribute('data-target'));
-        const duration = 2000; // 2 segundos
-        const increment = target / (duration / 16); // 60 FPS
-        let current = 0;
-        
-        const timer = setInterval(() => {
-            current += increment;
-            
-            if (current >= target) {
-                current = target;
-                clearInterval(timer);
-            }
-            
-            // Formatação dos números
-            let displayValue = Math.floor(current);
-            
-            if (counter.textContent.includes('%')) {
-                counter.textContent = displayValue + '%';
-            } else if (counter.textContent.includes('+')) {
-                counter.textContent = displayValue + '+';
-            } else if (counter.textContent.includes('s')) {
-                counter.textContent = displayValue + 's';
-            } else {
-                counter.textContent = displayValue;
-            }
-        }, 16);
-    });
-}
-
-// Função para animar elementos da CTA quando entram na viewport
-function initCTAAnimations() {
-    const ctaSection = document.getElementById('cta-final');
-    if (!ctaSection) return;
+// Função para animações da seção solução
+function initSolutionAnimations() {
+    const solutionCards = document.querySelectorAll('.enhanced-feature');
     
     const observer = new IntersectionObserver((entries) => {
-        entries.forEach(entry => {
+        entries.forEach((entry, index) => {
             if (entry.isIntersecting) {
-                // Animar contadores
                 setTimeout(() => {
-                    animateCTACounters();
-                }, 500);
-                
-                // Animar elementos floating
-                const floatingElements = document.querySelectorAll('.floating-element');
-                floatingElements.forEach((element, index) => {
-                    setTimeout(() => {
-                        element.style.opacity = '0.7';
-                        element.style.animation = `floatElement 8s ease-in-out infinite`;
-                        element.style.animationDelay = `${-index * 1.5}s`;
-                    }, index * 200);
-                });
-                
-                observer.unobserve(entry.target);
+                    entry.target.style.opacity = '1';
+                    entry.target.style.transform = 'translateY(0)';
+                }, index * 200);
             }
         });
     }, { threshold: 0.3 });
     
-    observer.observe(ctaSection);
+    solutionCards.forEach(card => {
+        card.style.opacity = '0';
+        card.style.transform = 'translateY(30px)';
+        card.style.transition = 'all 0.6s ease';
+        observer.observe(card);
+    });
+}
+
+// Função para interações das features
+function initFeatureInteractions() {
+    const features = document.querySelectorAll('.enhanced-feature');
+    
+    features.forEach(feature => {
+        feature.addEventListener('mouseenter', function() {
+            const icon = this.querySelector('.feature-icon-container i');
+            if (icon) {
+                icon.style.transform = 'scale(1.2) rotate(10deg)';
+            }
+        });
+        
+        feature.addEventListener('mouseleave', function() {
+            const icon = this.querySelector('.feature-icon-container i');
+            if (icon) {
+                icon.style.transform = 'scale(1) rotate(0deg)';
+            }
+        });
+        
+        feature.addEventListener('click', function() {
+            const featureName = this.querySelector('h4')?.textContent || 'Feature';
+            showNotification(`📊 Explorando: ${featureName}`, 'info', 3000);
+        });
+    });
 }
 
 // Função para adicionar efeitos de hover personalizados
@@ -1242,85 +562,7 @@ function initCTAInteractions() {
             this.style.borderWidth = '1px';
         });
     });
-    
-    // Efeito parallax nos elementos floating
-    document.addEventListener('mousemove', function(e) {
-        const floatingElements = document.querySelectorAll('.floating-element');
-        const mouseX = e.clientX / window.innerWidth;
-        const mouseY = e.clientY / window.innerHeight;
-        
-        floatingElements.forEach((element, index) => {
-            const speed = (index + 1) * 0.5;
-            const x = (mouseX - 0.5) * speed * 20;
-            const y = (mouseY - 0.5) * speed * 20;
-            
-            element.style.transform = `translateX(${x}px) translateY(${y}px)`;
-        });
-    });
-    
-    // Efeito de digitação no texto de urgência
-    const urgencyElement = document.querySelector('.urgency-message strong');
-    if (urgencyElement) {
-        setInterval(() => {
-            urgencyElement.style.color = urgencyElement.style.color === 'rgb(239, 68, 68)' ? '#f59e0b' : '#ef4444';
-        }, 2000);
-    }
 }
-
-// Event Listeners específicos da home
-document.addEventListener('DOMContentLoaded', function() {
-    // Inicializa todas as funcionalidades da home
-    initStatObserver();
-    simulateRealTimeAlerts();
-    initProblemCardEffects();
-    initFeatureAnimations();
-    createWaveEffect();
-    initParallaxEffect();
-    initMapPreview();
-    initEasterEgg();
-    
-    // Inicializa novas funcionalidades
-    initTypingEffect();
-    animateHeroStats();
-    initHeroParallax();
-    animateProblemStats();
-    animateProgressBars();
-    initTiltEffect();
-    createRainEffect();
-    
-    // Inicializa funcionalidades da seção solução
-    initSolutionAnimations();
-    simulateRealTimeData();
-    initFeatureInteractions();
-    
-    // Inicializa funcionalidades da seção CTA
-    initCTAAnimations();
-    initCTAInteractions();
-    
-    // Adiciona evento ao botão CTA principal
-    const ctaButton = document.querySelector('.cta-button');
-    if (ctaButton) {
-        ctaButton.addEventListener('click', function(e) {
-            e.preventDefault();
-            const targetId = this.getAttribute('onclick')?.match(/'([^']+)'/)?.[1];
-            if (targetId) {
-                scrollToSection(targetId);
-            }
-        });
-    }
-    
-    // Adiciona smooth scroll para todos os links internos
-    const internalLinks = document.querySelectorAll('a[href^="#"]');
-    internalLinks.forEach(link => {
-        link.addEventListener('click', function(e) {
-            e.preventDefault();
-            const targetId = this.getAttribute('href').substring(1);
-            scrollToSection(targetId);
-        });
-    });
-    
-    console.log('Home page initialized ✅');
-});
 
 // Função para cleanup quando sair da página
 window.addEventListener('beforeunload', function() {
@@ -1328,7 +570,7 @@ window.addEventListener('beforeunload', function() {
     console.log('Home page cleanup');
 });
 
-// ===== MAPA INTERATIVO COM LEAFLET =====
+// Mapa interativo de áreas de risco
 let dryPathMap = null;
 let riskMarkers = [];
 let evacuationRoutes = [];
@@ -1336,6 +578,8 @@ let evacuationRoutes = [];
 function toggleMapLegend() {
     const legend = document.getElementById('mapLegend');
     const toggleBtn = document.getElementById('legendToggle');
+    const dryPathMap = document.getElementById('drypath-map');
+
     
     if (legend && toggleBtn) {
         legend.classList.toggle('show');
@@ -1363,19 +607,16 @@ function filterMarkersByRisk(riskLevel) {
     if (selectedItem) {
         selectedItem.classList.add('active');
     }
-    
-    // Aqui você pode adicionar lógica para filtrar marcadores
-    console.log(`Filtrando marcadores por: ${riskLevel}`);
 }
 
 // Função para atualizar contadores da legenda
 function updateLegendCounts() {
     // Simular contagens (em implementação real, viria dos dados)
     const counts = {
-        high: Math.floor(Math.random() * 5) + 1,
-        medium: Math.floor(Math.random() * 4) + 1,
-        low: Math.floor(Math.random() * 3) + 1,
-        route: Math.floor(Math.random() * 8) + 3
+        high: 3,
+        medium: 2,
+        low: 1,
+        route: 3,
     };
     
     // Atualizar elementos
@@ -1817,30 +1058,15 @@ document.addEventListener('DOMContentLoaded', function() {
     }
 
     // Inicializa todas as funcionalidades da home
-    initStatObserver();
-    simulateRealTimeAlerts();
     initProblemCardEffects();
-    initFeatureAnimations();
     createWaveEffect();
-    initParallaxEffect();
     initMapPreview();
-    initEasterEgg();
-    
-    // Inicializa novas funcionalidades
     initTypingEffect();
-    animateHeroStats();
-    initHeroParallax();
     animateProblemStats();
     animateProgressBars();
-    initTiltEffect();
     createRainEffect();
-    
-    // Inicializa funcionalidades da seção solução
     initSolutionAnimations();
-    simulateRealTimeData();
     initFeatureInteractions();
-    
-    // Inicializa funcionalidades da seção CTA
     initCTAAnimations();
     initCTAInteractions();
     
