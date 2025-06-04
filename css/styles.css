@@ -259,9 +259,6 @@ html {
 }
 
 /* Ensure proper contrast for badges and alerts */
-.badge {
-    color: white !important;
-}
 
 .alert {
     color: var(--text-primary) !important;
