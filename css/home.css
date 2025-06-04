@@ -1700,3 +1700,97 @@
         font-size: 0.65rem;
     }
 }
+
+/* Historical Cases Section */
+.historical-card {
+    transition: all 0.3s ease;
+    border: 1px solid rgba(0,0,0,0.08) !important;
+}
+
+.historical-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 25px rgba(0,0,0,0.15);
+}
+
+.historical-card .card-header {
+    border-bottom: none;
+    position: relative;
+    overflow: hidden;
+}
+
+.historical-card .card-header::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent);
+    transition: left 0.5s;
+}
+
+.historical-card:hover .card-header::before {
+    left: 100%;
+}
+
+.impact-stats .stat-value {
+    font-size: 1.8rem;
+    line-height: 1;
+}
+
+.drypath-impact {
+    border-left: 4px solid var(--bs-success);
+    background: rgba(16, 185, 129, 0.1) !important;
+}
+
+.comparison-container {
+    background: linear-gradient(135deg, #f8fafc 0%, #e2e8f0 100%);
+}
+
+.comparison-side {
+    padding: 1.5rem;
+    border-radius: 0.75rem;
+}
+
+.without-drypath {
+    background: rgba(239, 68, 68, 0.05);
+    border: 2px solid rgba(239, 68, 68, 0.1);
+}
+
+.with-drypath {
+    background: rgba(16, 185, 129, 0.05);
+    border: 2px solid rgba(16, 185, 129, 0.1);
+}
+
+.stats-grid {
+    display: grid;
+    gap: 1rem;
+    margin-top: 1rem;
+}
+
+.stat-box {
+    transition: all 0.3s ease;
+}
+
+.stat-box:hover {
+    transform: scale(1.05);
+}
+
+.benefits-summary {
+    background: linear-gradient(135deg, rgba(37, 99, 235, 0.1) 0%, rgba(16, 185, 129, 0.1) 100%);
+}
+
+@media (max-width: 768px) {
+    .historical-card .card-header h3 {
+        font-size: 1rem;
+    }
+    
+    .impact-stats .stat-value {
+        font-size: 1.5rem;
+    }
+    
+    .comparison-side {
+        padding: 1rem;
+        margin-bottom: 2rem;
+    }
+}
