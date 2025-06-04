@@ -731,3 +731,102 @@ footer hr {
   }
 }
 
+/* ===== SOCIAL IMPACT CTA SECTION ===== */
+.social-impact-section {
+    background: linear-gradient(135deg, rgba(255,255,255,0.9) 0%, rgba(248,250,252,0.9) 100%);
+    border-radius: 1rem;
+    padding: 2rem;
+}
+
+.community-message {
+    border: 2px solid rgba(37, 99, 235, 0.1);
+    position: relative;
+    overflow: hidden;
+}
+
+.community-message::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(37, 99, 235, 0.05), transparent);
+    transition: left 0.8s;
+}
+
+.community-message:hover::before {
+    left: 100%;
+}
+
+.bg-gradient-light {
+    background: linear-gradient(135deg, rgba(249, 250, 251, 1) 0%, rgba(243, 244, 246, 1) 100%) !important;
+}
+
+@keyframes iconFloat {
+    0%, 100% { transform: translateY(0px); }
+    50% { transform: translateY(-10px); }
+}
+
+.social-action-card {
+    background: #ffffff;
+    border: 2px solid rgba(0, 0, 0, 0.05);
+    border-radius: 1rem;
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+}
+
+.social-action-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 4px;
+    background: linear-gradient(90deg, transparent, var(--bs-primary), transparent);
+    transform: translateX(-100%);
+    transition: transform 0.5s ease;
+}
+
+.social-action-card:hover::before {
+    transform: translateX(100%);
+}
+
+.social-action-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+    border-color: rgba(37, 99, 235, 0.2);
+}
+
+.social-action-card .action-icon {
+    transition: all 0.3s ease;
+}
+
+.social-action-card:hover .action-icon {
+    transform: scale(1.1);
+}
+
+.social-action-card .action-icon i {
+    transition: all 0.3s ease;
+}
+
+.social-action-card:hover .action-icon i {
+    text-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.bg-gradient-primary {
+    background: linear-gradient(135deg, var(--bs-primary) 0%, var(--bs-info) 100%) !important;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .social-impact-section {
+        padding: 1rem;
+    }
+    
+    .social-action-card {
+        margin-bottom: 1rem;
+    }
+}
+
