@@ -475,6 +475,7 @@ function initProblemCardEffects() {
     });
 }
 
+// Função para mostrar notificações dos cards de problemas
 function showProblemDetails(index) {
     const problemData = [
         {

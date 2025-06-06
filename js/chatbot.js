@@ -1,18 +1,20 @@
 document.addEventListener('DOMContentLoaded', () => {
+            // Elementos do chat
             const messagesContainer = document.getElementById('chat-messages');
             const userInputField = document.getElementById('user-input');
             const sendButton = document.getElementById('send-button');
 
+            //Elementos do botão e janela de chat
             const fabButton = document.getElementById('fab-chat-button');
             const fabIcon = document.getElementById('fab-icon');
             const chatWindowContainer = document.getElementById('chat-window-container');
             const closeChatButton = document.getElementById('close-chat-btn');
-
+            // Mensagem de demonstração do bot
             const botDemoMessage = "No momento estou apenas em fase de demonstração, obrigado por testar o meu funcionamento!";
             // URL do avatar do bot - substitua pelo URL da sua imagem
             const botAvatarUrl = "images/nautilus-chatbot.png";
 
-
+            // Função para alternar a visibilidade da janela de chat
             function toggleChatWindow() {
                 const isOpen = chatWindowContainer.classList.toggle('open');
                 
@@ -33,7 +35,7 @@ document.addEventListener('DOMContentLoaded', () => {
                     fabButton.setAttribute('aria-label', 'Abrir chat');
                 }
             }
-
+            // Adiciona eventos para abrir/fechar o chat
             fabButton.addEventListener('click', toggleChatWindow);
             closeChatButton.addEventListener('click', toggleChatWindow);
 
@@ -59,6 +61,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 messagesContainer.scrollTop = messagesContainer.scrollHeight;
             }
 
+            // Função para enviar mensagem do usuário
             function handleSendMessage() {
                 const userText = userInputField.value.trim();
 
@@ -70,7 +73,7 @@ document.addEventListener('DOMContentLoaded', () => {
                     }, 700);
                 }
             }
-
+            
             sendButton.addEventListener('click', handleSendMessage);
             userInputField.addEventListener('keypress', function(event) {
                 if (event.key === 'Enter') {

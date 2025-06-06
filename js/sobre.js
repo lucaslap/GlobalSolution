@@ -5,6 +5,7 @@ document.addEventListener('DOMContentLoaded', function() {
     initRoadmapInteractions();
 });
 
+// Animação dos contadores de métricas
 function animateMetricCounters() {
     const metrics = document.querySelectorAll('.metric-item h3');
     const observer = new IntersectionObserver((entries) => {
@@ -21,6 +22,7 @@ function animateMetricCounters() {
     metrics.forEach(metric => observer.observe(metric));
 }
 
+// Função para animar o contador de números
 function animateCounter(element, target) {
     let current = 0;
     const increment = target / 60; // 60 frames para 1 segundo
@@ -41,6 +43,7 @@ function animateCounter(element, target) {
     }, 16); // ~60fps
 }
 
+// Inicializar tooltips para os marcos do roadmap
 function initMilestoneTooltips() {
     const milestones = document.querySelectorAll('.card');
     

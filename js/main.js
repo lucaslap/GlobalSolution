@@ -334,7 +334,7 @@ animationStyles.textContent = `
 document.head.appendChild(animationStyles);
 
 // Exporta funções para uso global
-window.FloodAlert = {
+window.DryPath = {
     scrollToSection,
     showNotification,
     validateEmail,
