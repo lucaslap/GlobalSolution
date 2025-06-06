@@ -45,7 +45,6 @@ Criar uma plataforma web completa e funcional para gestão de emergências relac
 | Página | Descrição | Funcionalidades Implementadas | Linhas de Código |
 |--------|-----------|------------------------------|------------------|
 | **[Início](index.html)** | Landing page com hero animado | Animações CSS/JS, estatísticas, mapa Leaflet | 1.072 HTML + 1.548 CSS + 2.201 JS |
-| **[Simulação](simulacao.html)** | Centro de monitoramento interativo | Dados em tempo real, alertas, mapa SVG clicável | 659 HTML + 539 CSS + 547 JS |
 | **[Sobre](sobre.html)** | Informações e recursos do projeto | Dicas expandíveis, kit de emergência, contatos | 495 HTML + 456 CSS + 453 JS |
 | **[Educacional](educacional.html)** | Recursos educativos e prevenção | Guias de segurança, kits de emergência, contatos | 567 HTML + 195 CSS |
 
@@ -125,18 +124,16 @@ Criar uma plataforma web completa e funcional para gestão de emergências relac
 ├── 📁 css/ (3.207 linhas total)
 │   ├── styles.css                  # Estilos globais e variables (469 linhas)
 │   ├── home.css                    # Estilos da página inicial (1.548 linhas)
-│   ├── simulacao.css               # Estilos do centro de monitoramento (539 linhas)
 │   ├── sobre.css                   # Estilos da página sobre (456 linhas)
 │   └── educacional.css             # Estilos do conteúdo educativo (195 linhas)
 ├── 📁 js/ (3.545 linhas total)
 │   ├── main.js                     # Funções globais e utilitários (344 linhas)
 │   ├── home.js                     # Engine da página inicial (2.201 linhas)
-│   ├── simulacao.js                # Sistema de simulação (547 linhas)
 │   └── sobre.js                    # Funcionalidades da página sobre (453 linhas)
 ├── 📁 images/
 │   ├── favicon.svg                 # Ícone shield-check
 │   ├── hero-bg.svg                 # Background do hero
-│   └── README.md                   # Documentação de assets
+│   ├── logo-floodalert.svg         # Logo alternativo
 └── 📄 README.md                    # Esta documentação
 ```
 
@@ -326,56 +323,6 @@ Para funcionalidades básicas, abra `index.html` diretamente no navegador.
 
 ---
 
-## 🎯 Demonstrações Práticas
-
-### 🔥 Funcionalidades de Destaque
-
-#### 1. Sistema de Alertas Inteligente
-```javascript
-// Exemplo de como os alertas são gerados
-const riskLevels = {
-    low: { color: 'green', message: 'Condições normais' },
-    medium: { color: 'yellow', message: 'Chuvas previstas' },
-    high: { color: 'red', message: 'Risco de enchente' }
-};
-
-// Simulação de dados em tempo real
-setInterval(() => {
-    updateWeatherData();
-    checkRiskLevel();
-    sendNotifications();
-}, 30000); // Atualiza a cada 30 segundos
-```
-
-#### 2. Validação Brasileira Completa
-```javascript
-// Validações implementadas
-const validators = {
-    cpf: /^\d{3}\.\d{3}\.\d{3}-\d{2}$/,
-    telefone: /^\(\d{2}\)\s\d{4,5}-\d{4}$/,
-    cep: /^\d{5}-\d{3}$/,
-    email: /^[^\s@]+@[^\s@]+\.[^\s@]+$/
-};
-```
-
-#### 3. Mapa Interativo Avançado
-```javascript
-// Áreas de risco clicáveis
-const riskAreas = [
-    { lat: -23.5505, lng: -46.6333, level: 'high', name: 'Centro' },
-    { lat: -23.5629, lng: -46.6544, level: 'medium', name: 'Vila Madalena' },
-    // ... mais áreas
-];
-
-// Interação com clique
-map.addEventListener('click', (event) => {
-    const area = getRiskAreaByCoords(event.latlng);
-    showAreaDetails(area);
-});
-```
-
----
-
 ## 📊 Dados e Estatísticas do Projeto
 
 ### 🔢 Números Importantes
@@ -504,9 +451,11 @@ Este projeto representa a aplicação prática de conhecimentos em desenvolvimen
 - 📱 **Global Solution:** Programa de inovação e empreendedorismo
 
 ### 💼 Equipe de Desenvolvimento
-- 📧 **Email do Projeto:** [drypath.team@fiap.edu.br](mailto:drypath.team@fiap.edu.br)
-- 💻 **GitHub:** [github.com/drypath-team](https://github.com/drypath-team)
-- 🔗 **LinkedIn:** [linkedin.com/company/drypath](https://linkedin.com/company/drypath)
+- Lucas Alves Pereira
+- Diego Kanamori
+- Victor Melo Peres
+- Lara Hellen de Paula
+- Joao Silva Portugal Guimarães
 
 ### 🐛 Suporte Técnico e Issues
 - **Reportar Bugs:** Abra uma issue no repositório GitHub
@@ -580,7 +529,7 @@ O **DryPath** representa mais que um projeto acadêmico - é uma demonstração 
 
 ---
 
-*Última atualização: Janeiro 2025*  
+*Última atualização: Junho 2025*  
 *Versão: 1.0.0*  
 *Status: Projeto Completo*
 
