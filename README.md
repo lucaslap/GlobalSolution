@@ -136,7 +136,6 @@ Criar uma plataforma web completa e funcional para gestão de emergências relac
 ├── 📁 images/
 │   ├── favicon.svg                 # Ícone shield-check
 │   ├── hero-bg.svg                 # Background do hero
-│   ├── logo-floodalert.svg         # Logo alternativo
 │   └── README.md                   # Documentação de assets
 └── 📄 README.md                    # Esta documentação
 ```
