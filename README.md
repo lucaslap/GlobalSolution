@@ -10,31 +10,40 @@
   [![Projeto](https://img.shields.io/badge/Projeto-Global%20Solution-blue)](https://www.fiap.com.br)
   [![Tecnologia](https://img.shields.io/badge/Tecnologia-HTML%2BCSS%2BJS-green)](#tecnologias)
   [![Status](https://img.shields.io/badge/Status-Completo-brightgreen)](#)
-  [![Linhas de Código](https://img.shields.io/badge/Linhas%20de%20Código-9.545-orange)](#)
+  [![Linhas de Código](https://img.shields.io/badge/Linhas%20de%20Código-10.672-orange)](#)
 </div>
 
 ---
 
 ## 📋 Sobre o Projeto
 
-O **DryPath** é um sistema web completo e funcional desenvolvido para o Global Solution da FIAP 2025, criando uma solução abrangente para alertas de enchentes e coordenação de evacuação. O projeto implementa um sistema robusto de monitoramento simulado em tempo real, mapeamento interativo de áreas de risco com **Leaflet**, e interface responsiva completa para gestão de emergências.
+O **DryPath** é um sistema web completo e funcional desenvolvido para o Global Solution da FIAP 2025, criando uma solução abrangente para alertas de enchentes e coordenação de evacuação. O projeto implementa um sistema robusto com mapeamento interativo de áreas de risco usando **Leaflet**, interface responsiva completa, e chatbot assistente integrado.
 
 ### 🎯 Missão
 
 Criar uma plataforma web completa e funcional para gestão de emergências relacionadas a enchentes através de:
 - **Interface Interativa:** Sistema web responsivo com navegação intuitiva
-- **Simulação Realística:** Engine de simulação com dados meteorológicos dinâmicos
 - **Mapeamento Avançado:** Integração com Leaflet para visualização geográfica
 - **Educação e Prevenção:** Recursos educacionais completos para preparação
+- **Assistente Virtual:** Chatbot Nautilus para suporte e orientação
 
 ### 🌟 Principais Características
 
-- ✨ **9.545 linhas de código** implementadas e funcionais
-- ⚡ **4 páginas completas** com funcionalidades distintas
-- 🌐 **Simulação em tempo real** com dados meteorológicos
+- ✨ **10.672 linhas de código** implementadas e funcionais
+- ⚡ **3 páginas completas** com funcionalidades distintas
 - 📱 **Design totalmente responsivo** (mobile-first)
 - 🎯 **Mapa interativo** com áreas de risco e rotas de evacuação
-- 🔄 **Validação de formulários** com padrões brasileiros (CPF, telefone, CEP)
+- 🤖 **Chatbot integrado** em todas as páginas
+- 🎨 **Animações avançadas** e micro-interações
+
+### 🆕 Novidades da Versão Atual
+
+- **🤖 Chatbot Nautilus:** Assistente virtual integrado em todas as páginas com interface conversacional moderna
+- **🗺️ Mapeamento Educacional:** Sistema interativo de mapas usando Leaflet para demonstração educativa
+- **📱 Design Aprimorado:** Interface completamente responsiva com foco em mobile-first
+- **🎯 Foco Educacional:** Ênfase em recursos educativos e preparação para emergências
+- **⚡ Performance Otimizada:** Carregamento rápido e animações fluidas em 60fps
+- **🎨 Sistema de Design:** CSS Variables e componentes reutilizáveis para consistência visual
 
 ---
 
@@ -44,9 +53,9 @@ Criar uma plataforma web completa e funcional para gestão de emergências relac
 
 | Página | Descrição | Funcionalidades Implementadas | Linhas de Código |
 |--------|-----------|------------------------------|------------------|
-| **[Início](index.html)** | Landing page com hero animado | Animações CSS/JS, estatísticas, mapa Leaflet | 1.072 HTML + 1.548 CSS + 2.201 JS |
-| **[Sobre](sobre.html)** | Informações e recursos do projeto | Dicas expandíveis, kit de emergência, contatos | 495 HTML + 456 CSS + 453 JS |
-| **[Educacional](educacional.html)** | Recursos educativos e prevenção | Guias de segurança, kits de emergência, contatos | 567 HTML + 195 CSS |
+| **[Início](index.html)** | Landing page com hero animado | Animações CSS/JS, estatísticas, mapa Leaflet, chatbot | 1.356 HTML + 1.796 CSS + 1.113 JS |
+| **[Sobre](sobre.html)** | Informações e recursos do projeto | Dicas expandíveis, kit de emergência, contatos, chatbot | 898 HTML + 1.413 CSS + 114 JS |
+| **[Educacional](educacional.html)** | Recursos educativos e prevenção | Guias de segurança, kits de emergência, contatos, chatbot | 1.209 HTML + 1.446 CSS |
 
 ---
 
@@ -57,17 +66,8 @@ Criar uma plataforma web completa e funcional para gestão de emergências relac
 - ✅ **Estatísticas Animadas:** Contadores com easing e animações CSS
 - ✅ **Seção Problema Interativa:** Cards 3D com hover effects e efeito de chuva
 - ✅ **Mapa Leaflet Integrado:** Sistema real de mapas com áreas de risco e rotas de evacuação
-- ✅ **Dashboard Preview:** Simulação de interface com dados em tempo real
+- ✅ **Chatbot Nautilus:** Assistente virtual integrado com interface conversacional
 - ✅ **Parallax Effects:** Efeitos de scroll e revelação progressiva
-
-### 🗺️ Simulação Interativa (simulacao.html)
-- ✅ **Engine de Simulação:** Sistema completo com estado global e dados dinâmicos
-- ✅ **Mapa SVG Clicável:** Áreas de risco interativas com tooltips e feedback
-- ✅ **Dados Meteorológicos:** Simulação realística com 4 condições climáticas
-- ✅ **Sistema de Alertas:** 4 níveis (Verde/Amarelo/Laranja/Vermelho) com notificações
-- ✅ **Controles Dinâmicos:** Sliders para nível de água e seleção de clima
-- ✅ **Evacuação Simulada:** Contador de pessoas evacuadas com animação
-- ✅ **Formulário Completo:** Validação brasileira (CPF, telefone, CEP) com feedback
 
 ### ℹ️ Página Sobre (sobre.html)
 - ✅ **Cards Expansíveis:** Sistema de dicas de segurança por fase (antes/durante/depois)
@@ -75,21 +75,28 @@ Criar uma plataforma web completa e funcional para gestão de emergências relac
 - ✅ **Contatos de Emergência:** Modal interativo com botões de ligação
 - ✅ **Local Storage:** Persistência de dados dos checklists
 - ✅ **Animações de Scroll:** Elementos aparecem progressivamente
-- ✅ **Timeline do Projeto:** Cronograma visual de desenvolvimento
+- ✅ **Chatbot Integrado:** Suporte e orientação para usuários
 
 ### 🎓 Página Educacional (educacional.html)
 - ✅ **Guias de Segurança:** 3 fases estruturadas (antes/durante/depois)
-- ✅ **Kit de Emergência Detalhado:** 3 categorias (básicos/primeiros socorros/documentos)
+- ✅ **Kit de Emergência Detalhado:** 4 categorias (básicos/primeiros socorros/documentos/ferramentas)
 - ✅ **Contatos de Emergência:** Cards visuais com códigos oficiais (190, 192, 193, 199)
-- ✅ **Integração com Footer:** Sistema unificado de navegação
+- ✅ **Mapa Educacional:** Demonstração interativa com Leaflet
+- ✅ **Chatbot Educativo:** Assistente especializado em educação sobre enchentes
+
+### 🤖 Sistema de Chatbot (chatbot.js)
+- ✅ **Assistente Virtual Nautilus:** Chatbot integrado em todas as páginas
+- ✅ **Interface Conversacional:** Design moderno com avatares e balões de mensagem
+- ✅ **Integração Fluida:** Botão FAB (Floating Action Button) para acesso rápido
+- ✅ **Modo Demonstração:** Sistema funcional pronto para integração com IA
 
 ### 🔧 Funcionalidades Técnicas Implementadas
-- ✅ **Sistema de Design Completo:** CSS Variables e 469 linhas de estilos globais
-- ✅ **JavaScript Modular:** 4 arquivos JS com funções específicas (3.545 linhas total)
+- ✅ **Sistema de Design Completo:** CSS Variables e 5.484 linhas de estilos
+- ✅ **JavaScript Modular:** 4 arquivos JS com funções específicas (1.726 linhas total)
 - ✅ **Animações Avançadas:** CSS3 + JavaScript para micro-interações fluidas
 - ✅ **Local Storage:** Persistência de dados de formulários e preferências
 - ✅ **Responsividade Total:** Mobile-first design com breakpoints Bootstrap
-- ✅ **Validação Brasileira:** CPF, telefone e CEP com regex específicos
+- ✅ **Mapeamento Interativo:** Integração completa com Leaflet Maps
 
 ---
 
@@ -116,24 +123,24 @@ Criar uma plataforma web completa e funcional para gestão de emergências relac
 ### 🏗️ Arquitetura Implementada
 
 ```
-📁 DryPath/ (9.545 linhas de código total)
-├── 📄 index.html                    # Landing page principal (1.072 linhas)
-├── 📄 simulacao.html               # Centro de monitoramento (659 linhas)
-├── 📄 sobre.html                   # Página informativa (495 linhas)
-├── 📄 educacional.html             # Conteúdo educativo (567 linhas)
-├── 📁 css/ (3.207 linhas total)
-│   ├── styles.css                  # Estilos globais e variables (469 linhas)
-│   ├── home.css                    # Estilos da página inicial (1.548 linhas)
-│   ├── sobre.css                   # Estilos da página sobre (456 linhas)
-│   └── educacional.css             # Estilos do conteúdo educativo (195 linhas)
-├── 📁 js/ (3.545 linhas total)
-│   ├── main.js                     # Funções globais e utilitários (344 linhas)
-│   ├── home.js                     # Engine da página inicial (2.201 linhas)
-│   └── sobre.js                    # Funcionalidades da página sobre (453 linhas)
+📁 DryPath/ (10.672 linhas de código total)
+├── 📄 index.html                    # Landing page principal (1.356 linhas)
+├── 📄 sobre.html                   # Página informativa (898 linhas)
+├── 📄 educacional.html             # Conteúdo educativo (1.209 linhas)
+├── 📁 css/ (5.484 linhas total)
+│   ├── styles.css                  # Estilos globais e variables (829 linhas)
+│   ├── home.css                    # Estilos da página inicial (1.796 linhas)
+│   ├── sobre.css                   # Estilos da página sobre (1.413 linhas)
+│   └── educacional.css             # Estilos do conteúdo educativo (1.446 linhas)
+├── 📁 js/ (1.726 linhas total)
+│   ├── main.js                     # Funções globais e utilitários (415 linhas)
+│   ├── home.js                     # Engine da página inicial (1.113 linhas)
+│   ├── sobre.js                    # Funcionalidades da página sobre (114 linhas)
+│   └── chatbot.js                  # Sistema de chatbot integrado (84 linhas)
 ├── 📁 images/
 │   ├── favicon.svg                 # Ícone shield-check
 │   ├── hero-bg.svg                 # Background do hero
-│   ├── logo-floodalert.svg         # Logo alternativo
+│   └── nautilus-chatbot.png        # Avatar do chatbot Nautilus
 └── 📄 README.md                    # Esta documentação
 ```
 
@@ -189,17 +196,7 @@ Para funcionalidades básicas, abra `index.html` diretamente no navegador.
 | **Estatísticas** | Role até a seção | Contadores animados com easing |
 | **Cards 3D** | Hover nos cards de problema | Transformação 3D + efeito de chuva |
 | **Mapa Leaflet** | Clique nos marcadores | Popups com informações + rotas de evacuação |
-| **Dashboard** | Clique em "Ver Demonstração" | Modal com tabs funcionais |
-
-### 🗺️ Centro de Monitoramento
-
-| Funcionalidade | Como Testar | Resultado Esperado |
-|---------------|-------------|-------------------|
-| **Simulação em Tempo Real** | Aguarde carregamento | Dados atualizados a cada 3 segundos |
-| **Áreas de Risco** | Clique nas áreas coloridas | Tooltip + notificação + destaque |
-| **Controles Climáticos** | Mude o clima no select | Dados ajustados automaticamente |
-| **Slider de Água** | Arraste o slider | Atualização em tempo real + alertas |
-| **Formulário** | Teste com dados inválidos | Validação brasileira completa |
+| **Chatbot Nautilus** | Clique no ícone de chat | Interface conversacional com assistente |
 
 ### 📖 Página Sobre e Educacional
 
@@ -208,7 +205,17 @@ Para funcionalidades básicas, abra `index.html` diretamente no navegador.
 | **Cards Expansíveis** | Clique nos headers | Animação de abertura/fechamento |
 | **Checklists** | Marque/desmarque itens | Salvamento automático no localStorage |
 | **Contatos de Emergência** | Clique nos cartões | Modal com opção de ligação |
+| **Chatbot Integrado** | Botão flutuante de chat | Assistente contextual por página |
 | **Responsividade** | Redimensione a janela | Layout adapta perfeitamente |
+
+### 🤖 Sistema de Chatbot
+
+| Funcionalidade | Como Testar | Resultado Esperado |
+|---------------|-------------|-------------------|
+| **Abertura do Chat** | Clique no botão FAB | Janela do chat abre com saudação |
+| **Envio de Mensagens** | Digite e pressione Enter | Mensagem enviada + resposta automática |
+| **Interface Responsiva** | Teste em mobile/desktop | Layout adapta ao tamanho da tela |
+| **Avatar do Bot** | Observe as mensagens | Avatar Nautilus nas mensagens do bot |
 
 ---
 
@@ -335,12 +342,14 @@ Para funcionalidades básicas, abra `index.html` diretamente no navegador.
 ├── 1000+ vidas potencialmente salvas por ano
 └── 6 horas de antecedência média nos alertas
 
-💻 Estatísticas Técnicas
-├── ~3.500 linhas de código total
-├── 12 componentes interativos únicos
+💻 Estatísticas Técnicas Reais
+├── 10.672 linhas de código total
+├── 3 páginas principais funcionais
+├── 1 sistema de chatbot integrado
 ├── 45+ animações CSS customizadas
-├── 8 validações de formulário brasileiras
-└── 100% compatibilidade mobile
+├── 4 bibliotecas/frameworks utilizados
+├── 100% compatibilidade mobile
+└── Sistema de mapas interativo com Leaflet
 ```
 
 ### 🌍 Contexto do Problema
@@ -529,7 +538,7 @@ O **DryPath** representa mais que um projeto acadêmico - é uma demonstração 
 
 ---
 
-*Última atualização: Junho 2025*  
+*Última atualização: 05 de Junho de 2025*  
 *Versão: 1.0.0*  
 *Status: Projeto Completo*
 
