@@ -439,7 +439,7 @@ Este projeto representa a aplicação prática de conhecimentos em desenvolvimen
 ### 🌐 Dados sobre Enchentes e Emergências
 - **[CEMADEN](https://www.cemaden.gov.br/)** - Centro Nacional de Monitoramento
 - **[ANA - Agência Nacional de Águas](https://www.ana.gov.br/)** - Dados hidrológicos
-- **[Defesa Civil Nacional](https://www.defesacivil.gov.br/)** - Protocolos oficiais
+- **[Defesa Civil Nacional](https://www.gov.br/mdr/pt-br)** - Protocolos oficiais
 - **[INMET](https://www.inmet.gov.br/)** - Instituto de Meteorologia
 - **[UN-SPIDER](https://www.un-spider.org/)** - Dados globais sobre desastres
 
