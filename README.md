@@ -456,7 +456,6 @@ Este projeto representa a aplicação prática de conhecimentos em desenvolvimen
 ### 🎓 Instituição Responsável
 **FIAP - Faculdade de Informática e Administração Paulista**
 - 🌐 **Site Oficial:** [fiap.com.br](https://www.fiap.com.br)
-- 📧 **Email Institucional:** [contato@fiap.com.br](mailto:contato@fiap.com.br)
 - 📱 **Global Solution:** Programa de inovação e empreendedorismo
 
 ### 💼 Equipe de Desenvolvimento
